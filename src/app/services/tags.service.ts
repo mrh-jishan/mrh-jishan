@@ -11,7 +11,7 @@ export const tagData = [
   {displayName: 'Node.js', isSelected: true},
   {displayName: 'ASP.NET', isSelected: true},
   {displayName: 'CSS', isSelected: true},
-  {displayName: 'Others', isSelected: !true}
+  {displayName: 'Others', isSelected: false}
 ];
 
 
@@ -25,10 +25,7 @@ export class TagsService {
   }
 
   toogleTagSelection(tagName: string) {
-    const totalSelection = this.tags.reduce(
-      (prev, current) => prev + (current.isSelected ? 1 : 0),
-      0
-    );
+    const totalSelection = this.tags.reduce((prev, current) => prev + (current.isSelected ? 1 : 0), 0);
     const selectedSkill = this.tags.find(e => e.displayName === tagName);
 
     if (totalSelection <= 1 && selectedSkill.isSelected) return;

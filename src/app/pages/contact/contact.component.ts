@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'rh-contact',
@@ -7,9 +8,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
-  ngOnInit(): void {
+  contactProfile = {
+    profile: [
+      {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/md-robiul-hassan-093a5a10a/',
+        iconUrl: './assets/icons/linkedin.svg'
+      }
+    ],
+    work: [
+      {
+        name: 'GitHub',
+        url: 'https://github.com/mrh-jishan',
+        iconUrl: './assets/icons/github.svg'
+      },
+    ]
+  };
+
+  email = {
+    name: 'Email',
+    url: 'mailto:robiul.hassan12102@gmail.com',
+    iconUrl: './assets/icons/email.svg'
+  };
+
+  telegram = {
+    name: 'Telegram',
+    url: 'https://t.me/rforruby',
+    iconUrl: './assets/icons/telegram.png'
+  };
+
+  ngOnInit() {
+  }
+
+  onBackClick() {
+    this.router.navigateByUrl('/');
   }
 
 }
