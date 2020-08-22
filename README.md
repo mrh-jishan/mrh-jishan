@@ -9,10 +9,10 @@ Apart from coding, I also maintain a blog - you can find my articles on my websi
 
 ## &#x1f4c8; GitHub Stats
 
-<a href="https://github.com/ihsaninh/ihsaninh">
+<a href="https://github.com/ihsaninh/mrh-jishan">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mrh-jishan&hide=css,html" />
 </a>
-<a href="https://github.com/ihsaninh/ihsaninh">
+<a href="https://github.com/ihsaninh/mrh-jishan">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=mrh-jishan&show_icons=true&line_height=27&count_private=true alt="Ihsan's GitHub Stats" />
 </a>
 
