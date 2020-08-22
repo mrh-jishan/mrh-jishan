@@ -4,7 +4,7 @@ My name is Md Robiul Hassan and you can call me by ROBIN. I'm a Full-Stack Devel
 
 ## &#x270d; Blog & Writing
 
-Apart from coding, I also maintain a blog - you can find my articles on my website at [robinhassan.com](https://www.robinhassan.com/).
+Apart from coding, I also maintain a blog - you can find my articles on my website at [mrh-jishan](https://mrh-jishan.github.io/mrh-jishan/).
 
 
 ## &#x1f4c8; GitHub Stats
