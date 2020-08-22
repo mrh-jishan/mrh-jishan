@@ -1,27 +1,27 @@
-# MrhJishan
+# Hi, there 👋
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+My name is Md Robiul Hassan and you can call me by ROBIN. I'm a Full-Stack Developer who is also interested working on Mobile App Development as well. I was born in Bangladesh, studied in Malaysia and living in Singapore. At present I am working with Cognizant and placed to work at Credit Suisse Singapore to develop application using Java Spring Boot.
 
-## Development server
+## &#x270d; Blog & Writing
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Apart from coding, I also maintain a blog - you can find my articles on my website at [robinhassan.com](https://www.robinhassan.com/).
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## &#x1f4c8; GitHub Stats
 
-## Build
+<a href="https://github.com/ihsaninh/ihsaninh">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mrh-jishan&hide=css,html" />
+</a>
+<a href="https://github.com/ihsaninh/ihsaninh">
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=mrh-jishan&show_icons=true&line_height=27&count_private=true alt="Ihsan's GitHub Stats" />
+</a>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Here are some ideas to get you started:
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- 🔭 I’m currently working on **Personal Mobile App**
+- 🌱 I’m currently learning **K8S** and **Golang**
+- 👯 I’m looking to collaborate on **Business Ideas**
+- 🤔 I’m looking for help with **Personal Development**
+- 💬 Ask me about **Anything of Angular**
+- 📫 How to reach me: **robiul.hassan12102@gmail.com**
+- ⚡ Fun fact: **I am planning to get married in 2021**
