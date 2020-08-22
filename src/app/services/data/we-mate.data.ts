@@ -15,7 +15,7 @@ export const WeMateData: IProject = {
     'Order Food',
     'Track Food]'
   ],
-  tags: ['Food-Delivery', 'Realtime-Tracking', 'Payment'],
+  tags: ['node.js', 'angular', 'moongodb', 'express.js'],
   techStuff: ['NodeJS', 'Angular', 'MongoDB', 'AWS'],
   additionalData: []
 };

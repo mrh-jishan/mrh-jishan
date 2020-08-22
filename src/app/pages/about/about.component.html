@@ -1,1 +1,35 @@
-<p>about works!</p>
+<div (click)="onBackClick()" class="back-icon">
+  <rh-back-icon></rh-back-icon>
+</div>
+<span class="overlay"></span>
+<div class="container">
+  <div class="side1">
+    <h1 class="skill-header">ABOUT</h1>
+    <rh-dp-logo height="13rem" width="13rem" class="dp-logo"></rh-dp-logo>
+    <div class="text-container">
+      <p>
+        I started programming with C in 2016 (still I love C & *Pointer) then I jumped to .NET & ASP.NET with C# for Web and Desktop
+        App development and now I am working with Node.js, ASP.NET Core, Angular, React.js, React Native.
+      </p>
+      <br>
+      <p>
+        I've built few of extension for VSCode & Browsers which are downloaded more than 1.2M times.
+      </p>
+      <br>
+      <p>
+        Apart from web development, I like IOT & play with Arduino, ESP8266/NodeMCU.
+      </p>
+    </div>
+  </div>
+  <div class="side2">
+    <div class="skill-container">
+      <h1 class="skill-header">
+        Skills
+      </h1>
+      <div *ngFor="let skill of skills">
+        <h4 class="skill-type">{{skill.type}}</h4>
+        <h4 class="skill-names">{{skill.names.join(', ')}}</h4>
+      </div>
+    </div>
+  </div>
+</div>

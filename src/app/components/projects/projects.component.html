@@ -1,1 +1,14 @@
-<p>projects works!</p>
+<div [@slideIn]="projects?.length" (@slideIn.done)="renderProjects()" class="project-container">
+  <rh-project-card *ngFor="let project of projects"
+                   [project]="project"
+                   (select)="onProjectCardClick($event)"
+                   class="project-card">
+  </rh-project-card>
+</div>
+<div [@animateChildren]="selectedProject">
+  <rh-project-details [project]="selectedProject"
+                      (cancellation)="selectedProject = null"
+                      *ngIf="selectedProject">
+
+  </rh-project-details>
+</div>

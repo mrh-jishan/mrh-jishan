@@ -23,6 +23,9 @@ import { KeySkillBtnsComponent } from './components/key-skill-btns/key-skill-btn
 import { ProjectsComponent } from './components/projects/projects.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {EscCancelationDirective} from "./directives/esc-cancelation.directive";
+import { ProjectCardComponent } from './components/project-card/project-card.component';
+import { ProjectDetailsComponent } from './components/project-details/project-details.component';
+import { CrossIconComponent } from './components/cross-icon/cross-icon.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import {EscCancelationDirective} from "./directives/esc-cancelation.directive";
     BackIconComponent,
     KeySkillBtnsComponent,
     ProjectsComponent,
-    EscCancelationDirective
+    EscCancelationDirective,
+    ProjectCardComponent,
+    ProjectDetailsComponent,
+    CrossIconComponent
   ],
   imports: [
     BrowserModule,
