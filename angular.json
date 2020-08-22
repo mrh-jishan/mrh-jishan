@@ -124,8 +124,13 @@
               "devServerTarget": "mrh-jishan:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "mrh-jishan"
 }
