@@ -11,28 +11,4 @@
   <changefreq>daily</changefreq>
   <priority>1.00</priority>
 </url>
-<url>
-  <loc>https://mrh-jishan.github.io/vscode-live-server/</loc>
-  <lastmod>2017-07-26T06:51:35+00:00</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mrh-jishan.github.io/vscode-live-sass-compiler/</loc>
-  <lastmod>2017-07-25T13:31:58+00:00</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mrh-jishan.github.io/vscode-live-server/CHANGELOG.html</loc>
-  <lastmod>2017-07-26T06:51:35+00:00</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://mrh-jishan.github.io/vscode-live-sass-compiler/CHANGELOG.html</loc>
-  <lastmod>2017-07-25T13:31:58+00:00</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.64</priority>
-</url>
 </urlset>
