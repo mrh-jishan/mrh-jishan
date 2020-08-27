@@ -9,13 +9,13 @@ export const SKILLS_DATA: ISkill[] = [
   {
     type: 'Programming Language',
     names: [
-      'C', 'C#', 'JavaScript', 'TypeScript', 'Python'
+      'Java', 'JavaScript', 'TypeScript', 'Python', 'Ruby'
     ]
   },
   {
     type: 'Backend',
     names: [
-      'Spring Boot', 'Ruby on Rails','Node.js & Express.js',
+      'Spring Boot', 'Ruby on Rails', 'Node.js & Express.js',
     ]
   },
   {
@@ -27,13 +27,13 @@ export const SKILLS_DATA: ISkill[] = [
   {
     type: 'Database & ORM',
     names: [
-      'Postgres','MySql', 'MongoDB', 'JDBC/JPA/Hibernate', 'Mongoose','DB2', 'Oracle', 'Redis'
+      'Postgres', 'MySql', 'MongoDB', 'JDBC/JPA/Hibernate', 'Mongoose', 'DB2', 'Oracle', 'Redis'
     ]
   },
   {
     type: 'Cloud',
     names: [
-      'Amazon Web Services (AWS)', 'Firebase DB & Functions', 'Heroku'
+      'Amazon Web Services (AWS)', 'Firebase DB & Functions', 'Heroku', 'Docker', 'Jenkins', 'k8s', 'Maven', 'Git'
     ]
   },
   {
@@ -45,7 +45,7 @@ export const SKILLS_DATA: ISkill[] = [
   {
     type: 'Others',
     names: [
-      'Git & GitHub', 'CI/CD', 'REST API', 'JWT', 'Auth0','Micro-Service','Multithreading'
+      'GitHub', 'CI/CD', 'REST API', 'JWT', 'Auth0', 'Micro-Service', 'Multithreading', 'Kafka', 'ActiveMQ'
     ]
   },
 ];
