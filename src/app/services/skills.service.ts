@@ -15,7 +15,7 @@ export const SKILLS_DATA: ISkill[] = [
   {
     type: 'Backend',
     names: [
-      'Node.js & Express.js', 'ASP.NET Core/MVC/WebAPI'
+      'Spring Boot', 'Ruby on Rails','Node.js & Express.js',
     ]
   },
   {
@@ -27,25 +27,25 @@ export const SKILLS_DATA: ISkill[] = [
   {
     type: 'Database & ORM',
     names: [
-      'SQL Server', 'MongoDB', 'Entity Framework', 'Mongoose'
+      'Postgres','MySql', 'MongoDB', 'JDBC/JPA/Hibernate', 'Mongoose','DB2', 'Oracle', 'Redis'
     ]
   },
   {
     type: 'Cloud',
     names: [
-      'Azure Web Service & Storage', 'Firebase DB & Functions', 'Heroku'
+      'Amazon Web Services (AWS)', 'Firebase DB & Functions', 'Heroku'
     ]
   },
   {
     type: 'Testing',
     names: [
-      'Jest', 'Mocha'
+      'Mockito', 'Rspec', 'jUnit', 'Jasmine', 'Mocha', 'Chai'
     ]
   },
   {
     type: 'Others',
     names: [
-      'Git & GitHub', 'CI/CD', 'REST API', 'JWT', 'Auth0'
+      'Git & GitHub', 'CI/CD', 'REST API', 'JWT', 'Auth0','Micro-Service','Multithreading'
     ]
   },
 ];
