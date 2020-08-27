@@ -128,7 +128,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/mrh-jishan"
+            "baseHref": "/mrh-jishan/"
           }
         }
       }
