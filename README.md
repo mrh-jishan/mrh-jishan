@@ -1,6 +1,6 @@
 # Hi, there 👋
 
-My name is Md Robiul Hassan and you can call me by ROBIN. I'm a Full-Stack Developer who is also interested working on Mobile App Development as well. I was born in Bangladesh, studied in Malaysia and living in Singapore. At present I am working with Cognizant and placed to work at Credit Suisse Singapore to develop application using Java Spring Boot.
+My name is Md Robiul Hassan and you can call me by ROBIN. I'm a Full-Stack Developer who is also interested working on Mobile App Development as well. At present I am living and working in Singapore and have been busy working with Spring-Boot and some of crazy devOps tech staffs. 
 
 ## &#x270d; Blog & Writing
 
