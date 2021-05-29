@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit {
     profile: [
       {
         name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/md-robiul-hassan-093a5a10a/',
+        url: 'https://www.linkedin.com/in/rhsn1/',
         iconUrl: './assets/icons/linkedin.svg'
       }
     ],
