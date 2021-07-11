@@ -13,7 +13,7 @@ Apart from coding, I also maintain a blog - you can find my articles on [Robiul 
 ## Here are some ideas to get you started:
 
 - 🔭 I’m currently working on **Personal Social Network**
-- 🌱 I’m currently learning **K8S** and **Open-Shift**
+- 🌱 I’m currently learning **Adobe Premiere Pro**, **K8S** and **Open-Shift**
 - 👯 I’m looking to collaborate on **YouTube**
 - 🤔 I’m looking for help with **Personal Development**
 - 💬 Ask me about **Anything of Angular & Spring-Boot**
