@@ -14,7 +14,6 @@ Apart from coding, I also maintain a blog - you can find my articles on [Robiul 
 
 - 🔭 I’m currently working on **Personal Social Network**
 - 🌱 I’m currently learning **Adobe Premiere Pro**, **K8S** and **Open-Shift**
-- 👯 I’m looking to collaborate on **YouTube**
 - 🤔 I’m looking for help with **Personal Development**
 - 💬 Ask me about **Anything of Angular & Spring-Boot**
 - 📫 How to reach me: **[robiul.hassan12102@gmail.com](mailto:robiul.hassan12102@gmail.com)**
