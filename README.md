@@ -8,7 +8,7 @@
 
 ## &#x270d; Blog & Writing
 
-Apart from coding, I also maintain a blog - you can find my articles on [Robiul Hassan - Medium](https://robiul-hassan.medium.com/) and my YouTube chanel [The Documentation](https://www.youtube.com/channel/UC816zZRZ6sbGHxuHu4B8dOg).
+Apart from coding, I also maintain a blog - you can find my articles on [Robiul Hassan - Medium](https://robiul-hassan.medium.com/)
 
 ## Here are some ideas to get you started:
 
