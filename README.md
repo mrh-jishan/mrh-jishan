@@ -1,7 +1,6 @@
 # Robiul Hassan - Software Engineer
 
 - Email: robiul.hassan12102@gmail.com
-- Phone: (954) 709-0379
 - Address: Margate, FL 33063, USA
 - GitHub: [github.com/mrh-jishan](https://github.com/mrh-jishan)
 - LinkedIn: [linkedin.com/in/rhsn1](https://www.linkedin.com/in/rhsn1)
