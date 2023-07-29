@@ -5,6 +5,8 @@
 - GitHub: [github.com/mrh-jishan](https://github.com/mrh-jishan)
 - LinkedIn: [linkedin.com/in/rhsn1](https://www.linkedin.com/in/rhsn1)
 
+[Download PDF Resume](https://github.com/mrh-jishan/mrh-jishan/raw/master/Robiul%20Hassan%20-%20Software%20Engineer.pdf)
+
 ## Summary
 
 Half a decade of experience as a software engineer, spanning industries from investment banking to the ride-hailing sector. Proficient in utilizing various AWS services, including Lambda, DynamoDB, S3, RDS, EMR, Kinesis, and more. Extensive experience in working with distributed query engine and workflow tools such as Presto, Databricks, Airflow. Skilled in migrating traditional applications to containerized environments using Docker, and deploying them with Terraform, Ansible, Helm in Kubernetes/OpenShift Clusters. Strong background in client-side app development, utilizing ReactJS and Angular, as well as template engines like Jade/Pug/Haml.
