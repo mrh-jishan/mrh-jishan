@@ -41,7 +41,7 @@ Half a decade of experience as a software engineer, spanning industries from inv
 - Designed and implemented a DSL engine, reducing server load by 30% during DB2 data migration for banking clients.
 - Containerized payment application and automated GitLab CI/CD pipeline, ensuring seamless migration to Open-Shift using Helm.
 
-### Front-End Developer | Finterra Technologies Sdn Bhd - Margate, FL, USA
+### Front-End Developer | Finterra Technologies Sdn Bhd - Kuala Lumpur, Malaysia
 
 - **Date**: Nov 2017 – Oct 2019
 - **Location**: Ecosystem Team - Kuala Lumpur, Malaysia
