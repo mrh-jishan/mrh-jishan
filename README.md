@@ -13,15 +13,6 @@ Half a decade of experience as a software engineer, spanning industries from inv
 
 ## Experience
 
-### Senior Software Engineer | Digilant - Boston, MA, USA
-
-- **Date**: May 2022 – Present
-- **Location**: ISPD Global Team
-
-- Optimized Sidekiq jobs to process gigabytes of data from S3 to improve customers' daily reports.
-- Provided solutions using Semrush to measure the quality and quantity of a brand's memory associations that exist in a consumer's mind.
-- Migrated multi-model database into a single view and automated manual processes to reduce human errors.
-
 ### Data Platform Engineer | FREE NOW (MyTaxi) - Hamburg, Germany
 
 - **Date**: Jan 2022 – May 2022
