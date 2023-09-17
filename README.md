@@ -15,7 +15,7 @@ Half a decade of experience as a software engineer, spanning industries from inv
 
 ### Data Platform Engineer | FREE NOW (MyTaxi) - Hamburg, Germany
 
-- **Date**: Jan 2022 – May 2022
+- **Date**: Jan 2022 – Sep 2022 
 - **Location**: Data Platform Team
 
 - Improved Presto cluster deployment and created slim Docker images for frequent deployment on AWS.
