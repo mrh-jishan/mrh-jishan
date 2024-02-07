@@ -4,7 +4,7 @@
 - Address: Margate, FL 33063, USA
 - GitHub: [github.com/mrh-jishan](https://github.com/mrh-jishan)
 - LinkedIn: [linkedin.com/in/rhsn1](https://www.linkedin.com/in/rhsn1)
-- [Download PDF Resume](https://github.com/mrh-jishan/mrh-jishan/raw/master/Robiul%20Hassan%20-%20Software%20Engineer.pdf)
+- Resume: [Download PDF Resume](https://github.com/mrh-jishan/mrh-jishan/raw/master/Robiul%20Hassan%20-%20Software%20Engineer.pdf)
 
 ## Summary
 
