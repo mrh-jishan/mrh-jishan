@@ -1,110 +1,107 @@
-# Robiul Hassan - Sr. Software Engineer  (AWS, Rails, Angular, ReactJS, Spring-Boot)
+# **ROBIUL HASSAN**
+### **Sr Software Engineer (Ruby on Rails, ReactJS, Angular, NodeJS, Postgres & AWS)**
+5085 NW 7th St, Miami, FL 33126 \
+[+1 (954) 709-0379](tel:+19547090379) | [robiul.hassan12102@gmail.com](mailto:robiul.hassan12102@gmail.com) \
+[https://linkedin.com/in/rhsn1](https://linkedin.com/in/rhsn1) | [https://github.com/mrh-jishan](https://github.com/mrh-jishan)
 
-- Email: robiul.hassan12102@gmail.com
-- Address: 5085 NW 7th St, Miami, FL 33126
-- GitHub: [github.com/mrh-jishan](https://github.com/mrh-jishan)
-- LinkedIn: [linkedin.com/in/rhsn1](https://www.linkedin.com/in/rhsn1)
-- [Download PDF Resume](https://github.com/mrh-jishan/mrh-jishan/blob/2063f634c3c337fb7f51aba42a8042c26717695a/Senior%20Software%20Engineer%20-%20robiul%20hassan.pdf)
+---
 
-## Summary
+## **CAREER HIGHLIGHTS**
 
-As a Senior Software Engineer with more than 6+ year of experience, my focus is on leveraging Ruby on Rails, ReactJS, NodeJs, and AWS to develop robust software solutions. With a bachelor degree from Asia Pacific University in Computer Science, I am adept at constructing scalable cloud-based applications, ensuring efficiency and reliability.
+- **Extensive Experience**: Over 6 years as a Senior Software Engineer specializing in **Ruby on Rails**, **ReactJS**, **NodeJS**, **GraphQL**, **Postgres** and **AWS**.
+- **AWS Expertise**: Developed and maintained scalable cloud-based applications, leveraging **AWS** services to create efficient and reliable solutions.
+- **Automated ETL Process**: Led the automation of **ETL** processes and the development of the **Pace-Tracker** dashboard using **Ruby on Rails**, **ReactJS**, and **NodeJS**, enhancing ad pacing insights and expediting trader decision-making.
+- **AWS Cost Reduction**: Created **EC2** instances with **SSM** and **Lambda** for daily reporting on using **Ruby** meta programming and **Terraform**, significantly reducing AWS costs.
+- **Legacy Upgrades:** Upgraded legacy **Rails** applications to LTS with **Hotwire** and **Turbolink** as part of a comprehensive application modernization and security audit.
+- **Database Migration**: Migrated a multi-model database to Redshift, automating processes with multi-database connections on **Rails** App to reduce human errors and cutting manual processing time.
+- **Security Improvement**: Developed a rule engine on Terraform to configure IAM roles from Ranger, improving Databricks S3 access security and efficiency.
+- **Microservices Solution**: Delivered a 100% automated solution for customer corporate action letters using  **Ruby on Rails**, **ReactJS**, **NodeJS**, **GraphQL**, and **Kafka**.
+- **CI/CD Pipeline**: Dockerized a payment application and automated the GitLab CI/CD pipeline, facilitating a smooth migration to **OpenShift** using **Helm** and reducing deployment time.
+- **Cloud-Native Systems**: Solid understanding and experience with cloud-native systems, particularly in AWS/GCP environments, contributing to high availability and resilience.
+- **Crypto-Exchange Project**: Developed a **Crypto-Exchange** project using **Ruby on Rails**, **Angular** implementing P2P token transfer and increasing transaction efficiency.
 
-I have effectively leveraged my expertise in data engineering and full-stack development, previously at FREE NOW and Cognizant. My technical acumen is complemented by a dedication to continuous learning and excellence, as evidenced by multiple certifications in Kubernetes and AWS.
+---
 
-##Career Highlights
-- Reduced significant AWS costs by creating EC2 instances with SSM and Lambda for daily reporting using Terraform. @Digilant
-- Migrated multi-model database to Redshift, automating processes to reduce human errors and cutting manual processing time. @Digilant
-- Implemented Airflow Operators library to enable semantic versioning for Airflow clusters, reducing version control errors. @FreeNow
-- Developed a rule engine on Terraform to configure IAM roles from Ranger, improving Databricks S3 access security and efficiency. @FreeNow
-- Built Microservices using Spring-Boot for T24 and GraphQL services for a corporate-action project on Spring Boot, enhancing data retrieval speed. @Cognizant
-- Dockerized a payment application and automated the GitLab CI/CD pipeline, facilitating a smooth migration to OpenShift using Helm and reducing deployment time. @Cognizant
-- Developed a Crypto-Exchange project using Ruby on Rails, implementing P2P token transfer and increasing transaction efficiency. @Finterra
+## **PROFESSIONAL EXPERIENCE**
+
+### **Senior Software Engineer**
+**Digilant (ISPD)** - Boston, MA  
+*May 2022 - May 2024*
+
+- Automated the ETL process to ingest data from Adverity into Snowflake using **Ruby on Rails**, **ReactJS**, **NodeJS**, and **AWS**.
+- Developed a Pace Tracker dashboard using **Ruby on Rails**, **ReactJS** and **NodeJS**.
+- Upgraded legacy **Rails** applications to 7.2 with **Hotwire** and **Turbolink**.
+- Reduced AWS costs with scheduled EC2 instances using **SSM** and **Lambda**.
+- Optimized **Heroku** Jobs cost and improved daily data processing error.
+- Migrated Multi-Model database to **Redshift** and automated processes.
+
+### **Data Platform Engineer**
+**FREE NOW (MyTaxi)** - Hamburg, Germany  
+*Jan 2022 – May 2022*
+
+- Enhanced Presto cluster deployment on AWS using **Terraform** and **ASG** with launch templates.
+- Developed a custom rule engine to configure **IAM** roles from **Ranger**.
+- Developed a monitoring system using **Databricks** Overwatch and **Airflow**.
+- Implemented Airflow Operators library to enable semantic versioning for **Airflow** clusters.
+
+### **Associate - Projects (Software Engineer Consultant)**
+**Cognizant Technology Solutions** - Singapore  
+*Oct 2019 – Jan 2022*
+
+- Delivered an automated solution for customer corporate action letters using **Ruby on Rails**, **ReactJS** and **NodeJS**..
+- Configured CI/CD pipeline setup on **TeamCity** jobs using Ansible.
+- Worked on **CouchDB**, **ActiveMQ**, **FTPS**, and **Kafka** for high-frequency data transformation.
+- Migrated multiple **Spring-Boot** applications to **OpenShift** using **GitLab**.
+- Built a DSL engine for clients to migrate DB2 data.
+- Developed a reactive application using **Quarkus** and **Kafka** reactive adopter.
+
+### **Front-End Developer**
+**Finterra Technologies Sdn Bhd** - Kuala Lumpur, Malaysia  
+*Nov 2017 – Oct 2019*
+
+- Developed a Full-Stack Crypto-Exchange application using **Ruby on Rails**, **Angular**, and **AWS**.
+- Redesigned a crowdfunding portal with lazy loading in **Angular**.
+- Designed microservice architecture and automated **CI/CD** pipeline on **AWS**.
+- Managed AWS infrastructure and implemented automated **CI/CD** pipeline for streamlined deployment. 
+
+---
+
+## **EDUCATION**
+
+**B.Sc. Computer Science**  
+**Asia Pacific University of Technology and Innovation** - Malaysia  
+*2015 – 2018*
+
+- Coding Challenge (Winner) - Asia Pacific University, KL, Malaysia - July 2017
+- Hackathons (2nd Prize) - Universiti Kebangsaan Malaysia, KL, Malaysia - May 2017
+- Event organizer - APU Math & Science Club, APU - August 2015 – February 2016
+- Students enrollment recommendation system using neural network (2018)
+
+---
+
+## **TECHNOLOGIES AND LANGUAGES**
+
+- **Front-End**: JavaScript, ReactJS, React-Query, Redux, Angular, Redux-Saga, SCSS, jQuery, Bootstrap, HTML5, ES6
+- **Back-End**: Ruby, Ruby on Rails, NodeJS, ExpressJS, NextJS
+- **Database**: MySQL, Postgres, Redis, MongoDB, CouchDB, Redshift, Snowflake
+- **Tools**: Git, Nginx, AWS, ActiveMQ, Kafka, Jenkins, Docker, K8S
+
+---
+
+## **CERTIFICATIONS & ONLINE COURSES**
+
+- **Ultimate AWS Certified Developer Associate** (Udemy, 2020)
+- **Certified Kubernetes Application Developer 2020** (Udemy, 2020)
+- **NgRx (with NgRx Data) - The Complete Guide** (Udemy, 2020)
+- **PyTorch Scholarship Challenge from Facebook** – November 2018 – January 2019
+- **The Complete Angular Course**: (Udemy, May 2017)
+- **Intro to AI: UC Berkeley CS188** (ai.berkeley.edu, July 2017)
 
 
-## Experience
+## **Projects**
 
-### Digilant - Boston, Massachusetts, United States
-
-- **Date**: May 2022 - May 2024 
-- **Location**: Senior Software Engineer
-
-Digilant is a full-service media agency that unlocks data-driven solutions to drive growth for brands and agencies. Other digital advertising agencies and service providers limit strategy and execution to siloed channels or platforms. But with Digilant, you can start thinking beyond silos and enable a connected online and offline experience. Channel solutions include display advertising, video, OTT, digital audio, podcast, social, paid search, DOOH, traditional OOH, TV, and Radio. I have worked on the tech team to deliver solutions for the traders and analytics team to understand the campaigns cost and performance. 
-
-Accomplishments:
-- Worked on Pace Tracker dashboard for traders using ReactJS and NodeJS technology, enhancing advertisement pacing insights and improving decision-making speed.
-- Reduced AWS costs by creating EC2 instances with SSM and Lambda for daily reporting using Terraform.
-- Optimized Sidekiq jobs, improving daily data processing from S3, resulting in more efficient and timely customer
-reports.
-- Migrated multi-model database to Redshift, automating processes to reduce human errors by and cutting manual processing time.
-
-### Data Platform Engineer | FREE NOW (MyTaxi) - Hamburg, Germany
-
-- **Date**: Jan 2022 – May 2022 
-- **Location**: Data Platform Team
-
-FREENOW is the Mobility Super App with the largest vehicle choice for consumers across Europe available in 9 markets and in over 150 cities. Users can access all types of mobility services within a single app including public transport services, taxis, private hire vehicles, car sharing, e-scooters, e-bikes, and e-mopeds. FREENOW aggregates numerous mobility brands with the ambition to make urban mobility more efficient and sustainable without adding new vehicles on the street. The Germany-based company is backed by the BMW Group and Mercedes-Benz Mobility. I was working on the platform team which closely collaborate with the Machine Learning and analyst team to keep the infrastructure running with optimal cost. 
-
-Accomplishments:
-- Enhanced Presto cluster deployment on AWS using Terraform and ASG with launch templates, increasing deployment efficiency.
-- Developed a monitoring system using Databricks Overwatch and Airflow, improving cluster cost monitoring accuracy.
-- Implemented Airflow Operators library to enable semantic versioning for Airflow clusters, reducing version control errors.
-- Developed a rule engine to configure IAM roles from Ranger, improving Databricks S3 access security and efficiency.
-
-### Associate - Projects | Cognizant Technology Solutions - Singapore
-
-- **Date**: Oct 2019 – Jan 2022
-- **Location**: Digital Engineering Team
-
-Cognizant Technology Solutions Corporation is an American multinational information technology services and consulting company. Cognizant helps companies modernize technology, reimagine processes and transform experiences so they stay ahead in a fast-changing world. I was part of the digital engineering team where I was working with banking clients to migrate their monolithic java applications into micro-services. Significant of my work contributed to integration with vendor systems and build API for corporate actions dashboards. 
-
-- Develop corporate action services using spring-boot and Quarkus for clients to consume T24 OFS enquiry as well as GraphQL services 
-- Configure CI/CD pipeline setup on teamcity jobs and use ansible for server configuration.
-- Worked on CoucdDB, ActiveMQ, FTPS, and Kafka for high frequency data transformation. 
-- Used Gitlab to migrate multiple Spring-Boot application to open-shift for high performance and scalability
-- Build DSL engine for clients to migrate DB2 data which reduced 30% load on the existing COBOL server.
-- Build reactive application using quarkus and kafka reactive adopter to handle T24 transaction
-
-### Front-End Developer | Finterra Technologies Sdn Bhd - Kuala Lumpur, Malaysia
-
-- **Date**: Nov 2017 – Oct 2019
-- **Location**: Ecosystem Team - Kuala Lumpur, Malaysia
-
-- Spearheaded the Crypto-Exchange project using Ruby on Rails and distributed technology for efficient P2P token transfer.
-- Revamped crowdfunding portal, significantly reducing initial load time through innovative lazy loading on Angular.
-- Designed microservice architecture and automated CI/CD pipeline on AWS using EB, ECS, and EKS.
-
-## Education
-
-- **Degree**: Bachelor of Science in Computer Science
-- **Date**: 2015 – 2018
-- **Location**: Asia Pacific University of Technology and Innovation, Kuala Lumpur, Malaysia
-
-## Skills
-
-### Programming Languages
-
-- Ruby
-- Java
-- JavaScript
-- Python
-
-### Cloud Services
-
-- AWS (Lambda, DynamoDB, S3, RDS, EMR, Kinesis, and more)
-- Microsoft Azure
-- Google Cloud Platform
-
-### Frameworks and Tools
-
-- Ruby on Rails (RoR)
-- ReactJS
-- Spring Boot
-- Angular
-- Docker
-- Kubernetes
-- Terraform
-- Ansible
-- Apache Airflow
-- Databricks
-- Presto
+- **Pace-Tracker**: Automated ETL process and developed a dashboard using Ruby on Rails, ReactJS and NodeJS for enhanced advertisement pacing insights.
+- **Corporate Action**: Integration with T24 and TCS Bancs for corporate action processing using Ruby on Rails, ReactJS, NodeJS.
+- **DSL Engine (ETL)**: Java and Nashorn based DSL engine to parse text into SQL and JavaScript to process warehouse data.
+- **myWAQF Chain**: Crowdf unding dApp deployed on Hyperledger and Finterra internal consensus engine.
+- **Crypto-Exchange**: Ruby on Rails and Angular implementation of Ethereum and ERC20 token transfer from client to client.
