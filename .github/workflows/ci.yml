@@ -7,6 +7,8 @@ on:
 
 permissions:
   issues: read
+  contents: read
+  id-token: read
 
 jobs:
   build:
