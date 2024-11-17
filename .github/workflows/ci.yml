@@ -9,6 +9,7 @@ permissions:
   issues: read
   contents: read
   id-token: read
+  metadata: read
 
 jobs:
   build:
