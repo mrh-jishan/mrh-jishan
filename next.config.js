@@ -3,6 +3,7 @@ module.exports = {
     assetPrefix: "./",
     basePath: process.env.BASE_PATH,
     images: {
+        unoptimized: true,
         domains: [
             'imagizer.imageshack.com',
             'i.imgur.com',
