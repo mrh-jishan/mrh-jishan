@@ -263,6 +263,5 @@ export async function getStaticProps({ params }) {
       source: mdxSource,
       toc: toc,
     },
-    revalidate: 30,
   }
 }
