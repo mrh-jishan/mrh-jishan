@@ -4,16 +4,13 @@ on:
   push:
     branches: [ master ]
 
-
-permissions:
-  issues: read
-  contents: read
-  id-token: read
-  metadata: read
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      issues: read
+      contents: read
+      id-token: read
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4.1.3
