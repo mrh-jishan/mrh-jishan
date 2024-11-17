@@ -26,6 +26,8 @@ jobs:
 
       - name: Build my App
         run: yarn build && touch ./out/.nojekyll
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
