@@ -7,6 +7,7 @@ module.exports = {
       'media.giphy.com',
       'cdn-images-1.medium.com',
       'github.com',
+      'abdulrahman.id'
     ],
   },
 }

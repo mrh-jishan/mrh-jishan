@@ -13,46 +13,32 @@ import {
   PopoverBody,
   PopoverArrow,
 } from '@chakra-ui/react'
-
-import useMediaQuery from '../hook/useMediaQuery'
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible'
-import ReactGA from 'react-ga4'
 
 export default function AboutMe() {
-  const isLargerThan800 = useMediaQuery(800)
-  const handleHover = (event) => {
-    ReactGA.event({
-      category: 'hover',
-      action: event,
-    })
-  }
+
   const MoreInfo = ({ text, content }) => {
     return (
       <>
         {' '}
-        {isLargerThan800 ? (
-          <Popover isLazy placement="right" trigger="hover">
-            <PopoverTrigger>
-              <chakra.span
-                color="button1"
-                cursor="help"
-                onMouseOver={() => handleHover(`about_${text}`)}
-              >
-                {text}
-              </chakra.span>
-            </PopoverTrigger>
-            <PopoverContent color="white" bg="secondary" borderColor="button1">
-              <PopoverArrow bg="button1" />
-              <PopoverBody color="textPrimary" fontSize="sm">
-                {content}
-              </PopoverBody>
-            </PopoverContent>
-          </Popover>
-        ) : (
-          <Text as="span" color="button1">
-            {text}
-          </Text>
-        )}{' '}
+        <Popover isLazy placement="right" trigger="hover">
+          <PopoverTrigger>
+            <chakra.span
+              color="button1"
+              cursor="help"
+              onMouseOver={() => handleHover(`about_${text}`)}
+            >
+              {text}
+            </chakra.span>
+          </PopoverTrigger>
+          <PopoverContent color="white" bg="secondary" borderColor="button1">
+            <PopoverArrow bg="button1" />
+            <PopoverBody color="textPrimary" fontSize="sm">
+              {content}
+            </PopoverBody>
+          </PopoverContent>
+        </Popover>
+        {' '}
       </>
     )
   }
@@ -70,7 +56,7 @@ export default function AboutMe() {
               fontSize={{ base: '14px', md: '16px' }}
               whiteSpace="pre-line"
             >
-              Hey! I'm Abdul Rahman, I've been close to a computer since an
+              Hey! I'm Robiul Hassan, I've been close to a computer since an
               early age, and been passionate about it ever since. <br />
               <br /> I really liked to build stuff using{' '}
               <MoreInfo
@@ -147,8 +133,8 @@ export default function AboutMe() {
                 h={{ base: '300px', lg: '350px' }}
                 objectFit="cover"
                 borderRadius="50%"
-                alt="Abdul Rahman"
-                src="https://i.imgur.com/jk8NmSx.jpeg"
+                alt="Robiul Hassan"
+                src="https://avatars.githubusercontent.com/u/16862701?v=4"
               />
             </Box>
           </Flex>

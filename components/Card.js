@@ -9,7 +9,6 @@ import {
   TagLeftIcon,
   Text,
 } from '@chakra-ui/react'
-import ReactGA from 'react-ga4'
 import {
   FaBootstrap,
   FaCode,
@@ -24,8 +23,7 @@ import {
   FaSass,
 } from 'react-icons/fa'
 import { SiChakraui, SiNextdotjs } from 'react-icons/si'
-import useMediaQuery from '../hook/useMediaQuery'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 export default function Cards({ imageURL, title, slug, desc, tag }) {
   const getTag = (tag) => {
@@ -67,23 +65,17 @@ export default function Cards({ imageURL, title, slug, desc, tag }) {
     return values
   }
 
-  const isLargerThan800 = useMediaQuery(800)
-
   const Tags = tag.map((item) => (
     <Tag
       key={item}
       colorScheme={getTag(item)[0]}
-      size={isLargerThan800 ? 'md' : 'sm'}
+      size="md"
     >
       <TagLeftIcon as={getTag(item)[1]}></TagLeftIcon>
       <TagLabel>{item}</TagLabel>
     </Tag>
   ))
   const handleClick = (event) => {
-    ReactGA.event({
-      category: 'click',
-      action: event,
-    })
     router.push(`/projects/${slug}`)
   }
 

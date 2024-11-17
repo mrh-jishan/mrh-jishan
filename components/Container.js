@@ -1,13 +1,9 @@
 import { Box, Flex, Stack, Text, chakra } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
-import ReactGA from 'react-ga4'
 import Navbar from './Navbar'
 
 const Container = ({ enableTransition, children }) => {
   const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    ReactGA.initialize(process.env.NEXT_PUBLIC_UA_CODE)
-  }, [])
 
   useEffect(() => {
     setMounted(true)
@@ -29,7 +25,7 @@ const Container = ({ enableTransition, children }) => {
         </Flex>
         <Stack alignItems="center" mt={10} mb={5}>
           <Text fontSize="sm" textAlign="center">
-            Designed and Developed by Abdul Rahman.
+            Designed and Developed by Robiul Hassan.
             <br />
             Built with{' '}
             <chakra.span color="button1" fontWeight="semibold">

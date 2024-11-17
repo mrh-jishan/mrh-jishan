@@ -1,8 +1,8 @@
-![](https://i.imgur.com/aUVHd1c.png)
+![](https://avatars.githubusercontent.com/u/16862701?v=4)
 
 ---
 
-## ⚡ abdulrahman.id
+## ⚡ mrh-jishan
 
 I've decided to open-source my latest portfolio website! it has dynamic content management to add projects and posts using Contentful CMS, and was built using Next.js and Chakra UI.
 
@@ -15,55 +15,11 @@ Feel free to fork this repository to make your own portfolio, and if you liked t
 Create an `.env.local` and follow the variable name based on `.env.example` and get the API Keys based on the steps below  
 
 <details>
-<summary>Contentful API Keys</summary>
+<summary>GitHub Api Key</summary>
 <p>
 <br>
-1. Create a <a href="https://www.contentful.com/sign-up/">Contentful</a> account <br>
-2. Add a Community Space (It's free!)  <br>
-3. Choose "I create content"  <br>
-4. Go to content model and start to add content type  <br>
-
-> 📌  In this portfolio website, it has 5 Content type which is:  
-> > ~~1. BlogPosts~~  
-> > After the [⚡2.0.0 update](https://github.com/abdulrcs/abdulrahman.id/pull/17), I use Github Issues as blog content!  
-> > More details about this on: https://abdulrahman.id/blog/unleash-your-dev-blog-write-more-with-github-issues-as-your-cms
-> 2. FeaturedProjects
-> 3. Projects
-> 4. Introduction
-> 5. ContactMe
-> 
-> You must add this exact name since it's the ID that's used in the code.
-
-5. Add the content type according to these fields:  <br>
-	![](https://i.imgur.com/OD1oWG2.png)
-	![](https://i.imgur.com/nIkloDk.png)
-	![](https://user-images.githubusercontent.com/54136956/166127110-7baaef65-87b1-4f89-bbf5-eae3207f9ba6.png)
-	![image](https://user-images.githubusercontent.com/54136956/166127116-66f51c82-8944-4cf6-9ecf-cdcc6e2b10a2.png)
-
-6. Go to settings -> API Keys -> Content Delivery / Preview tokens -> "Your space name"
-copy the Space ID and Content Delivery API access token  <br>
-7. Put it into the environment variables according to `.env.example` and you're all set! <br>
-</p>
-</details>
-
-<details>
-<summary>Firebase API Keys</summary>
-<p>
-  <br>
-  1. Create a <a href="https://console.firebase.google.com/">Firebase</a> project <br>
-2. After setting things up you'll get the API keys, save those. <br>
-3. Go to Firestore Database <br>
-4. Add a collection named <code>views</code> <br>
-  5. Then, put those API Keys before according to the <code>.env.example</code> and that's it!<br> 
-</p>
-</details>
-
-<details>
-<summary>Google Analytics API Keys</summary>
-<p>
-<br>
-  1. Create a <a href="https://analytics.google.com/">Google Analytics</a> account, in the <i>property settings</i> part, don't forget to <b>turn on Universal Analytics</b><br>
-  2. After that, you'll see a code starting with <code>UA-</code> <br>
+  1. Create a <a href="https://github.com/settings/tokens?type=beta">GitHub Developer Settings</a> account, in the <i>Fine-grained tokens</i> part<br>
+  2. After that, you'll see a code starting with <code>github_pat_</code> <br>
   3. Copy those code and put it into environment variables according to <code>env.example</code> and done! <br>
   </p>
 </details>  
@@ -82,12 +38,10 @@ You can deploy easily by using [Vercel](https://vercel.com/) 🎉
 `pages/projects/index.js` = Projects archive page  
 `pages/blog/index.js` = Blog listings page  
 `pages/blog/[slug].js` = Blog post page  
-`pages/api/views` = API to fetch blog post views from Firebase  
 
 ## ⚙ Tech Stack
 - Next.js
 - Chakra UI
 - Contentful CMS
 - MDX (next-mdx-remote)
-- Firebase
 - Google Analytics (react-ga)

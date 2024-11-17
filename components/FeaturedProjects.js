@@ -10,15 +10,8 @@ import {
 import NextLink from 'next/link'
 import Cards from './Card'
 import SlideUpWhenVisible from '../hook/SlideUpWhenVisible'
-import ReactGA from 'react-ga4'
 
-export default function FeaturedProjects({ projects }) {
-  const handleClick = (event) => {
-    ReactGA.event({
-      category: 'click',
-      action: event,
-    })
-  }
+export default function FeaturedProjects() {
 
   return (
     <>
@@ -39,10 +32,10 @@ export default function FeaturedProjects({ projects }) {
                   All Creative Works.
                 </Heading>
                 <NextLink passHref href="/projects">
-                  <Link
-                    onClick={() => handleClick('featuredprojects_explore more')}
-                  >
-                    <Text
+                  {/* <Link                  >
+                    
+                  </Link> */}
+                  <Text
                       _hover={{ color: 'button2' }}
                       color="button1"
                       display={{ base: 'block', md: 'none' }}
@@ -51,53 +44,52 @@ export default function FeaturedProjects({ projects }) {
                       {' '}
                       Explore more &rarr;
                     </Text>
-                  </Link>
                 </NextLink>
               </Stack>
               <Text color="textSecondary" fontSize={{ base: 'md', md: 'xl' }}>
                 Here's some of my projects that I have worked on.
               </Text>
               <NextLink href="/projects">
-                <Link
+                {/* <Link
                   onClick={() => handleClick('featuredprojects_explore more')}
-                >
+                > */}
                   <Text
                     display={{ base: 'none', md: 'block' }}
                     fontSize={{ base: 'md', md: 'xl' }}
                   >
                     Explore more &rarr;
                   </Text>
-                </Link>
+                {/* </Link> */}
               </NextLink>
             </Stack>
           </SlideUpWhenVisible>
           <SlideUpWhenVisible>
             <Cards
-              slug={projects[0].fields.slug}
-              desc={projects[0].fields.description}
-              imageURL={projects[0].fields.imageUrl}
-              tag={projects[0].fields.tags}
-              title={projects[0].fields.title}
+              slug="opiniometer"
+              desc="A web app to analyze whether an opinion on specific topic is positive or negative based on recent tweets using Natural Language Processing concept called Sentiment Analysis."
+              imageURL="https://github.com/abdulrcs/abdulrahman.id/assets/54136956/bbe7f444-095a-4683-b609-93684e119f99&w=1920&q=75"
+              tag={[]}
+              title="Opiniometer"
             />
           </SlideUpWhenVisible>
           <SlideUpWhenVisible>
             <Box mt={{ md: '-50%' }}>
               <Cards
-                slug={projects[1].fields.slug}
-                desc={projects[1].fields.description}
-                imageURL={projects[1].fields.imageUrl}
-                tag={projects[1].fields.tags}
-                title={projects[1].fields.title}
+                slug="opiniometer"
+                desc="A web app to analyze whether an opinion on specific topic is positive or negative based on recent tweets using Natural Language Processing concept called Sentiment Analysis."
+                imageURL="https://github.com/abdulrcs/abdulrahman.id/assets/54136956/bbe7f444-095a-4683-b609-93684e119f99&w=1920&q=75"
+                tag={[]}
+                title="Opiniometer"
               />
             </Box>
           </SlideUpWhenVisible>
           <SlideUpWhenVisible threshold={0.8}>
             <Cards
-              slug={projects[2].fields.slug}
-              desc={projects[2].fields.description}
-              imageURL={projects[2].fields.imageUrl}
-              tag={projects[2].fields.tags}
-              title={projects[2].fields.title}
+              slug="opiniometer"
+              desc="A web app to analyze whether an opinion on specific topic is positive or negative based on recent tweets using Natural Language Processing concept called Sentiment Analysis."
+              imageURL="https://github.com/abdulrcs/abdulrahman.id/assets/54136956/bbe7f444-095a-4683-b609-93684e119f99&w=1920&q=75"
+              tag={[]}
+              title="Opiniometer"
             />
           </SlideUpWhenVisible>
         </SimpleGrid>

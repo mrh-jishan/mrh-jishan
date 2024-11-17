@@ -7,7 +7,7 @@ import NextLink from 'next/link'
 export default function LatestArticle({ articles }) {
   return (
     <Stack
-      display={articles.length < 2 ? 'none' : 'block'}
+      display='block'
       w="100%"
       h="auto"
       spacing={5}

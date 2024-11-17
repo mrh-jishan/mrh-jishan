@@ -6,16 +6,15 @@ import FeaturedProjects from '../components/FeaturedProjects'
 import LatestArticle from '../components/LatestArticle'
 import AboutMe from '../components/AboutMe'
 import ContactMe from '../components/ContactMe'
-
 import { GithubBlog } from '@rena.to/github-blog'
 
-export default function Index({ introduction, projects, articles, contactMe }) {
+export default function Index({ articles }) {
   return (
     <>
       <Container enableTransition={true}>
         <Head>
-          <title>Abdul Rahman - Software Engineer</title>
-          <meta content="Abdul Rahman - Software Engineer" name="title" />
+          <title>Robiul Hassan - Sr.Software Engineer</title>
+          <meta content="Robiul Hassan - Sr. Software Engineer" name="title" />
           <meta content="abdulrcs, abdulrcs website" name="keywords" />
           <meta
             content="Software Engineer based in Indonesia, an undergraduate student at Universitas Negeri Surabaya."
@@ -25,7 +24,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
           <meta content="website" property="og:type" />
           <meta content="https://abdulrahman.id" property="og:url" />
           <meta
-            content="Abdul Rahman - Software Engineer"
+            content="Robiul Hassan - Sr. Software Engineer"
             property="og:title"
           />
           <meta
@@ -40,7 +39,7 @@ export default function Index({ introduction, projects, articles, contactMe }) {
           <meta content="summary_large_image" property="twitter:card" />
           <meta content="https://abdulrahman.id/" property="twitter:url" />
           <meta
-            content="Abdul Rahman - Software Engineer"
+            content="Robiul Hassan - Sr. Software Engineer"
             property="twitter:title"
           />
           <meta
@@ -61,57 +60,36 @@ export default function Index({ introduction, projects, articles, contactMe }) {
           pb="144px"
           spacing={{ base: '100px', md: '144px' }}
         >
-          <Introduction introduction={introduction} />
+          <Introduction />
           <AboutMe />
-          <FeaturedProjects projects={projects} />
+          <FeaturedProjects />
           <LatestArticle articles={articles} />
-          <ContactMe contactMe={contactMe} />
+          <ContactMe />
         </Stack>
       </Container>
     </>
   )
 }
 
-let client = require('contentful').createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-})
-
 export async function getStaticProps() {
-  let data = await client.getEntries({
-    content_type: 'featuredProjects',
-    order: 'fields.order',
-  })
 
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: 'mrh-jishan/mrh-jishan',
     token: process.env.GITHUB_TOKEN,
   })
-  let data2 = await blog.getPosts({
+
+  let blogPosts = await blog.getPosts({
     query: {
-      author: 'abdulrcs',
+      author: 'mrh-jishan',
       type: 'post',
       state: 'published',
     },
     pager: { limit: 10, offset: 0 },
   })
 
-  let data3 = await client.getEntries({
-    content_type: 'introduction',
-    limit: 2,
-    order: 'sys.createdAt',
-  })
-
-  let data4 = await client.getEntries({
-    content_type: 'contactMe',
-    limit: 1,
-    order: 'sys.createdAt',
-  })
-
   return {
     props: {
-      projects: data.items,
-      articles: data2.edges
+      articles: blogPosts.edges
         .sort(
           (a, b) =>
             Date.parse(b.post.frontmatter.date) -
@@ -119,8 +97,6 @@ export async function getStaticProps() {
         )
         .map((edge) => edge.post)
         .slice(0, 4),
-      introduction: data3.items,
-      contactMe: data4.items,
     },
   }
 }

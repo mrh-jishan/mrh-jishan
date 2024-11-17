@@ -5,7 +5,6 @@ import Link from 'next/link'
 import Container from '../../components/Container'
 import { FaSearch } from 'react-icons/fa'
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/input'
-import useMediaQuery from '../../hook/useMediaQuery'
 import dateFormat from 'dateformat'
 
 import { GithubBlog } from '@rena.to/github-blog'
@@ -13,13 +12,12 @@ import { GithubBlog } from '@rena.to/github-blog'
 export default function Index({ posts }) {
   const [query, setQuery] = useState('')
   const handleChange = (e) => setQuery(e.target.value)
-  const isLargerThan1024 = useMediaQuery(1024)
 
   return (
     <Container>
       <Head>
-        <title>Blog - Abdul Rahman</title>
-        <meta content="Blog - Abdul Rahman" name="title" />
+        <title>Blog - Robiul Hassan</title>
+        <meta content="Blog - Robiul Hassan" name="title" />
         <meta
           content="Writings on programming, tutorials, and my experiences."
           name="description"
@@ -27,7 +25,7 @@ export default function Index({ posts }) {
 
         <meta content="website" property="og:type" />
         <meta content="https://abdulrahman.id/blog" property="og:url" />
-        <meta content="Blog - Abdul Rahman" property="og:title" />
+        <meta content="Blog - Robiul Hassan" property="og:title" />
         <meta
           content="Writings on programming, tutorials, and my experiences."
           property="og:description"
@@ -39,7 +37,7 @@ export default function Index({ posts }) {
 
         <meta content="summary_large_image" property="twitter:card" />
         <meta content="https://abdulrahman.id/" property="twitter:url" />
-        <meta content="Blog - Abdul Rahman" property="twitter:title" />
+        <meta content="Blog - Robiul Hassan" property="twitter:title" />
         <meta
           content="Writings on programming, tutorials, and my experiences."
           property="twitter:description"
@@ -85,10 +83,10 @@ export default function Index({ posts }) {
                 key={post.frontmatter.slug}
                 alignItems="flex-start"
                 justifyContent="flex-start"
-                direction={isLargerThan1024 ? 'row' : 'column'}
+                direction="row"
               >
                 <Text
-                  display={isLargerThan1024 ? 'block' : 'none'}
+                  display="block"
                   w={100}
                   color="textSecondary"
                   textAlign="right"
@@ -100,7 +98,7 @@ export default function Index({ posts }) {
                   </Text>
                 </Text>
                 <Text
-                  display={isLargerThan1024 ? 'none' : 'block'}
+                  display="block"
                   color="textSecondary"
                   fontSize="sm"
                 >
@@ -110,7 +108,7 @@ export default function Index({ posts }) {
                   </Box>{' '}
                   {post.frontmatter.readingTime}
                 </Text>
-                <Flex direction="column" px={isLargerThan1024 ? 10 : 0}>
+                <Flex direction="column" px="10">
                   <Link href={'/blog/' + post.frontmatter.slug}>
                     <Text
                       color="displayColor"
@@ -139,12 +137,12 @@ export default function Index({ posts }) {
 
 export async function getStaticProps() {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: 'mrh-jishan/mrh-jishan',
     token: process.env.GITHUB_TOKEN,
   })
   const posts = await blog.getPosts({
     query: {
-      author: 'abdulrcs',
+      author: 'mrh-jishan',
       type: 'post',
       state: 'published',
     },

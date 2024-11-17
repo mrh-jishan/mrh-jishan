@@ -13,21 +13,21 @@ import {
   DrawerHeader,
   DrawerBody,
   Stack,
-  Icon,
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
-import useMediaQuery from '../hook/useMediaQuery'
-import { AiOutlineMenu } from 'react-icons/ai'
 
 export default function Navbar({ enableTransition }) {
-  const isLargerThan768 = useMediaQuery(768)
-  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const { isOpen, onClose } = useDisclosure()
+
   const firstField = useRef()
+
   const Bracket = styled.span`
     color: #8f9094;
     font-weight: 600;
   `
+
   const NavbarDrawer = () => (
     <>
       <Drawer
@@ -40,7 +40,7 @@ export default function Navbar({ enableTransition }) {
         <DrawerContent bgColor="secondary">
           <DrawerCloseButton />
           <DrawerHeader borderBottomWidth="1px">
-            <Bracket>&#123;</Bracket>A<Bracket>&#125;</Bracket>
+            <Bracket>&#123;</Bracket>RH<Bracket>&#125;</Bracket>
           </DrawerHeader>
 
           <DrawerBody>
@@ -99,30 +99,26 @@ export default function Navbar({ enableTransition }) {
               fontWeight="bold"
               cursor="pointer"
             >
-              <Bracket>&#123;</Bracket>A<Bracket>&#125;</Bracket>
+              <Bracket>&#123;</Bracket>RH<Bracket>&#125;</Bracket>
             </Text>
           </NextLink>
-          {isLargerThan768 ? (
-            <Box mr={7} color="displayColor">
-              <NextLink passHref href="/">
-                <Button as="a" p="4" fontSize="16px" variant="ghost">
-                  Home
-                </Button>
-              </NextLink>
-              <NextLink passHref href="/projects">
-                <Button as="a" p="4" fontSize="16px" variant="ghost">
-                  Projects
-                </Button>
-              </NextLink>
-              <NextLink passHref href="/blog">
-                <Button as="a" p="4" fontSize="16px" variant="ghost">
-                  Blog
-                </Button>
-              </NextLink>{' '}
-            </Box>
-          ) : (
-            <Icon as={AiOutlineMenu} w={7} h={7} onClick={onOpen} />
-          )}
+          <Box mr={7} color="displayColor">
+            <NextLink passHref href="/">
+              <Button as="a" p="4" fontSize="16px" variant="ghost">
+                Home
+              </Button>
+            </NextLink>
+            <NextLink passHref href="/projects">
+              <Button as="a" p="4" fontSize="16px" variant="ghost">
+                Projects
+              </Button>
+            </NextLink>
+            <NextLink passHref href="/blog">
+              <Button as="a" p="4" fontSize="16px" variant="ghost">
+                Blog
+              </Button>
+            </NextLink>{' '}
+          </Box>
         </Flex>
       </Slide>
       <NavbarDrawer />

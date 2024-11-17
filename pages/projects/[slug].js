@@ -12,24 +12,17 @@ import {
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { useEffect, useState } from 'react'
-
-import ReactGA from 'react-ga4'
-
 import mdxPrism from 'mdx-prism'
-
 import readingTime from 'reading-time'
-
 import { useRouter } from 'next/router'
 import Container from '../../components/Container'
 import MDXComponents from '../../components/MDXComponents'
 import ProjectContainer from '../../components/ProjectContainer'
-
 import { GithubBlog } from '@rena.to/github-blog'
-
 import { FaGithub, FaLink, FaPersonBooth, FaUser } from 'react-icons/fa'
 import NextSeoData from '../../components/NextSeoData'
 import useUtterances from '../../hook/useUtterances'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 export default function Post({ metadata, publishedDate, source, toc }) {
   const [views, setViews] = useState('...')
@@ -66,12 +59,6 @@ export default function Post({ metadata, publishedDate, source, toc }) {
     }
   }, [toc])
 
-  const handleClick = (event) => {
-    ReactGA.event({
-      category: 'click',
-      action: event,
-    })
-  }
 
   const { isCommentsLoading } = useUtterances('comments', metadata.title)
 
@@ -130,7 +117,6 @@ export default function Post({ metadata, publishedDate, source, toc }) {
                       fontSize={['xs', 'xs', 'sm', 'sm']}
                       href={metadata.frontmatter.githubLink}
                       isExternal
-                      onClick={() => handleClick(`${metadata.title}_github`)}
                     >
                       Github
                     </Link>
@@ -147,7 +133,6 @@ export default function Post({ metadata, publishedDate, source, toc }) {
                       fontSize={['xs', 'xs', 'sm', 'sm']}
                       href={metadata.frontmatter.deployLink}
                       isExternal
-                      onClick={() => handleClick(`${metadata.title}_livesite`)}
                     >
                       Live Site
                     </Link>
@@ -223,13 +208,13 @@ export default function Post({ metadata, publishedDate, source, toc }) {
 
 export async function getStaticPaths() {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: 'mrh-jishan/mrh-jishan',
     token: process.env.GITHUB_TOKEN,
   })
 
   const data = await blog.getPosts({
     query: {
-      author: 'abdulrcs',
+      author: 'mrh-jishan',
       type: 'project',
       state: 'published',
     },
@@ -246,12 +231,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: 'mrh-jishan/mrh-jishan',
     token: process.env.GITHUB_TOKEN,
   })
   const data = await blog.getPost({
     query: {
-      author: 'abdulrcs',
+      author: 'mrh-jishan',
       search: params.slug,
     },
   })

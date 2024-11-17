@@ -27,13 +27,14 @@ import { GithubBlog } from '@rena.to/github-blog'
 
 import NextSeoData from '../../components/NextSeoData'
 import useUtterances from '../../hook/useUtterances'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 export default function Post({ metadata, publishedDate, source, toc }) {
   const [views, setViews] = useState('...')
 
   const router = useRouter()
   const { slug } = router.query
+  
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/views/${slug}`)
       .then((res) => res.json())
@@ -41,6 +42,7 @@ export default function Post({ metadata, publishedDate, source, toc }) {
   }, [slug])
 
   const [activeId, setActiveId] = useState()
+  
   useEffect(() => {
     const handleScroll = () => {
       let currentId
@@ -114,13 +116,13 @@ export default function Post({ metadata, publishedDate, source, toc }) {
               <Stack alignItems="center" isInline>
                 <Avatar
                   border="1px solid textPrimary"
-                  name="Abdul Rahman"
+                  name="Robiul Hassan"
                   size="xs"
-                  src="https://i.imgur.com/jBZ9o8U.png"
+                  src="https://avatars.githubusercontent.com/u/16862701?v=4"
                 />
 
                 <Text color="textPrimary" fontSize={['xs', 'xs', 'sm', 'sm']}>
-                  Abdul Rahman /{' '}
+                  Robiul Hassan /{' '}
                   {dateFormat(Date.parse(publishedDate), 'mmmm d, yyyy')}
                 </Text>
               </Stack>
@@ -193,13 +195,13 @@ export default function Post({ metadata, publishedDate, source, toc }) {
 
 export async function getStaticPaths() {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: 'mrh-jishan/mrh-jishan',
     token: process.env.GITHUB_TOKEN,
   })
 
   const data = await blog.getPosts({
     query: {
-      author: 'abdulrcs',
+      author: 'mrh-jishan',
       type: 'post',
       state: 'published',
     },
@@ -216,12 +218,12 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const blog = new GithubBlog({
-    repo: 'abdulrcs/abdulrahman.id',
+    repo: 'mrh-jishan/mrh-jishan',
     token: process.env.GITHUB_TOKEN,
   })
   const data = await blog.getPost({
     query: {
-      author: 'abdulrcs',
+      author: 'mrh-jishan',
       search: params.slug,
     },
   })
