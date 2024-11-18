@@ -12,35 +12,21 @@ import {
 import {MDXRemote} from 'next-mdx-remote'
 import {serialize} from 'next-mdx-remote/serialize'
 import {useEffect, useState} from 'react'
-
 import mdxPrism from 'mdx-prism'
-
 import readingTime from 'reading-time'
-
 import dateFormat from 'dateformat'
 import {useRouter} from 'next/router'
 import Container from '../../components/Container'
 import MDXComponents from '../../components/MDXComponents'
 import ProjectContainer from '../../components/ProjectContainer'
-
 import {GithubBlog} from '@rena.to/github-blog'
-
 import NextSeoData from '../../components/NextSeoData'
 import useUtterances from '../../hook/useUtterances'
 import Image from 'next/legacy/image'
 
 export default function Post({metadata, publishedDate, source, toc}) {
-    const [views, setViews] = useState('...')
-
     const router = useRouter()
     const {slug} = router.query
-
-    useEffect(() => {
-        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/views/${slug}`)
-            .then((res) => res.json())
-            .then((json) => setViews(json.views))
-    }, [slug])
-
     const [activeId, setActiveId] = useState()
 
     useEffect(() => {
@@ -129,7 +115,7 @@ export default function Post({metadata, publishedDate, source, toc}) {
 
                             <Stack>
                                 <Text color="textSecondary" fontSize={['xs', 'xs', 'sm', 'sm']}>
-                                    {metadata.readingTime} &bull; {views} views
+                                    {metadata.readingTime} &bull; 0 views
                                 </Text>
                             </Stack>
                         </HStack>
