@@ -24,17 +24,6 @@
 
 ## **PROFESSIONAL EXPERIENCE**
 
-### **Senior Software Engineer**
-**Digilant (ISPD)** - Boston, MA  
-*May 2022 - May 2024*
-
-- Automated the ETL process to ingest data from Adverity into Snowflake using **Ruby on Rails**, **ReactJS**, **NodeJS**, and **AWS**.
-- Developed a Pace Tracker dashboard using **Ruby on Rails**, **ReactJS** and **NodeJS**.
-- Upgraded legacy **Rails** applications to 7.2 with **Hotwire** and **Turbolink**.
-- Reduced AWS costs with scheduled EC2 instances using **SSM** and **Lambda**.
-- Optimized **Heroku** Jobs cost and improved daily data processing error.
-- Migrated Multi-Model database to **Redshift** and automated processes.
-
 ### **Data Platform Engineer**
 **FREE NOW (MyTaxi)** - Hamburg, Germany  
 *Jan 2022 – May 2022*
