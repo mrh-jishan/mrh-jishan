@@ -6,9 +6,9 @@
 
 ---
 
-<p><img align="left" height="200" width="550" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mrh-jishan&layout=compact&hide=html" alt="mrh-jishan" /></p>
+<p><img align="left" height="200" width="450" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mrh-jishan&layout=compact&hide=html" alt="mrh-jishan" /></p>
 
-<p>&nbsp;<img align="center" height="200" width="550" src="https://github-readme-stats.vercel.app/api?username=mrh-jishan&show_icons=true" alt="mrh-jishan" /></p>
+<p>&nbsp;<img align="center" height="200" width="450" src="https://github-readme-stats.vercel.app/api?username=mrh-jishan&show_icons=true" alt="mrh-jishan" /></p>
 
 ---
 
