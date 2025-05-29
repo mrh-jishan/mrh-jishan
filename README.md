@@ -1,3 +1,4 @@
+
 # ROBIUL HASSAN
 ## Sr Software Engineer (Ruby on Rails, ReactJS, Angular, NodeJS, Postgres & AWS)
 
@@ -7,7 +8,7 @@ Highly accomplished Full Stack Developer with 6+ years of experience in designin
 
 ## Contact
 - **Email:** robiul.hassan12102@gmail.com
-- **Location:** 5085 NW 7th St, Miami, FL 33126
+- **Location:** Coconut Creek, FL 33066
 - **LinkedIn:** [https://linkedin.com/in/rhsn1](https://linkedin.com/in/rhsn1)
 - **GitHub:** [https://github.com/mrh-jishan](https://github.com/mrh-jishan)
 - **Websites:**
@@ -143,11 +144,6 @@ Integration with T24 and TCS Bancs for corporate action processing using Ruby on
 **Tags:** Ruby on Rails, ReactJS, NodeJS, FinTech
 [View Live](#)
 
-### Crypto-Exchange
-Ruby on Rails and Angular implementation of Ethereum and ERC20 token transfer from client to client.
-**Tags:** Ruby on Rails, Angular, Blockchain, Crypto
-[View Live](#)
-
 ---
 
 ## Certifications & Courses
@@ -157,7 +153,8 @@ Ruby on Rails and Angular implementation of Ethereum and ERC20 token transfer fr
 
 ---
 
-## Firebase Studio Project
+## Firebase Studio Project & Deployment
+
 This is a NextJS starter project in Firebase Studio. It has been customized to serve as a personal portfolio.
 
 To get started with development:
@@ -166,4 +163,29 @@ npm install
 npm run dev
 ```
 
-**Note on Deployment:** This is a Next.js application. For live deployment, platforms like Vercel, Netlify, or Firebase App Hosting (which this project is configured for via `apphosting.yaml`) are recommended. This README provides a comprehensive overview of the portfolio content for GitHub profile display.
+### Deployment Options
+
+This Next.js application can be deployed to various platforms.
+
+**1. Firebase App Hosting (Recommended for Full Features)**
+The project is pre-configured for Firebase App Hosting via the `apphosting.yaml` file. This platform supports the full range of Next.js features, including server-side rendering and API routes.
+
+**2. GitHub Pages (Static Site)**
+This project also includes a GitHub Actions workflow (`.github/workflows/deploy-gh-pages.yml`) to deploy a static version of the site to GitHub Pages.
+
+**Important Setup for GitHub Pages:**
+*   **Repository Name Configuration:**
+    *   Open the `next.config.ts` file.
+    *   Locate the `GITHUB_REPO_NAME` constant.
+    *   **You MUST change its value from `'rh-portfolio'` to your actual GitHub repository name.** For example, if your repository URL is `https://github.com/your-username/my-awesome-portfolio`, set `GITHUB_REPO_NAME` to `'my-awesome-portfolio'`. This is crucial for links and assets to work correctly.
+*   **GitHub Repository Settings:**
+    1.  Go to your repository on GitHub.
+    2.  Click on "Settings" > "Pages".
+    3.  Under "Build and deployment", for "Source", select "GitHub Actions".
+    The workflow will automatically build and deploy your site. After the first successful run, your site will be available at `https://<your-username>.github.io/<your-repo-name>/`.
+
+**Note on GitHub Pages Limitations:** GitHub Pages serves static files. While this setup allows for deploying your portfolio, some dynamic Next.js features (like API routes or complex server-side rendering scenarios beyond basic static generation) might not be fully supported compared to serverful hosting like Firebase App Hosting, Vercel, or Netlify.
+
+---
+
+This README provides a comprehensive overview of the portfolio content for GitHub profile display.
