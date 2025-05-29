@@ -12,7 +12,7 @@ function ExperienceTimelineItemCard({ item }: { item: ExperienceItem }) {
       <CardHeader className="pb-4">
         <div className="flex items-start gap-4">
           <div className="mt-1 p-2 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors duration-300">
-            <Icon className="h-6 w-6 text-primary" />
+            <Icon className="h-6 w-6 text-primary group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300" />
           </div>
           <div>
             <CardTitle className="text-xl font-semibold text-primary">{item.role}</CardTitle>
@@ -46,9 +46,9 @@ export function ExperienceSection() {
       <div className="container mx-auto px-4 md:px-6 py-12">
         <div className="relative">
           {/* Central Timeline Line - Desktop */}
-          <div className="hidden md:block absolute h-full border-l-2 border-border/70 top-0 left-1/2 transform -translate-x-1/2 rounded-full"></div>
+          <div className="hidden md:block absolute h-full border-l-2 border-primary/40 top-0 left-1/2 transform -translate-x-1/2 rounded-full"></div>
           {/* Mobile Timeline Line - Aligned Left */}
-          <div className="md:hidden absolute h-full border-l-2 border-border/70 top-0 left-4 rounded-full"></div>
+          <div className="md:hidden absolute h-full border-l-2 border-primary/40 top-0 left-4 rounded-full"></div>
 
           <div className="space-y-12 md:space-y-0"> {/* Manages overall spacing for items */}
             {portfolioData.experience.map((item, index) => (
@@ -67,7 +67,7 @@ export function ExperienceSection() {
 
                   {/* Timeline Dot Area (Central Column) */}
                   <div className="flex justify-center relative order-2">
-                    <div className="w-6 h-6 bg-background border-4 border-primary rounded-full mt-10 ring-4 ring-background group-hover:scale-110 group-hover:border-accent transition-all duration-300 z-10"></div>
+                    <div className="w-6 h-6 bg-background border-4 border-primary rounded-full mt-10 ring-4 ring-background group-hover:scale-110 group-hover:border-accent group-hover:shadow-[0_0_12px_hsl(var(--accent))] transition-all duration-300 z-10"></div>
                   </div>
 
                   {/* Right Content Area (for EVEN items, index 0, 2, ...) */}
@@ -83,7 +83,7 @@ export function ExperienceSection() {
                 {/* Mobile Layout: Single column */}
                 <div className="md:hidden flex items-start mt-4">
                   {/* Mobile Dot - positioned absolutely relative to the item's start */}
-                  <div className="absolute left-4 top-2 w-6 h-6 bg-background border-4 border-primary rounded-full ring-4 ring-background transform -translate-x-1/2 group-hover:scale-110 group-hover:border-accent transition-all duration-300 z-10"></div>
+                  <div className="absolute left-4 top-2 w-6 h-6 bg-background border-4 border-primary rounded-full ring-4 ring-background transform -translate-x-1/2 group-hover:scale-110 group-hover:border-accent group-hover:shadow-[0_0_12px_hsl(var(--accent))] transition-all duration-300 z-10"></div>
                   <div className="ml-12 w-full"> {/* Card pushed to the right of the mobile timeline */}
                     <ExperienceTimelineItemCard item={item} />
                   </div>
