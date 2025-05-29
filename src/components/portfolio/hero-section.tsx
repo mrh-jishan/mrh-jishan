@@ -32,55 +32,49 @@ export function HeroSection() {
   useEffect(() => {
     setIsMounted(true);
 
-    const lines: Array<DynamicStyle> = Array.from({ length: 4 }).map((_, i) => ({
+    const lines: Array<DynamicStyle> = Array.from({ length: 5 }).map((_, i) => ({ // Increased line count slightly
       position: 'absolute',
-      height: `${Math.random() * 2 + 0.5}px`, // 0.5px to 2.5px
-      width: `${Math.random() * 25 + 20}%`,   // 20% to 45%
+      height: `${Math.random() * 3 + 1.5}px`, // Thicker lines: 1.5px to 4.5px
+      width: `${Math.random() * 30 + 25}%`,   // 25% to 55%
       borderRadius: '9999px',
       top: `${Math.random() * 90 + 5}%`,     // 5% to 95%
       animationName: 'flow-across',
       animationTimingFunction: 'linear',
       animationIterationCount: 'infinite',
-      animationDuration: `${Math.random() * 10 + 15}s`, // 15s to 25s
+      animationDuration: `${Math.random() * 10 + 12}s`, // 12s to 22s
       animationDelay: `${Math.random() * 5}s`,
     }));
     setFlowingLines(lines);
 
     const particleColors = [
-      'hsl(var(--primary) / 0.7)',
-      'hsl(var(--accent) / 0.7)',
-      'hsl(var(--secondary) / 0.6)'
+      'hsl(var(--primary) / 0.8)', // Increased opacity
+      'hsl(var(--accent) / 0.8)',  // Increased opacity
+      'hsl(var(--secondary) / 0.7)'
     ];
-    const parts: Array<DynamicStyle> = Array.from({ length: 80 }).map((_, i) => ({ // Increased particle count
+    const parts: Array<DynamicStyle> = Array.from({ length: 100 }).map((_, i) => ({ // Kept particle count high
       position: 'absolute',
-      width: `${Math.random() * 2.5 + 1.5}px`, // Slightly larger particles: 1.5px to 4px
-      height: `${Math.random() * 2.5 + 1.5}px`,
+      width: `${Math.random() * 3.5 + 2.5}px`, // Bigger particles: 2.5px to 6px
+      height: `${Math.random() * 3.5 + 2.5}px`,
       borderRadius: '50%',
       backgroundColor: particleColors[Math.floor(Math.random() * particleColors.length)],
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
-      animationName: 'bounceAndTwinkle', // Updated animation name
-      animationTimingFunction: 'linear', // For smoother, continuous movement
+      animationName: 'atomicMotion', // New animation name
+      animationTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1.0)', // Smoother easing for some parts
       animationIterationCount: 'infinite',
-      animationDuration: `${Math.random() * 12 + 18}s`, // Longer duration for larger paths: 18s to 30s
-      animationDelay: `${Math.random() * 18}s`, // Wider delay spread
+      animationDuration: `${Math.random() * 10 + 10}s`, // Duration: 10s to 20s
+      animationDelay: `${Math.random() * 10}s`, 
     }));
     setParticles(parts);
 
   }, []);
 
   const handleDownloadCV = () => {
-    // Create a link element
     const link = document.createElement('a');
-    // Set the href to the path of your resume file in the public directory
     link.href = '/resume.pdf'; 
-    // Set the download attribute to suggest a filename for the downloaded file
     link.download = `${portfolioData.name.replace(/\s+/g, '_')}_Resume.pdf`;
-    // Append the link to the body (required for Firefox)
     document.body.appendChild(link);
-    // Programmatically click the link to trigger the download
     link.click();
-    // Remove the link from the body
     document.body.removeChild(link);
   };
 
@@ -145,7 +139,7 @@ export function HeroSection() {
 
   if (!isMounted) {
     return (
-      <div className="relative bg-gradient-to-br from-background to-secondary py-20 md:py-32">
+      <div className="relative bg-gradient-to-br from-background via-primary/10 to-accent/10 py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <div className="animate-pulse space-y-6">
             <div className="h-10 bg-muted rounded w-3/4 mx-auto"></div>
@@ -159,8 +153,8 @@ export function HeroSection() {
   }
 
   return (
-    <section id="about" className="relative bg-gradient-to-br from-background via-primary/5 to-accent/5 py-20 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 opacity-20 z-0">
+    <section id="about" className="relative bg-gradient-to-br from-background via-primary/15 to-accent/15 py-20 md:py-32 overflow-hidden"> {/* Updated gradient */}
+      <div className="absolute inset-0 opacity-25 z-0"> {/* Increased opacity slightly for 3D effect */}
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary rounded-full filter blur-2xl animate-pulse-rotate-primary"></div>
         <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-accent rounded-full filter blur-2xl animate-pulse-rotate-accent animation-delay-2s"></div>
       </div>
@@ -169,7 +163,7 @@ export function HeroSection() {
         {flowingLines.map((style, i) => (
           <div
             key={`line-${i}`}
-            className={`bg-gradient-to-r ${i % 2 === 0 ? 'from-transparent via-primary/10 to-transparent' : 'from-transparent via-accent/10 to-transparent'}`}
+            className={`bg-gradient-to-r ${i % 2 === 0 ? 'from-transparent via-primary/25 to-transparent' : 'from-transparent via-accent/25 to-transparent'}`} /* Increased line visibility */
             style={style as React.CSSProperties}
           />
         ))}
@@ -305,42 +299,35 @@ export function HeroSection() {
 
         @keyframes flow-across {
           0% { transform: translateX(-150%); opacity: 0; }
-          10%, 90% { opacity: 1; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
           100% { transform: translateX(150vw); opacity: 0; }
         }
         
-        @keyframes bounceAndTwinkle {
-          0%, 100% {
-            transform: translate(0, 0) scale(0.7);
-            opacity: 0.2;
+        @keyframes atomicMotion {
+          0% {
+            transform: translate(0vw, 0vh) scale(0.6) rotate(0deg);
+            opacity: 0.3;
           }
-          12% {
-            transform: translate(30vw, -25vh) scale(1.1);
+          20% {
+            transform: translate(-25vw, 30vh) scale(1.1) rotate(72deg);
             opacity: 0.9;
           }
-          25% {
-            transform: translate(-20vw, 30vh) scale(0.8);
-            opacity: 0.7;
+          40% {
+            transform: translate(30vw, -20vh) scale(0.7) rotate(144deg);
+            opacity: 0.6;
           }
-          37% {
-            transform: translate(25vw, 20vh) scale(1.2);
+          60% {
+            transform: translate(-15vw, -25vh) scale(1.2) rotate(216deg);
             opacity: 1;
           }
-          50% {
-            transform: translate(-30vw, -15vh) scale(0.9);
-            opacity: 0.8;
-          }
-          62% {
-            transform: translate(15vw, -30vh) scale(1.1);
-            opacity: 0.9;
-          }
-          75% {
-            transform: translate(-25vw, 25vh) scale(0.8);
+          80% {
+            transform: translate(20vw, 15vh) scale(0.8) rotate(288deg);
             opacity: 0.7;
           }
-          87% {
-            transform: translate(20vw, -20vh) scale(1);
-            opacity: 0.8;
+          100% {
+            transform: translate(0vw, 0vh) scale(0.6) rotate(360deg);
+            opacity: 0.3;
           }
         }
       `}</style>

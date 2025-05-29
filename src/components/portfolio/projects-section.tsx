@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { portfolioData, ProjectItem } from '@/lib/data';
 import { SectionWrapper } from '@/components/portfolio/section-wrapper';
@@ -28,7 +29,11 @@ function ProjectCard({ project }: { project: ProjectItem }) {
         </CardDescription>
         <div className="flex flex-wrap gap-2 mt-auto">
           {project.tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs bg-accent/10 text-accent-foreground border-accent/20">
+            <Badge 
+              key={tag} 
+              // variant="secondary" // Removing variant to allow direct class override
+              className="text-xs bg-accent text-accent-foreground border-transparent px-3 py-1" // Updated classes for better visibility
+            >
               {tag}
             </Badge>
           ))}
@@ -71,3 +76,4 @@ export function ProjectsSection() {
     </SectionWrapper>
   );
 }
+
