@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -19,8 +18,11 @@ interface DynamicStyle {
   height?: string;
   top?: string;
   left?: string;
+  bottom?: string;
+  right?: string;
   borderRadius?: string;
   backgroundColor?: string;
+  opacity?: number;
 }
 
 
@@ -32,38 +34,62 @@ export function HeroSection() {
   useEffect(() => {
     setIsMounted(true);
 
-    const lines: Array<DynamicStyle> = Array.from({ length: 5 }).map((_, i) => ({ // Increased line count slightly
-      position: 'absolute',
-      height: `${Math.random() * 3 + 1.5}px`, // Thicker lines: 1.5px to 4.5px
-      width: `${Math.random() * 30 + 25}%`,   // 25% to 55%
-      borderRadius: '9999px',
-      top: `${Math.random() * 90 + 5}%`,     // 5% to 95%
-      animationName: 'flow-across',
-      animationTimingFunction: 'linear',
-      animationIterationCount: 'infinite',
-      animationDuration: `${Math.random() * 10 + 12}s`, // 12s to 22s
-      animationDelay: `${Math.random() * 5}s`,
-    }));
-    setFlowingLines(lines);
-
+    const generateLines = () => {
+      const lines: Array<DynamicStyle> = [];
+      // Horizontal lines
+      for (let i = 0; i < 8; i++) { // Increased count
+        lines.push({
+          position: 'absolute',
+          height: `${Math.random() * 3.5 + 2}px`, // Thicker
+          width: `${Math.random() * 40 + 30}%`,   // Wider range
+          borderRadius: '9999px',
+          top: `${Math.random() * 95 + 2.5}%`,
+          animationName: 'flow-across',
+          animationTimingFunction: 'linear',
+          animationIterationCount: 'infinite',
+          animationDuration: `${Math.random() * 12 + 15}s`, // Slightly faster overall
+          animationDelay: `${Math.random() * 7}s`,
+          opacity: Math.random() * 0.25 + 0.1, // More visible
+        });
+      }
+      // Vertical lines
+      for (let i = 0; i < 6; i++) { // Added vertical lines
+        lines.push({
+          position: 'absolute',
+          width: `${Math.random() * 3.5 + 2}px`, // Thicker
+          height: `${Math.random() * 40 + 30}%`,  // Longer range
+          borderRadius: '9999px',
+          left: `${Math.random() * 95 + 2.5}%`,
+          animationName: 'flow-up-down', // New animation for vertical
+          animationTimingFunction: 'linear',
+          animationIterationCount: 'infinite',
+          animationDuration: `${Math.random() * 12 + 15}s`,
+          animationDelay: `${Math.random() * 7}s`,
+          opacity: Math.random() * 0.25 + 0.1, // More visible
+        });
+      }
+      return lines;
+    };
+    setFlowingLines(generateLines());
+    
     const particleColors = [
-      'hsl(var(--primary) / 0.8)', // Increased opacity
-      'hsl(var(--accent) / 0.8)',  // Increased opacity
-      'hsl(var(--secondary) / 0.7)'
+      'hsl(var(--primary) / 0.9)',
+      'hsl(var(--accent) / 0.9)',
+      'hsl(var(--secondary) / 0.8)'
     ];
-    const parts: Array<DynamicStyle> = Array.from({ length: 100 }).map((_, i) => ({ // Kept particle count high
+    const parts: Array<DynamicStyle> = Array.from({ length: 150 }).map((_, i) => ({ // Increased particle count
       position: 'absolute',
-      width: `${Math.random() * 3.5 + 2.5}px`, // Bigger particles: 2.5px to 6px
-      height: `${Math.random() * 3.5 + 2.5}px`,
+      width: `${Math.random() * 4 + 3}px`, // Bigger particles: 3px to 7px
+      height: `${Math.random() * 4 + 3}px`,
       borderRadius: '50%',
       backgroundColor: particleColors[Math.floor(Math.random() * particleColors.length)],
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
-      animationName: 'atomicMotion', // New animation name
-      animationTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1.0)', // Smoother easing for some parts
+      animationName: 'atomicMotion',
+      animationTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1.0)',
       animationIterationCount: 'infinite',
-      animationDuration: `${Math.random() * 10 + 10}s`, // Duration: 10s to 20s
-      animationDelay: `${Math.random() * 10}s`, 
+      animationDuration: `${Math.random() * 12 + 8}s`, // Duration: 8s to 20s (faster overall)
+      animationDelay: `${Math.random() * 8}s`, 
     }));
     setParticles(parts);
 
@@ -153,8 +179,8 @@ export function HeroSection() {
   }
 
   return (
-    <section id="about" className="relative bg-gradient-to-br from-background via-primary/15 to-accent/15 py-20 md:py-32 overflow-hidden"> {/* Updated gradient */}
-      <div className="absolute inset-0 opacity-25 z-0"> {/* Increased opacity slightly for 3D effect */}
+    <section id="about" className="relative bg-gradient-to-br from-primary/20 via-background to-accent/20 py-20 md:py-32 overflow-hidden">
+      <div className="absolute inset-0 opacity-25 z-0">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary rounded-full filter blur-2xl animate-pulse-rotate-primary"></div>
         <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-accent rounded-full filter blur-2xl animate-pulse-rotate-accent animation-delay-2s"></div>
       </div>
@@ -163,8 +189,13 @@ export function HeroSection() {
         {flowingLines.map((style, i) => (
           <div
             key={`line-${i}`}
-            className={`bg-gradient-to-r ${i % 2 === 0 ? 'from-transparent via-primary/25 to-transparent' : 'from-transparent via-accent/25 to-transparent'}`} /* Increased line visibility */
-            style={style as React.CSSProperties}
+            className={`bg-gradient-to-r ${i % 4 === 0 ? 'from-transparent via-primary/40 to-transparent' : i % 4 === 1 ? 'from-transparent via-accent/40 to-transparent' : i % 4 === 2 ? 'from-transparent via-primary/40 to-transparent' : 'from-transparent via-accent/40 to-transparent' }`}
+            style={{
+              ...style,
+              background: style.animationName === 'flow-up-down' 
+                ? (i % 2 === 0 ? 'linear-gradient(to bottom, transparent, hsl(var(--primary)/0.4), transparent)' : 'linear-gradient(to bottom, transparent, hsl(var(--accent)/0.4), transparent)')
+                : (i % 2 === 0 ? 'linear-gradient(to right, transparent, hsl(var(--primary)/0.4), transparent)' : 'linear-gradient(to right, transparent, hsl(var(--accent)/0.4), transparent)')
+            } as React.CSSProperties}
           />
         ))}
         {particles.map((style, i) => (
@@ -188,10 +219,10 @@ export function HeroSection() {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-4 animate-fade-in-up animation-delay-200">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-4 animate-fade-in-up animation-delay-200 animate-text-render-shake">
             {portfolioData.name}
           </h1>
-          <p className="text-xl md:text-2xl text-foreground mb-6 animate-fade-in-up animation-delay-400">
+          <p className="text-xl md:text-2xl text-foreground mb-6 animate-fade-in-up animation-delay-400 animate-text-render-shake animation-delay-subtext-shake">
             {portfolioData.title}
           </p>
           
@@ -253,6 +284,22 @@ export function HeroSection() {
             transform: translateY(0);
           }
         }
+
+        .animate-text-render-shake {
+          animation: textRenderShake 0.5s ease-in-out 1;
+        }
+        .animation-delay-subtext-shake {
+            animation-delay: 0.4s, 0.4s; /* delay for both fadeInUp and textRenderShake */
+        }
+        @keyframes textRenderShake {
+          0% { transform: translateX(0) rotate(0); }
+          10%, 90% { transform: translateX(-1px) rotate(-0.2deg); }
+          20%, 80% { transform: translateX(1px) rotate(0.2deg); }
+          30%, 50%, 70% { transform: translateX(-2px) rotate(-0.4deg); }
+          40%, 60% { transform: translateX(2px) rotate(0.4deg); }
+          100% { transform: translateX(0) rotate(0); }
+        }
+
         .animation-delay-200 { animation-delay: 0.2s; }
         .animation-delay-400 { animation-delay: 0.4s; }
         .animation-delay-600 { animation-delay: 0.6s; }
@@ -299,39 +346,53 @@ export function HeroSection() {
 
         @keyframes flow-across {
           0% { transform: translateX(-150%); opacity: 0; }
-          10% { opacity: 1; }
-          90% { opacity: 1; }
+          10% { opacity: var(--line-opacity, 0.25); } /* Use CSS var for opacity */
+          90% { opacity: var(--line-opacity, 0.25); }
           100% { transform: translateX(150vw); opacity: 0; }
         }
         
-        @keyframes atomicMotion {
+        @keyframes flow-up-down { /* New animation for vertical lines */
+          0% { transform: translateY(-150%); opacity: 0; }
+          10% { opacity: var(--line-opacity, 0.25); }
+          90% { opacity: var(--line-opacity, 0.25); }
+          100% { transform: translateY(150vh); opacity: 0; }
+        }
+        
+        @keyframes atomicMotion { /* Enhanced particle motion */
           0% {
-            transform: translate(0vw, 0vh) scale(0.6) rotate(0deg);
-            opacity: 0.3;
+            transform: translate(0vw, 0vh) scale(0.7) rotate(0deg);
+            opacity: 0.4;
           }
-          20% {
-            transform: translate(-25vw, 30vh) scale(1.1) rotate(72deg);
-            opacity: 0.9;
-          }
-          40% {
-            transform: translate(30vw, -20vh) scale(0.7) rotate(144deg);
-            opacity: 0.6;
-          }
-          60% {
-            transform: translate(-15vw, -25vh) scale(1.2) rotate(216deg);
+          15% {
+            transform: translate(-35vw, 40vh) scale(1.2) rotate(90deg);
             opacity: 1;
           }
-          80% {
-            transform: translate(20vw, 15vh) scale(0.8) rotate(288deg);
+          30% {
+            transform: translate(40vw, -30vh) scale(0.8) rotate(180deg);
             opacity: 0.7;
           }
+          45% {
+            transform: translate(-20vw, -35vh) scale(1.3) rotate(270deg);
+            opacity: 1;
+          }
+          60% {
+            transform: translate(30vw, 25vh) scale(0.9) rotate(360deg);
+            opacity: 0.8;
+          }
+          75% {
+            transform: translate(-45vw, -10vh) scale(1.1) rotate(450deg);
+            opacity: 0.9;
+          }
+          90% {
+            transform: translate(10vw, 30vh) scale(0.75) rotate(540deg);
+            opacity: 0.6;
+          }
           100% {
-            transform: translate(0vw, 0vh) scale(0.6) rotate(360deg);
-            opacity: 0.3;
+            transform: translate(0vw, 0vh) scale(0.7) rotate(720deg); /* End at start, more rotation */
+            opacity: 0.4;
           }
         }
       `}</style>
     </section>
   );
 }
-

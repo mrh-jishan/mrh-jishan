@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
+import { cn } from "@/lib/utils";
 
 interface SectionWrapperProps {
   title?: string;
@@ -26,7 +27,7 @@ export function SectionWrapper({ title, id, children, className, titleClassName 
       {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1,
+        threshold: 0.1, // Lower threshold for earlier animation trigger
       }
     );
 
@@ -50,17 +51,31 @@ export function SectionWrapper({ title, id, children, className, titleClassName 
     >
       <div className="container mx-auto px-4 md:px-6">
         {title && (
-          <h2 className={cn("text-3xl md:text-4xl font-bold mb-10 md:mb-16 text-center text-primary", titleClassName)}>
+          <h2 className={cn(
+            "text-3xl md:text-4xl font-bold mb-10 md:mb-16 text-center text-primary",
+            isVisible ? "animate-text-render-shake-section" : "", // Apply shake animation when visible
+            titleClassName
+          )}>
             {title}
           </h2>
         )}
         {children}
       </div>
+      {/* Add Keyframes for section title shake if not globally available */}
+      <style jsx global>{`
+        .animate-text-render-shake-section {
+          animation: textRenderShakeSection 0.6s ease-in-out 1;
+          animation-delay: 0.2s; /* Slight delay after section fades in */
+        }
+        @keyframes textRenderShakeSection {
+          0% { transform: translateX(0) rotate(0); }
+          10%, 90% { transform: translateX(-0.5px) rotate(-0.1deg); }
+          20%, 80% { transform: translateX(0.5px) rotate(0.1deg); }
+          30%, 50%, 70% { transform: translateX(-1px) rotate(-0.2deg); }
+          40%, 60% { transform: translateX(1px) rotate(0.2deg); }
+          100% { transform: translateX(0) rotate(0); }
+        }
+      `}</style>
     </section>
   );
 }
-
-// cn utility function (if not globally available through another import, include it or ensure it is)
-// For simplicity, assuming cn is available from "@/lib/utils" which is standard in shadcn projects.
-// If not, you might need to define it or import it if this component is in a different context.
-import { cn } from "@/lib/utils";
