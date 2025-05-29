@@ -1,7 +1,6 @@
 
 "use client";
 
-import Image from 'next/image';
 import { portfolioData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Mail, MapPin, Download } from 'lucide-react';
@@ -40,11 +39,11 @@ export function HeroSection() {
     const generateLines = () => {
       const lines: Array<DynamicStyle> = [];
       // Horizontal lines
-      for (let i = 0; i < 12; i++) { // Increased count
+      for (let i = 0; i < 12; i++) { 
         lines.push({
           position: 'absolute',
-          height: `${Math.random() * 4 + 2.5}px`, // Thicker
-          width: `${Math.random() * 50 + 40}%`,   // Wider range
+          height: `${Math.random() * 4 + 2.5}px`, 
+          width: `${Math.random() * 50 + 40}%`,   
           borderRadius: '9999px',
           top: `${Math.random() * 95 + 2.5}%`,
           animationName: 'flow-across',
@@ -52,15 +51,15 @@ export function HeroSection() {
           animationIterationCount: 'infinite',
           animationDuration: `${Math.random() * 10 + 12}s`, 
           animationDelay: `${Math.random() * 6}s`,
-          opacity: Math.random() * 0.3 + 0.15, // More visible
+          opacity: Math.random() * 0.3 + 0.15, 
         });
       }
       // Vertical lines
-      for (let i = 0; i < 10; i++) { // Increased count
+      for (let i = 0; i < 10; i++) { 
         lines.push({
           position: 'absolute',
-          width: `${Math.random() * 4 + 2.5}px`, // Thicker
-          height: `${Math.random() * 50 + 40}%`,  // Longer range
+          width: `${Math.random() * 4 + 2.5}px`, 
+          height: `${Math.random() * 50 + 40}%`,  
           borderRadius: '9999px',
           left: `${Math.random() * 95 + 2.5}%`,
           animationName: 'flow-up-down', 
@@ -68,7 +67,7 @@ export function HeroSection() {
           animationIterationCount: 'infinite',
           animationDuration: `${Math.random() * 10 + 12}s`,
           animationDelay: `${Math.random() * 6}s`,
-          opacity: Math.random() * 0.3 + 0.15, // More visible
+          opacity: Math.random() * 0.3 + 0.15, 
         });
       }
       return lines;
@@ -80,20 +79,20 @@ export function HeroSection() {
       'hsl(var(--accent) / 0.9)',
       'hsl(var(--secondary) / 0.8)'
     ];
-    const parts: Array<DynamicStyle> = Array.from({ length: 200 }).map((_, i) => ({ // Increased particle count
+    const parts: Array<DynamicStyle> = Array.from({ length: 200 }).map((_, i) => ({ 
       position: 'absolute',
-      width: `${Math.random() * 5 + 4}px`, // Bigger particles: 4px to 9px
+      width: `${Math.random() * 5 + 4}px`, 
       height: `${Math.random() * 5 + 4}px`,
       borderRadius: '50%',
       backgroundColor: particleColors[Math.floor(Math.random() * particleColors.length)],
-      top: `${Math.random() * 100}%`, // Initial position
-      left: `${Math.random() * 100}%`, // Initial position
-      animationName: 'atomicPopMotion', // New animation with pop effect
-      animationTimingFunction: 'linear', // Changed for smoother continuous feel
+      top: `${Math.random() * 100}%`, 
+      left: `${Math.random() * 100}%`, 
+      animationName: 'atomicPopMotion', 
+      animationTimingFunction: 'linear', 
       animationIterationCount: 'infinite',
-      animationDuration: `${Math.random() * 10 + 10}s`, // Duration: 10s to 20s
+      animationDuration: `${Math.random() * 10 + 10}s`, 
       animationDelay: `${Math.random() * 10}s`, 
-      '--particle-rand-x': (Math.random() * 2 - 1).toFixed(2), // Random values for varied paths
+      '--particle-rand-x': (Math.random() * 2 - 1).toFixed(2), 
       '--particle-rand-y': (Math.random() * 2 - 1).toFixed(2),
     }));
     setParticles(parts);
@@ -212,15 +211,23 @@ export function HeroSection() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-8 opacity-0 translate-y-8 animate-fade-in-up">
              <div ref={heroImageWrapperRef} style={imageStyle}>
-              <Image
-                src="https://placehold.co/160x160.png"
-                alt={portfolioData.name}
-                width={160}
-                height={160}
-                className="rounded-full mx-auto border-4 border-primary shadow-xl"
-                data-ai-hint="professional portrait"
-                priority
-              />
+              <div
+                className="rounded-full mx-auto border-4 border-primary shadow-xl bg-card flex items-center justify-center"
+                style={{ width: 160, height: 160 }}
+              >
+                <svg
+                  width="100"
+                  height="100"
+                  viewBox="0 0 24 24"
+                  fill="hsl(var(--primary))"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-labelledby="heroIconTitle"
+                >
+                  <title id="heroIconTitle">{`${portfolioData.name} icon`}</title>
+                  <circle cx="12" cy="7" r="4" />
+                  <path d="M12 12c-4.4183 0-8 3.134-8 7v2h16v-2c0-3.866-3.5817-7-8-7z" />
+                </svg>
+              </div>
             </div>
           </div>
 
@@ -407,4 +414,3 @@ export function HeroSection() {
     </section>
   );
 }
-
