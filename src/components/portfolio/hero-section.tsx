@@ -3,7 +3,7 @@
 
 import { portfolioData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
-import { Mail, MapPin, Download } from 'lucide-react';
+import { Mail, MapPin, Download, MonitorPlay } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState, useRef, useMemo } from 'react';
 
@@ -42,32 +42,32 @@ export function HeroSection() {
       for (let i = 0; i < 12; i++) { 
         lines.push({
           position: 'absolute',
-          height: `${Math.random() * 4 + 3.5}px`, // Made slightly thicker
-          width: `${Math.random() * 60 + 50}%`, // Cover more area  
+          height: `${Math.random() * 4 + 3.5}px`, 
+          width: `${Math.random() * 60 + 50}%`,  
           borderRadius: '9999px',
           top: `${Math.random() * 95 + 2.5}%`,
           animationName: 'flow-across',
           animationTimingFunction: 'linear',
           animationIterationCount: 'infinite',
-          animationDuration: `${Math.random() * 8 + 10}s`, // Slightly faster range 
+          animationDuration: `${Math.random() * 8 + 10}s`, 
           animationDelay: `${Math.random() * 5}s`,
-          opacity: Math.random() * 0.4 + 0.25, // Made more visible
+          opacity: Math.random() * 0.4 + 0.25, 
         });
       }
       // Vertical lines
       for (let i = 0; i < 10; i++) { 
         lines.push({
           position: 'absolute',
-          width: `${Math.random() * 4 + 3.5}px`, // Made slightly thicker
-          height: `${Math.random() * 60 + 50}%`, // Cover more area 
+          width: `${Math.random() * 4 + 3.5}px`, 
+          height: `${Math.random() * 60 + 50}%`,  
           borderRadius: '9999px',
           left: `${Math.random() * 95 + 2.5}%`,
           animationName: 'flow-up-down', 
           animationTimingFunction: 'linear',
           animationIterationCount: 'infinite',
-          animationDuration: `${Math.random() * 8 + 10}s`, // Slightly faster range
+          animationDuration: `${Math.random() * 8 + 10}s`, 
           animationDelay: `${Math.random() * 5}s`,
-          opacity: Math.random() * 0.4 + 0.25, // Made more visible
+          opacity: Math.random() * 0.4 + 0.25, 
         });
       }
       return lines;
@@ -79,9 +79,9 @@ export function HeroSection() {
       'hsl(var(--accent) / 0.9)',
       'hsl(var(--secondary) / 0.8)'
     ];
-    const parts: Array<DynamicStyle> = Array.from({ length: 250 }).map((_, i) => ({ // Increased particle count
+    const parts: Array<DynamicStyle> = Array.from({ length: 250 }).map((_, i) => ({ 
       position: 'absolute',
-      width: `${Math.random() * 6 + 5}px`, // Made particles bigger
+      width: `${Math.random() * 6 + 5}px`, 
       height: `${Math.random() * 6 + 5}px`,
       borderRadius: '50%',
       backgroundColor: particleColors[Math.floor(Math.random() * particleColors.length)],
@@ -285,7 +285,10 @@ export function HeroSection() {
 
           {portfolioData.websiteLinks && portfolioData.websiteLinks.length > 0 && (
             <div className="mt-8 animate-fade-in-up animation-delay-1000">
-              <p className="text-base text-foreground font-medium mb-3">Check out my ongoing work:</p>
+              <p className="text-lg text-primary font-semibold mb-4 flex items-center justify-center gap-2">
+                <MonitorPlay className="h-5 w-5" />
+                Check out my ongoing work:
+              </p>
               <div className="flex flex-wrap justify-center gap-4">
                 {portfolioData.websiteLinks.map(link => (
                   <Button key={link.name} variant="link" asChild className="text-primary hover:text-accent transition-colors">
