@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -68,7 +69,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="flex justify-center gap-4 mb-10 animate-fade-in-up animation-delay-800">
+          <div className="flex flex-wrap justify-center gap-4 mb-10 animate-fade-in-up animation-delay-800">
             {portfolioData.socialLinks.map((link) => (
               <Button key={link.name} variant="outline" size="icon" asChild className="hover:bg-accent/10 hover:border-accent transition-all transform hover:scale-110">
                 <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
@@ -76,10 +77,10 @@ export function HeroSection() {
                 </a>
               </Button>
             ))}
-             {/* <Button variant="default" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all transform hover:scale-105">
+             <Button variant="default" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all transform hover:scale-105" onClick={() => alert('CV download functionality to be implemented.')}>
               <Download size={18} className="mr-2" />
               Download CV
-            </Button> */}
+            </Button>
           </div>
 
           {portfolioData.websiteLinks && portfolioData.websiteLinks.length > 0 && (
