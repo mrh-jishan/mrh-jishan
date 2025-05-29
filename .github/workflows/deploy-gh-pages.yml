@@ -45,6 +45,8 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true # Ensure this is true to allow the action to configure/enable Pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

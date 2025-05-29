@@ -173,18 +173,24 @@ The project is pre-configured for Firebase App Hosting via the `apphosting.yaml`
 **2. GitHub Pages (Static Site)**
 This project also includes a GitHub Actions workflow (`.github/workflows/deploy-gh-pages.yml`) to deploy a static version of the site to GitHub Pages.
 
-**Important Setup for GitHub Pages:**
+**CRITICAL Setup for GitHub Pages:**
+
 *   **Repository Name Configuration:**
     *   Open the `next.config.ts` file.
     *   Locate the `GITHUB_REPO_NAME` constant.
     *   **You MUST change its value from `'rh-portfolio'` to your actual GitHub repository name.** For example, if your repository URL is `https://github.com/your-username/my-awesome-portfolio`, set `GITHUB_REPO_NAME` to `'my-awesome-portfolio'`. This is crucial for links and assets to work correctly.
-*   **GitHub Repository Settings:**
-    1.  Go to your repository on GitHub.
-    2.  Click on "Settings" > "Pages".
-    3.  Under "Build and deployment", for "Source", select "GitHub Actions".
-    The workflow will automatically build and deploy your site. After the first successful run, your site will be available at `https://<your-username>.github.io/<your-repo-name>/`.
 
-**Note on GitHub Pages Limitations:** GitHub Pages serves static files. While this setup allows for deploying your portfolio, some dynamic Next.js features (like API routes or complex server-side rendering scenarios beyond basic static generation) might not be fully supported compared to serverful hosting like Firebase App Hosting, Vercel, or Netlify.
+*   **GitHub Repository Settings (IMPORTANT: Do this BEFORE the first workflow run if possible):**
+    1.  Go to your repository on GitHub.
+    2.  Click on "Settings" (usually a tab at the top or in the sidebar).
+    3.  In the left sidebar of the Settings page, scroll down and click on "Pages".
+    4.  Under "Build and deployment", for the "Source" option, **select "GitHub Actions"**.
+        *   If this option is not selected, or if it's set to "Deploy from a branch", the workflow might fail or not deploy correctly.
+        *   The `actions/configure-pages` step in the workflow (with `enablement: true`) will attempt to set this up, but it's best to ensure this setting is correct in your repository.
+
+The workflow will automatically build and deploy your site. After the first successful run (which may take a few minutes), your site will be available at `https://<your-username>.github.io/<your-repo-name>/`.
+
+**Note on GitHub Pages Limitations:** GitHub Pages serves static files. While this setup allows for deploying your portfolio, some dynamic Next.js features (like API routes or complex server-side rendering scenarios beyond basic static generation) might not be fully supported compared to serverful hosting like Firebase App Hosting, Vercel, or Netlify. For a Next.js app using the App Router, static export has limitations, and a dedicated Next.js hosting platform is generally recommended for full feature support.
 
 ---
 
