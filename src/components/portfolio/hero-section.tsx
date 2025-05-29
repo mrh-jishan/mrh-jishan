@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -23,6 +24,8 @@ interface DynamicStyle {
   borderRadius?: string;
   backgroundColor?: string;
   opacity?: number;
+  '--particle-rand-x'?: string;
+  '--particle-rand-y'?: string;
 }
 
 
@@ -37,35 +40,35 @@ export function HeroSection() {
     const generateLines = () => {
       const lines: Array<DynamicStyle> = [];
       // Horizontal lines
-      for (let i = 0; i < 8; i++) { // Increased count
+      for (let i = 0; i < 12; i++) { // Increased count
         lines.push({
           position: 'absolute',
-          height: `${Math.random() * 3.5 + 2}px`, // Thicker
-          width: `${Math.random() * 40 + 30}%`,   // Wider range
+          height: `${Math.random() * 4 + 2.5}px`, // Thicker
+          width: `${Math.random() * 50 + 40}%`,   // Wider range
           borderRadius: '9999px',
           top: `${Math.random() * 95 + 2.5}%`,
           animationName: 'flow-across',
           animationTimingFunction: 'linear',
           animationIterationCount: 'infinite',
-          animationDuration: `${Math.random() * 12 + 15}s`, // Slightly faster overall
-          animationDelay: `${Math.random() * 7}s`,
-          opacity: Math.random() * 0.25 + 0.1, // More visible
+          animationDuration: `${Math.random() * 10 + 12}s`, 
+          animationDelay: `${Math.random() * 6}s`,
+          opacity: Math.random() * 0.3 + 0.15, // More visible
         });
       }
       // Vertical lines
-      for (let i = 0; i < 6; i++) { // Added vertical lines
+      for (let i = 0; i < 10; i++) { // Increased count
         lines.push({
           position: 'absolute',
-          width: `${Math.random() * 3.5 + 2}px`, // Thicker
-          height: `${Math.random() * 40 + 30}%`,  // Longer range
+          width: `${Math.random() * 4 + 2.5}px`, // Thicker
+          height: `${Math.random() * 50 + 40}%`,  // Longer range
           borderRadius: '9999px',
           left: `${Math.random() * 95 + 2.5}%`,
-          animationName: 'flow-up-down', // New animation for vertical
+          animationName: 'flow-up-down', 
           animationTimingFunction: 'linear',
           animationIterationCount: 'infinite',
-          animationDuration: `${Math.random() * 12 + 15}s`,
-          animationDelay: `${Math.random() * 7}s`,
-          opacity: Math.random() * 0.25 + 0.1, // More visible
+          animationDuration: `${Math.random() * 10 + 12}s`,
+          animationDelay: `${Math.random() * 6}s`,
+          opacity: Math.random() * 0.3 + 0.15, // More visible
         });
       }
       return lines;
@@ -77,19 +80,21 @@ export function HeroSection() {
       'hsl(var(--accent) / 0.9)',
       'hsl(var(--secondary) / 0.8)'
     ];
-    const parts: Array<DynamicStyle> = Array.from({ length: 150 }).map((_, i) => ({ // Increased particle count
+    const parts: Array<DynamicStyle> = Array.from({ length: 200 }).map((_, i) => ({ // Increased particle count
       position: 'absolute',
-      width: `${Math.random() * 4 + 3}px`, // Bigger particles: 3px to 7px
-      height: `${Math.random() * 4 + 3}px`,
+      width: `${Math.random() * 5 + 4}px`, // Bigger particles: 4px to 9px
+      height: `${Math.random() * 5 + 4}px`,
       borderRadius: '50%',
       backgroundColor: particleColors[Math.floor(Math.random() * particleColors.length)],
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      animationName: 'atomicMotion',
-      animationTimingFunction: 'cubic-bezier(0.25, 0.1, 0.25, 1.0)',
+      top: `${Math.random() * 100}%`, // Initial position
+      left: `${Math.random() * 100}%`, // Initial position
+      animationName: 'atomicPopMotion', // New animation with pop effect
+      animationTimingFunction: 'linear', // Changed for smoother continuous feel
       animationIterationCount: 'infinite',
-      animationDuration: `${Math.random() * 12 + 8}s`, // Duration: 8s to 20s (faster overall)
-      animationDelay: `${Math.random() * 8}s`, 
+      animationDuration: `${Math.random() * 10 + 10}s`, // Duration: 10s to 20s
+      animationDelay: `${Math.random() * 10}s`, 
+      '--particle-rand-x': (Math.random() * 2 - 1).toFixed(2), // Random values for varied paths
+      '--particle-rand-y': (Math.random() * 2 - 1).toFixed(2),
     }));
     setParticles(parts);
 
@@ -346,53 +351,60 @@ export function HeroSection() {
 
         @keyframes flow-across {
           0% { transform: translateX(-150%); opacity: 0; }
-          10% { opacity: var(--line-opacity, 0.25); } /* Use CSS var for opacity */
-          90% { opacity: var(--line-opacity, 0.25); }
+          10% { opacity: var(--line-opacity, 0.3); } 
+          90% { opacity: var(--line-opacity, 0.3); }
           100% { transform: translateX(150vw); opacity: 0; }
         }
         
-        @keyframes flow-up-down { /* New animation for vertical lines */
+        @keyframes flow-up-down { 
           0% { transform: translateY(-150%); opacity: 0; }
-          10% { opacity: var(--line-opacity, 0.25); }
-          90% { opacity: var(--line-opacity, 0.25); }
+          10% { opacity: var(--line-opacity, 0.3); }
+          90% { opacity: var(--line-opacity, 0.3); }
           100% { transform: translateY(150vh); opacity: 0; }
         }
         
-        @keyframes atomicMotion { /* Enhanced particle motion */
-          0% {
-            transform: translate(0vw, 0vh) scale(0.7) rotate(0deg);
-            opacity: 0.4;
+        @keyframes atomicPopMotion {
+          0% { /* Start small, somewhat central */
+            transform: translate(calc(var(--particle-rand-x) * 20vw + 40vw), calc(var(--particle-rand-y) * 20vh + 40vh)) scale(0.3) rotate(0deg);
+            opacity: 0;
           }
-          15% {
-            transform: translate(-35vw, 40vh) scale(1.2) rotate(90deg);
-            opacity: 1;
+          5% { /* Fade in */
+            opacity: 0.5;
+            transform: translate(calc(var(--particle-rand-x) * 25vw + 37.5vw), calc(var(--particle-rand-y) * 25vh + 37.5vh)) scale(0.5) rotate(36deg);
           }
-          30% {
-            transform: translate(40vw, -30vh) scale(0.8) rotate(180deg);
+          /* Growth phase while moving around - simulating accumulation */
+          20% {
+            transform: translate(calc(var(--particle-rand-x) * 30vw + 10vw), calc(var(--particle-rand-y) * 30vh + 20vh)) scale(0.8) rotate(144deg);
             opacity: 0.7;
           }
-          45% {
-            transform: translate(-20vw, -35vh) scale(1.3) rotate(270deg);
-            opacity: 1;
-          }
-          60% {
-            transform: translate(30vw, 25vh) scale(0.9) rotate(360deg);
-            opacity: 0.8;
-          }
-          75% {
-            transform: translate(-45vw, -10vh) scale(1.1) rotate(450deg);
+          40% {
+            transform: translate(calc(var(--particle-rand-y) * -35vw + 80vw), calc(var(--particle-rand-x) * -35vh + 70vh)) scale(1.2) rotate(288deg);
             opacity: 0.9;
           }
-          90% {
-            transform: translate(10vw, 30vh) scale(0.75) rotate(540deg);
-            opacity: 0.6;
+          60% { /* Mid-life, larger */
+            transform: translate(calc(var(--particle-rand-x) * -20vw + 20vw), calc(var(--particle-rand-y) * 40vh + 10vh)) scale(1.6) rotate(432deg);
+            opacity: 1;
           }
-          100% {
-            transform: translate(0vw, 0vh) scale(0.7) rotate(720deg); /* End at start, more rotation */
-            opacity: 0.4;
+          80% { /* Max normal size before pop */
+            transform: translate(calc(var(--particle-rand-y) * 40vw + 50vw), calc(var(--particle-rand-x) * -25vh + 60vh)) scale(2.0) rotate(576deg);
+            opacity: 0.8;
+          }
+          /* Pop sequence */
+          90% { /* Start of pop - rapid expansion */
+            transform: translate(calc(var(--particle-rand-y) * 40vw + 50vw), calc(var(--particle-rand-x) * -25vh + 60vh)) scale(6) rotate(648deg); /* Significantly larger */
+            opacity: 0.4; /* Start fading more rapidly */
+          }
+          99% { /* Almost gone */
+            transform: translate(calc(var(--particle-rand-y) * 40vw + 50vw), calc(var(--particle-rand-x) * -25vh + 60vh)) scale(6.5) rotate(710deg);
+            opacity: 0.05;
+          }
+          100% { /* Fully popped and reset for next loop (opacity 0, ready to restart at 0%) */
+            transform: translate(calc(var(--particle-rand-x) * 20vw + 40vw), calc(var(--particle-rand-y) * 20vh + 40vh)) scale(0.3) rotate(720deg);
+            opacity: 0;
           }
         }
       `}</style>
     </section>
   );
 }
+
