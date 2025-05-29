@@ -180,13 +180,17 @@ This project also includes a GitHub Actions workflow (`.github/workflows/deploy-
     *   Locate the `GITHUB_REPO_NAME` constant.
     *   **You MUST change its value from `'rh-portfolio'` to your actual GitHub repository name.** For example, if your repository URL is `https://github.com/your-username/my-awesome-portfolio`, set `GITHUB_REPO_NAME` to `'my-awesome-portfolio'`. This is crucial for links and assets to work correctly.
 
-*   **GitHub Repository Settings (IMPORTANT: Do this BEFORE the first workflow run if possible):**
+*   **GitHub Repository Settings (VERY IMPORTANT):**
     1.  Go to your repository on GitHub.
     2.  Click on "Settings" (usually a tab at the top or in the sidebar).
     3.  In the left sidebar of the Settings page, scroll down and click on "Pages".
-    4.  Under "Build and deployment", for the "Source" option, **select "GitHub Actions"**.
-        *   If this option is not selected, or if it's set to "Deploy from a branch", the workflow might fail or not deploy correctly.
-        *   The `actions/configure-pages` step in the workflow (with `enablement: true`) will attempt to set this up, but it's best to ensure this setting is correct in your repository.
+    4.  **Manual Initialization (If workflow fails with "Resource not accessible"):**
+        *   If you see errors like `Get Pages site failed. Error: Not Found` or `Create Pages site failed. Error: Resource not accessible by integration` in your GitHub Actions workflow, it often means GitHub Pages needs to be manually initialized for your repository *once*.
+        *   On the "Pages" settings page, if Pages is not enabled, try enabling it by choosing a temporary source (like "Deploy from a branch" with your `main` branch and `/ (root)` folder). Let it attempt a build (it might fail, that's okay).
+        *   **Then, crucially, change the "Source" under "Build and deployment" to "GitHub Actions".**
+        *   This manual step can "unlock" the Pages site, allowing the `actions/configure-pages` step in the workflow (with `enablement: true`) to successfully take over management.
+    5.  **Ensure "GitHub Actions" is Selected:** After the manual step above, or if Pages was already enabled, confirm that under "Build and deployment", the "Source" option is **selected as "GitHub Actions"**.
+        *   The `actions/configure-pages` step in the workflow (with `enablement: true`) will attempt to set this, but verifying it manually is a good troubleshooting step.
 
 The workflow will automatically build and deploy your site. After the first successful run (which may take a few minutes), your site will be available at `https://<your-username>.github.io/<your-repo-name>/`.
 
@@ -195,3 +199,4 @@ The workflow will automatically build and deploy your site. After the first succ
 ---
 
 This README provides a comprehensive overview of the portfolio content for GitHub profile display.
+```
