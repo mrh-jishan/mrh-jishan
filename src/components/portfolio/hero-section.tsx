@@ -46,19 +46,24 @@ export function HeroSection() {
     }));
     setFlowingLines(lines);
 
-    const parts: Array<DynamicStyle> = Array.from({ length: 25 }).map((_, i) => ({
+    const particleColors = [
+      'hsl(var(--primary) / 0.6)',
+      'hsl(var(--accent) / 0.6)',
+      'hsl(var(--secondary) / 0.5)'
+    ];
+    const parts: Array<DynamicStyle> = Array.from({ length: 30 }).map((_, i) => ({
       position: 'absolute',
-      width: `${Math.random() * 1.5 + 1}px`, // 1px to 2.5px
-      height: `${Math.random() * 1.5 + 1}px`,
+      width: `${Math.random() * 2 + 1}px`, // 1px to 3px
+      height: `${Math.random() * 2 + 1}px`,
       borderRadius: '50%',
-      backgroundColor: 'hsl(var(--foreground) / 0.2)', // Subtle particles
+      backgroundColor: particleColors[Math.floor(Math.random() * particleColors.length)],
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
-      animationName: 'twinkle',
+      animationName: 'driftAndTwinkle',
       animationTimingFunction: 'ease-in-out',
       animationIterationCount: 'infinite',
-      animationDuration: `${Math.random() * 4 + 3}s`, // 3s to 7s
-      animationDelay: `${Math.random() * 5}s`,
+      animationDuration: `${Math.random() * 8 + 10}s`, // 10s to 18s
+      animationDelay: `${Math.random() * 10}s`,
     }));
     setParticles(parts);
 
@@ -297,9 +302,32 @@ export function HeroSection() {
           10%, 90% { opacity: 1; }
           100% { transform: translateX(150vw); opacity: 0; }
         }
-        @keyframes twinkle {
-          0%, 100% { opacity: 0.1; transform: scale(0.7); }
-          50% { opacity: 0.5; transform: scale(1); }
+        
+        @keyframes driftAndTwinkle {
+          0% {
+            opacity: 0;
+            transform: scale(0.5) translate(0px, 0px);
+          }
+          20% {
+            opacity: 0.7;
+            transform: scale(1) translate(15px, -20px);
+          }
+          40% {
+            opacity: 0.3;
+            transform: scale(0.8) translate(-20px, 15px);
+          }
+          60% {
+            opacity: 0.8;
+            transform: scale(1.1) translate(20px, 20px);
+          }
+          80% {
+            opacity: 0.4;
+            transform: scale(0.9) translate(-15px, -15px);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(0.5) translate(0px, 0px);
+          }
         }
       `}</style>
     </section>
