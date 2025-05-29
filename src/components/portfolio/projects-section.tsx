@@ -8,20 +8,26 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github } from 'lucide-react';
 
 function ProjectCard({ project }: { project: ProjectItem }) {
+  const Icon = project.icon;
   return (
     <Card className="flex flex-col h-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-out transform hover:-translate-y-1">
       <div className="relative w-full h-48 md:h-56">
         <Image
           src={project.image}
           alt={project.name}
-          layout="fill"
-          objectFit="cover"
+          fill // Use fill instead of layout="fill" objectFit="cover" for Next 13+
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Add sizes prop for responsiveness with fill
+          style={{ objectFit: 'cover' }} // Use style for objectFit with fill
           className="transition-transform duration-500 ease-out group-hover:scale-105"
           data-ai-hint={project.dataAiHint}
+          priority={project.name === portfolioData.projects[0].name} // Prioritize the first image
         />
       </div>
       <CardHeader>
-        <CardTitle className="text-xl font-semibold text-primary">{project.name}</CardTitle>
+        <div className="flex items-center gap-3">
+          {Icon && <Icon className="h-6 w-6 text-accent shrink-0" />}
+          <CardTitle className="text-xl font-semibold text-primary">{project.name}</CardTitle>
+        </div>
       </CardHeader>
       <CardContent className="flex-grow">
         <CardDescription className="text-sm text-muted-foreground mb-3 leading-relaxed">
@@ -31,8 +37,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
           {project.tags.map((tag) => (
             <Badge 
               key={tag} 
-              // variant="secondary" // Removing variant to allow direct class override
-              className="text-xs bg-accent text-accent-foreground border-transparent px-3 py-1" // Updated classes for better visibility
+              className="text-xs bg-accent text-accent-foreground border-transparent px-3 py-1"
             >
               {tag}
             </Badge>
@@ -76,4 +81,3 @@ export function ProjectsSection() {
     </SectionWrapper>
   );
 }
-

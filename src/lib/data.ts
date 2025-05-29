@@ -1,5 +1,10 @@
+
 import type { LucideIcon } from 'lucide-react';
-import { Github, Linkedin, Mail, MapPin, Briefcase, GraduationCap, Award, Settings, Workflow, Code2, Library, DatabaseIcon, Cloud, Wrench, Users } from 'lucide-react'; // Explicitly import DatabaseIcon
+import { 
+  Github, Linkedin, Mail, MapPin, Briefcase, GraduationCap, Award, 
+  Settings, Workflow, Code2, Library, DatabaseIcon, Cloud, Wrench, Users,
+  Settings2, TableCellsSplit, Bitcoin, Gauge, Landmark, Repeat, ExternalLink, BarChart2, AreaChart, MonitorPlay, HelpingHand
+} from 'lucide-react';
 
 export interface NavItem {
   label: string;
@@ -48,6 +53,7 @@ export interface ProjectItem {
   tags: string[];
   liveLink?: string;
   githubLink?: string;
+  icon?: LucideIcon;
 }
 
 export interface CertificationItem {
@@ -79,7 +85,7 @@ export const portfolioData: PortfolioData = {
   name: "ROBIUL HASSAN",
   title: "Sr Software Engineer (Ruby on Rails, ReactJS, Angular, NodeJS, Postgres & AWS)",
   contact: {
-    address: "5085 NW 7th St, Miami, FL 33126",
+    address: "Coconut Creek, FL 33066",
     email: "robiul.hassan12102@gmail.com",
   },
   socialLinks: [
@@ -176,6 +182,7 @@ export const portfolioData: PortfolioData = {
       dataAiHint: "optimization tool",
       tags: ["Web Application", "SaaS", "Optimization"],
       liveLink: "https://metaboost.360tablero.com/",
+      icon: Settings2,
     },
     {
       name: "DataFlow",
@@ -184,6 +191,7 @@ export const portfolioData: PortfolioData = {
       dataAiHint: "data workflow",
       tags: ["Data Management", "Web Application", "Visualization"],
       liveLink: "https://dataflow.360tablero.com/",
+      icon: Workflow,
     },
     {
       name: "DataGrid",
@@ -192,6 +200,7 @@ export const portfolioData: PortfolioData = {
       dataAiHint: "data table",
       tags: ["Data Grid", "Web Application", "Enterprise"],
       liveLink: "https://datagrid.360tablero.com/",
+      icon: TableCellsSplit, // Changed from TableCells
     },
     {
       name: "PlutoCoin",
@@ -200,6 +209,7 @@ export const portfolioData: PortfolioData = {
       dataAiHint: "cryptocurrency platform",
       tags: ["Cryptocurrency", "FinTech", "Web Application"],
       liveLink: "https://plutocoin.360tablero.com/",
+      icon: Bitcoin,
     },
     {
       name: "Pace-Tracker",
@@ -207,7 +217,8 @@ export const portfolioData: PortfolioData = {
       image: "https://placehold.co/600x400.png",
       dataAiHint: "dashboard analytics",
       tags: ["Ruby on Rails", "ReactJS", "NodeJS", "ETL"],
-      liveLink: "#", // Replace with actual link if available
+      liveLink: "#", 
+      icon: Gauge,
     },
     {
       name: "Corporate Action",
@@ -215,7 +226,8 @@ export const portfolioData: PortfolioData = {
       image: "https://placehold.co/600x400.png",
       dataAiHint: "finance integration",
       tags: ["Ruby on Rails", "ReactJS", "NodeJS", "FinTech"],
-      liveLink: "#", // Replace with actual link if available
+      liveLink: "#", 
+      icon: Landmark,
     },
     {
       name: "Crypto-Exchange",
@@ -223,7 +235,8 @@ export const portfolioData: PortfolioData = {
       image: "https://placehold.co/600x400.png",
       dataAiHint: "crypto blockchain",
       tags: ["Ruby on Rails", "Angular", "Blockchain", "Crypto"],
-      liveLink: "#", // Replace with actual link if available
+      liveLink: "#", 
+      icon: Repeat,
     }
   ],
   certifications: [
@@ -240,3 +253,4 @@ export const portfolioData: PortfolioData = {
     { label: "Contact", href: "#contact" },
   ],
 };
+
