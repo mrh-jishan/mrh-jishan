@@ -6,7 +6,7 @@ import { portfolioData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Mail, MapPin, Download } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 
 export function HeroSection() {
   const [isMounted, setIsMounted] = useState(false);
@@ -21,8 +21,67 @@ export function HeroSection() {
     document.body.removeChild(link);
   };
 
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const heroImageWrapperRef = useRef<HTMLDivElement>(null);
+  const buttonsGroupWrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    };
+    if (typeof window !== 'undefined') {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
+  }, []);
+
+  const imageStyle = useMemo(() => {
+    if (typeof window === 'undefined' || !isMounted) return {};
+
+    const { x, y } = mousePosition;
+    const { innerWidth, innerHeight } = window;
+
+    const rotateXMax = 8; 
+    const rotateYMax = 8;
+
+    const normX = x / innerWidth - 0.5;
+    const normY = y / innerHeight - 0.5;
+
+    const rotateY = normX * rotateYMax * 2;
+    const rotateX = -normY * rotateXMax * 2;
+
+    return {
+      transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`,
+      transition: 'transform 0.1s ease-out',
+    };
+  }, [mousePosition, isMounted]);
+
+  const buttonsGroupStyle = useMemo(() => {
+    if (typeof window === 'undefined' || !isMounted) return {};
+
+    const { x, y } = mousePosition;
+    const { innerWidth, innerHeight } = window;
+
+    const translateMax = 6;
+
+    const normX = x / innerWidth - 0.5;
+    const normY = y / innerHeight - 0.5;
+
+    const translateX = normX * translateMax * -1.5; 
+    const translateY = normY * translateMax * -1.5;
+
+    return {
+      transform: `translateX(${translateX}px) translateY(${translateY}px)`,
+      transition: 'transform 0.15s ease-out',
+    };
+  }, [mousePosition, isMounted]);
+
   if (!isMounted) {
-    return ( // Basic skeleton or loader for SSR/initial load
+    return (
       <div className="relative bg-gradient-to-br from-background to-secondary py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <div className="animate-pulse space-y-6">
@@ -38,7 +97,6 @@ export function HeroSection() {
 
   return (
     <section id="about" className="relative bg-gradient-to-br from-background via-secondary to-background py-20 md:py-32 overflow-hidden">
-      {/* Subtle animated background shapes (optional) */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary rounded-full filter blur-2xl animate-pulse-slow"></div>
         <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-accent rounded-full filter blur-2xl animate-pulse-slow animation-delay-2000"></div>
@@ -46,15 +104,19 @@ export function HeroSection() {
       
       <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
         <div className="max-w-3xl mx-auto">
-          <div className="mb-8 transform transition-all duration-1000 ease-out opacity-0 translate-y-8 animate-fade-in-up">
-            <Image
-              src="https://placehold.co/160x160.png"
-              alt={portfolioData.name}
-              width={160}
-              height={160}
-              className="rounded-full mx-auto border-4 border-primary shadow-xl"
-              data-ai-hint="professional portrait"
-            />
+          {/* Image with mouse-move effect wrapper */}
+          <div className="mb-8 opacity-0 translate-y-8 animate-fade-in-up">
+             <div ref={heroImageWrapperRef} style={imageStyle}>
+              <Image
+                src="https://placehold.co/160x160.png"
+                alt={portfolioData.name}
+                width={160}
+                height={160}
+                className="rounded-full mx-auto border-4 border-primary shadow-xl"
+                data-ai-hint="professional portrait"
+                priority
+              />
+            </div>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-4 animate-fade-in-up animation-delay-200">
@@ -77,19 +139,22 @@ export function HeroSection() {
               </a>
             </div>
           </div>
-
-          <div className="flex flex-wrap justify-center gap-4 mb-10 animate-fade-in-up animation-delay-800">
-            {portfolioData.socialLinks.map((link) => (
-              <Button key={link.name} variant="outline" size="icon" asChild className="hover:bg-accent/10 hover:border-accent transition-all transform hover:scale-110">
-                <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
-                  <link.icon size={20} />
-                </a>
+          
+          {/* Buttons group with mouse-move effect wrapper */}
+          <div className="animate-fade-in-up animation-delay-800 mb-10">
+            <div ref={buttonsGroupWrapperRef} style={buttonsGroupStyle} className="flex flex-wrap justify-center gap-4">
+              {portfolioData.socialLinks.map((link) => (
+                <Button key={link.name} variant="outline" size="icon" asChild className="hover:bg-accent/10 hover:border-accent transition-all transform hover:scale-110">
+                  <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
+                    <link.icon size={20} />
+                  </a>
+                </Button>
+              ))}
+               <Button variant="default" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all transform hover:scale-105" onClick={handleDownloadCV}>
+                <Download size={18} className="mr-2" />
+                Download CV
               </Button>
-            ))}
-             <Button variant="default" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all transform hover:scale-105" onClick={handleDownloadCV}>
-              <Download size={18} className="mr-2" />
-              Download CV
-            </Button>
+            </div>
           </div>
 
           {portfolioData.websiteLinks && portfolioData.websiteLinks.length > 0 && (
