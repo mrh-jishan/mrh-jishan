@@ -66,8 +66,8 @@ export function HeroSection() {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Path to the resume file in the public folder
-    link.download = `${portfolioData.name.replace(/\s+/g, '_')}_Resume.pdf`; // Suggested filename for download
+    link.href = '/resume.pdf'; 
+    link.download = `${portfolioData.name.replace(/\s+/g, '_')}_Resume.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -150,8 +150,8 @@ export function HeroSection() {
   return (
     <section id="about" className="relative bg-gradient-to-br from-background via-secondary to-background py-20 md:py-32 overflow-hidden">
       <div className="absolute inset-0 opacity-20 z-0">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary rounded-full filter blur-2xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-accent rounded-full filter blur-2xl animate-pulse-slow animation-delay-2000"></div>
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary rounded-full filter blur-2xl animate-pulse-rotate-primary"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-accent rounded-full filter blur-2xl animate-pulse-rotate-accent animation-delay-2s"></div>
       </div>
 
       <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
@@ -253,15 +253,44 @@ export function HeroSection() {
         .animation-delay-600 { animation-delay: 0.6s; }
         .animation-delay-800 { animation-delay: 0.8s; }
         .animation-delay-1000 { animation-delay: 1s; }
+        .animation-delay-2s { animation-delay: 2s; }
 
-        .animate-pulse-slow {
-          animation: pulse-slow 4s infinite ease-in-out;
+        .animate-pulse-rotate-primary {
+          animation: pulse-rotate-primary 6s infinite ease-in-out;
         }
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.1; transform: scale(0.95); }
-          50% { opacity: 0.3; transform: scale(1.05); }
+        .animate-pulse-rotate-accent {
+          animation: pulse-rotate-accent 6s infinite ease-in-out;
         }
-        .animation-delay-2000 { animation-delay: 2s; }
+
+        @keyframes pulse-rotate-primary {
+          0% {
+            opacity: 0.2;
+            transform: perspective(800px) scale(0.95) rotateX(0deg) rotateY(0deg);
+          }
+          50% {
+            opacity: 0.4;
+            transform: perspective(800px) scale(1.05) rotateX(15deg) rotateY(20deg);
+          }
+          100% {
+            opacity: 0.2;
+            transform: perspective(800px) scale(0.95) rotateX(0deg) rotateY(0deg);
+          }
+        }
+        
+        @keyframes pulse-rotate-accent {
+          0% {
+            opacity: 0.2;
+            transform: perspective(800px) scale(0.95) rotateX(0deg) rotateY(0deg);
+          }
+          50% {
+            opacity: 0.4;
+            transform: perspective(800px) scale(1.05) rotateX(-20deg) rotateY(-15deg);
+          }
+          100% {
+            opacity: 0.2;
+            transform: perspective(800px) scale(0.95) rotateX(0deg) rotateY(0deg);
+          }
+        }
 
         @keyframes flow-across {
           0% { transform: translateX(-150%); opacity: 0; }
