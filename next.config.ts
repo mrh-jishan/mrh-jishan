@@ -6,7 +6,7 @@ import type {NextConfig} from 'next';
 // you MUST update 'GITHUB_REPO_NAME' below to match your GitHub repository name.
 // For example, if your repository URL is https://github.com/your-username/my-portfolio,
 // then GITHUB_REPO_NAME should be 'my-portfolio'.
-const GITHUB_REPO_NAME = 'rh-portfolio'; // <--- USER MUST UPDATE THIS
+const GITHUB_REPO_NAME = 'mrh-jishan1'; // <--- USER MUST UPDATE THIS
 
 // This variable is set to "true" in the GitHub Actions workflow
 const isGithubPages = process.env.GITHUB_PAGES === 'true';

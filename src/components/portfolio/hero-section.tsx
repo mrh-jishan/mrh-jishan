@@ -90,7 +90,7 @@ export function HeroSection() {
       animationName: 'atomicPopMotion', 
       animationTimingFunction: 'linear', 
       animationIterationCount: 'infinite',
-      animationDuration: `${Math.random() * 8 + 8}s`, 
+      animationDuration: `${Math.random() * 10 + 15}s`, // Increased duration
       animationDelay: `${Math.random() * 8}s`, 
       '--particle-rand-x': (Math.random() * 2 - 1).toFixed(2), 
       '--particle-rand-y': (Math.random() * 2 - 1).toFixed(2),
@@ -432,3 +432,4 @@ export function HeroSection() {
     </section>
   );
 }
+
