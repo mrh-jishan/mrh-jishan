@@ -59,7 +59,7 @@ export function HeroSection() {
       backgroundColor: particleColors[Math.floor(Math.random() * particleColors.length)],
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
-      animationName: 'driftAndTwinkle', // Will use updated keyframes
+      animationName: 'bounceAndTwinkle', // Updated animation name
       animationTimingFunction: 'linear', // For smoother, continuous movement
       animationIterationCount: 'infinite',
       animationDuration: `${Math.random() * 12 + 18}s`, // Longer duration for larger paths: 18s to 30s
@@ -159,7 +159,7 @@ export function HeroSection() {
   }
 
   return (
-    <section id="about" className="relative bg-gradient-to-br from-background via-secondary to-background py-20 md:py-32 overflow-hidden">
+    <section id="about" className="relative bg-gradient-to-br from-background via-primary/5 to-accent/5 py-20 md:py-32 overflow-hidden">
       <div className="absolute inset-0 opacity-20 z-0">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary rounded-full filter blur-2xl animate-pulse-rotate-primary"></div>
         <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-accent rounded-full filter blur-2xl animate-pulse-rotate-accent animation-delay-2s"></div>
@@ -309,33 +309,38 @@ export function HeroSection() {
           100% { transform: translateX(150vw); opacity: 0; }
         }
         
-        @keyframes driftAndTwinkle {
+        @keyframes bounceAndTwinkle {
           0%, 100% {
-            opacity: 0.1; /* Start and end faded */
-            transform: translate(0px, 0px) scale(0.6); /* Relative to initial random position */
+            transform: translate(0, 0) scale(0.7);
+            opacity: 0.2;
           }
-          5% { /* Fade in quickly */
-            opacity: 0.7;
-            transform: translate(calc(var(--random-x-start, 0) * 1vw), calc(var(--random-y-start, 0) * 1vh)) scale(0.8);
+          12% {
+            transform: translate(30vw, -25vh) scale(1.1);
+            opacity: 0.9;
           }
           25% {
+            transform: translate(-20vw, 30vh) scale(0.8);
+            opacity: 0.7;
+          }
+          37% {
+            transform: translate(25vw, 20vh) scale(1.2);
             opacity: 1;
-            /* Move significantly, using calc with vw/vh for responsiveness */
-            transform: translate(calc(20vw - 50px + var(--random-x-1, 0) * 5vw), calc(-15vh + 30px + var(--random-y-1, 0) * 5vh)) scale(1.1);
           }
           50% {
+            transform: translate(-30vw, -15vh) scale(0.9);
+            opacity: 0.8;
+          }
+          62% {
+            transform: translate(15vw, -30vh) scale(1.1);
             opacity: 0.9;
-            /* "Bounce" to another far point in a different direction */
-            transform: translate(calc(-15vw + 40px + var(--random-x-2, 0) * 5vw), calc(25vh - 60px + var(--random-y-2, 0) * 5vh)) scale(0.9);
           }
           75% {
-            opacity: 1;
-            /* And another "bounce" */
-            transform: translate(calc(10vw - 20px + var(--random-x-3, 0) * 5vw), calc(-20vh + 50px + var(--random-y-3, 0) * 5vh)) scale(1);
-          }
-          95% { /* Fade out towards a final small drift */
+            transform: translate(-25vw, 25vh) scale(0.8);
             opacity: 0.7;
-            transform: translate(calc(-5vw + 10px + var(--random-x-end, 0) * 1vw), calc(5vh - 10px + var(--random-y-end, 0) * 1vh)) scale(0.7);
+          }
+          87% {
+            transform: translate(20vw, -20vh) scale(1);
+            opacity: 0.8;
           }
         }
       `}</style>
