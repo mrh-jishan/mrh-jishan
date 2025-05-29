@@ -12,6 +12,15 @@ export function HeroSection() {
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => setIsMounted(true), []);
 
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // Path to the resume file in the public folder
+    link.download = `${portfolioData.name.replace(/\s+/g, '_')}_Resume.pdf`; // Suggested filename for download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   if (!isMounted) {
     return ( // Basic skeleton or loader for SSR/initial load
       <div className="relative bg-gradient-to-br from-background to-secondary py-20 md:py-32">
@@ -77,7 +86,7 @@ export function HeroSection() {
                 </a>
               </Button>
             ))}
-             <Button variant="default" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all transform hover:scale-105" onClick={() => alert('CV download functionality to be implemented.')}>
+             <Button variant="default" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all transform hover:scale-105" onClick={handleDownloadCV}>
               <Download size={18} className="mr-2" />
               Download CV
             </Button>
