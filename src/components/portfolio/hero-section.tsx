@@ -47,34 +47,40 @@ export function HeroSection() {
     setFlowingLines(lines);
 
     const particleColors = [
-      'hsl(var(--primary) / 0.6)',
-      'hsl(var(--accent) / 0.6)',
-      'hsl(var(--secondary) / 0.5)'
+      'hsl(var(--primary) / 0.7)',
+      'hsl(var(--accent) / 0.7)',
+      'hsl(var(--secondary) / 0.6)'
     ];
-    const parts: Array<DynamicStyle> = Array.from({ length: 30 }).map((_, i) => ({
+    const parts: Array<DynamicStyle> = Array.from({ length: 80 }).map((_, i) => ({ // Increased particle count
       position: 'absolute',
-      width: `${Math.random() * 2 + 1}px`, // 1px to 3px
-      height: `${Math.random() * 2 + 1}px`,
+      width: `${Math.random() * 2.5 + 1.5}px`, // Slightly larger particles: 1.5px to 4px
+      height: `${Math.random() * 2.5 + 1.5}px`,
       borderRadius: '50%',
       backgroundColor: particleColors[Math.floor(Math.random() * particleColors.length)],
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
-      animationName: 'driftAndTwinkle',
-      animationTimingFunction: 'ease-in-out',
+      animationName: 'driftAndTwinkle', // Will use updated keyframes
+      animationTimingFunction: 'linear', // For smoother, continuous movement
       animationIterationCount: 'infinite',
-      animationDuration: `${Math.random() * 8 + 10}s`, // 10s to 18s
-      animationDelay: `${Math.random() * 10}s`,
+      animationDuration: `${Math.random() * 12 + 18}s`, // Longer duration for larger paths: 18s to 30s
+      animationDelay: `${Math.random() * 18}s`, // Wider delay spread
     }));
     setParticles(parts);
 
   }, []);
 
   const handleDownloadCV = () => {
+    // Create a link element
     const link = document.createElement('a');
+    // Set the href to the path of your resume file in the public directory
     link.href = '/resume.pdf'; 
+    // Set the download attribute to suggest a filename for the downloaded file
     link.download = `${portfolioData.name.replace(/\s+/g, '_')}_Resume.pdf`;
+    // Append the link to the body (required for Firefox)
     document.body.appendChild(link);
+    // Programmatically click the link to trigger the download
     link.click();
+    // Remove the link from the body
     document.body.removeChild(link);
   };
 
@@ -304,32 +310,36 @@ export function HeroSection() {
         }
         
         @keyframes driftAndTwinkle {
-          0% {
-            opacity: 0;
-            transform: scale(0.5) translate(0px, 0px);
+          0%, 100% {
+            opacity: 0.1; /* Start and end faded */
+            transform: translate(0px, 0px) scale(0.6); /* Relative to initial random position */
           }
-          20% {
+          5% { /* Fade in quickly */
             opacity: 0.7;
-            transform: scale(1) translate(15px, -20px);
+            transform: translate(calc(var(--random-x-start, 0) * 1vw), calc(var(--random-y-start, 0) * 1vh)) scale(0.8);
           }
-          40% {
-            opacity: 0.3;
-            transform: scale(0.8) translate(-20px, 15px);
+          25% {
+            opacity: 1;
+            /* Move significantly, using calc with vw/vh for responsiveness */
+            transform: translate(calc(20vw - 50px + var(--random-x-1, 0) * 5vw), calc(-15vh + 30px + var(--random-y-1, 0) * 5vh)) scale(1.1);
           }
-          60% {
-            opacity: 0.8;
-            transform: scale(1.1) translate(20px, 20px);
+          50% {
+            opacity: 0.9;
+            /* "Bounce" to another far point in a different direction */
+            transform: translate(calc(-15vw + 40px + var(--random-x-2, 0) * 5vw), calc(25vh - 60px + var(--random-y-2, 0) * 5vh)) scale(0.9);
           }
-          80% {
-            opacity: 0.4;
-            transform: scale(0.9) translate(-15px, -15px);
+          75% {
+            opacity: 1;
+            /* And another "bounce" */
+            transform: translate(calc(10vw - 20px + var(--random-x-3, 0) * 5vw), calc(-20vh + 50px + var(--random-y-3, 0) * 5vh)) scale(1);
           }
-          100% {
-            opacity: 0;
-            transform: scale(0.5) translate(0px, 0px);
+          95% { /* Fade out towards a final small drift */
+            opacity: 0.7;
+            transform: translate(calc(-5vw + 10px + var(--random-x-end, 0) * 1vw), calc(5vh - 10px + var(--random-y-end, 0) * 1vh)) scale(0.7);
           }
         }
       `}</style>
     </section>
   );
 }
+
