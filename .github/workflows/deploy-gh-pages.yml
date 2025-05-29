@@ -42,13 +42,7 @@ jobs:
         env:
           GITHUB_PAGES: "true" # This environment variable activates basePath and assetPrefix in next.config.js
         run: npm run build # next build will automatically export to 'out' dir due to 'output: export' in next.config.js
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          static_site_generator: next
-          enablement: true # Ensure this is true to allow the action to configure/enable Pages
-
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
