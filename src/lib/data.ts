@@ -3,7 +3,8 @@ import type { LucideIcon } from 'lucide-react';
 import { 
   Github, Linkedin, Mail, MapPin, Briefcase, GraduationCap, Award, 
   Settings, Workflow, Code2, Library, DatabaseIcon, Cloud, Wrench, Users,
-  Settings2, TableCellsSplit, Bitcoin, Gauge, Landmark, Repeat, ExternalLink, BarChart2, AreaChart, MonitorPlay, HelpingHand
+  Settings2, TableCellsSplit, Bitcoin, Gauge, Landmark, Repeat, ExternalLink, BarChart2, AreaChart, MonitorPlay, HelpingHand,
+  Coffee, Gem, Braces, Pipette, Orbit, Train, Network, ArrowRightCircle, Power, Leaf, DatabaseZap, CloudCog, Container, Sailboat, GitFork, Layers, Wind, MessageSquare, RefreshCw
 } from 'lucide-react';
 
 export interface NavItem {
@@ -22,10 +23,15 @@ export interface WebsiteLink {
   url: string;
 }
 
+export interface SkillItem {
+  name: string;
+  icon?: LucideIcon;
+}
+
 export interface SkillCategory {
   name: string;
-  icon: LucideIcon;
-  items: string[];
+  icon: LucideIcon; // Category icon
+  items: SkillItem[]; // Array of skill items
 }
 
 export interface ExperienceItem {
@@ -98,12 +104,82 @@ export const portfolioData: PortfolioData = {
   ],
   summary: "Highly accomplished Full Stack Developer with 6+ years of experience in designing, developing, and deploying scalable web applications. Proven expertise in Java (Spring Boot), Ruby on Rails, ReactJS, and cloud-native technologies (AWS, OpenShift). Demonstrated success in optimizing performance, reducing costs, and delivering complex solutions in Agile environments.",
   skills: [
-    { name: "Programming Languages", icon: Code2, items: ["Java (Spring Boot)", "Ruby", "JavaScript (ES6+)", "Python"] },
-    { name: "Frameworks & Libraries", icon: Library, items: ["ReactJS", "Angular", "Ruby on Rails", "NodeJS", "ExpressJS", "NextJS", "Spring Boot", "Hotwire", "Turbolinks", "Quarkus"] },
-    { name: "Databases", icon: DatabaseIcon, items: ["PostgreSQL", "MySQL", "Redshift", "Snowflake", "MongoDB", "CouchDB", "Redis", "DB2"] },
-    { name: "Cloud Platforms", icon: Cloud, items: ["AWS (EC2, Lambda, SSM)", "OpenShift", "Heroku"] },
-    { name: "Tools", icon: Wrench, items: ["Git", "Docker", "Kubernetes", "GitLab CI/CD", "TeamCity", "Ansible", "JIRA", "Rally", "Terraform", "Databricks Overwatch", "Airflow", "ActiveMQ", "Kafka"] },
-    { name: "Methodologies", icon: Workflow, items: ["Agile/Scrum", "CI/CD"] },
+    { 
+      name: "Programming Languages", 
+      icon: Code2, 
+      items: [
+        { name: "Java (Spring Boot)", icon: Coffee }, 
+        { name: "Ruby", icon: Gem }, 
+        { name: "JavaScript (ES6+)", icon: Braces }, 
+        { name: "Python", icon: Pipette }
+      ] 
+    },
+    { 
+      name: "Frameworks & Libraries", 
+      icon: Library, 
+      items: [
+        { name: "ReactJS", icon: Orbit }, 
+        { name: "Angular" }, 
+        { name: "Ruby on Rails", icon: Train }, 
+        { name: "NodeJS", icon: Network }, 
+        { name: "ExpressJS" }, 
+        { name: "NextJS", icon: ArrowRightCircle }, 
+        { name: "Spring Boot", icon: Power }, 
+        { name: "Hotwire" }, 
+        { name: "Turbolinks" }, 
+        { name: "Quarkus" }
+      ] 
+    },
+    { 
+      name: "Databases", 
+      icon: DatabaseIcon, 
+      items: [
+        { name: "PostgreSQL", icon: DatabaseIcon }, 
+        { name: "MySQL", icon: DatabaseIcon }, 
+        { name: "Redshift" }, 
+        { name: "Snowflake" }, 
+        { name: "MongoDB", icon: Leaf }, 
+        { name: "CouchDB" }, 
+        { name: "Redis", icon: DatabaseZap }, 
+        { name: "DB2" }
+      ] 
+    },
+    { 
+      name: "Cloud Platforms", 
+      icon: Cloud, 
+      items: [
+        { name: "AWS (EC2, Lambda, SSM)", icon: CloudCog }, 
+        { name: "OpenShift", icon: Container }, 
+        { name: "Heroku", icon: Cloud }
+      ] 
+    },
+    { 
+      name: "Tools", 
+      icon: Wrench, 
+      items: [
+        { name: "Git", icon: GitFork }, 
+        { name: "Docker", icon: Container }, 
+        { name: "Kubernetes", icon: Sailboat }, 
+        { name: "GitLab CI/CD" }, 
+        { name: "TeamCity" }, 
+        { name: "Ansible" }, 
+        { name: "JIRA" }, 
+        { name: "Rally" }, 
+        { name: "Terraform", icon: Layers }, 
+        { name: "Databricks Overwatch" }, 
+        { name: "Airflow", icon: Wind }, 
+        { name: "ActiveMQ" }, 
+        { name: "Kafka", icon: MessageSquare }
+      ] 
+    },
+    { 
+      name: "Methodologies", 
+      icon: Workflow, 
+      items: [
+        { name: "Agile/Scrum", icon: RefreshCw }, 
+        { name: "CI/CD", icon: Repeat }
+      ] 
+    },
   ],
   experience: [
     {
@@ -200,7 +276,7 @@ export const portfolioData: PortfolioData = {
       dataAiHint: "data table",
       tags: ["Data Grid", "Web Application", "Enterprise"],
       liveLink: "https://datagrid.360tablero.com/",
-      icon: TableCellsSplit, // Changed from TableCells
+      icon: TableCellsSplit,
     },
     {
       name: "PlutoCoin",
@@ -254,3 +330,4 @@ export const portfolioData: PortfolioData = {
   ],
 };
 
+    
