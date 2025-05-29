@@ -8,9 +8,61 @@ import { Mail, MapPin, Download } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState, useRef, useMemo } from 'react';
 
+interface DynamicStyle {
+  position: 'absolute';
+  animationTimingFunction: string;
+  animationIterationCount: 'infinite';
+  animationName?: string;
+  animationDuration?: string;
+  animationDelay?: string;
+  width?: string;
+  height?: string;
+  top?: string;
+  left?: string;
+  borderRadius?: string;
+  backgroundColor?: string;
+}
+
+
 export function HeroSection() {
   const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => setIsMounted(true), []);
+  const [flowingLines, setFlowingLines] = useState<Array<DynamicStyle>>([]);
+  const [particles, setParticles] = useState<Array<DynamicStyle>>([]);
+
+  useEffect(() => {
+    setIsMounted(true);
+
+    const lines: Array<DynamicStyle> = Array.from({ length: 4 }).map((_, i) => ({
+      position: 'absolute',
+      height: `${Math.random() * 2 + 0.5}px`, // 0.5px to 2.5px
+      width: `${Math.random() * 25 + 20}%`,   // 20% to 45%
+      borderRadius: '9999px',
+      top: `${Math.random() * 90 + 5}%`,     // 5% to 95%
+      animationName: 'flow-across',
+      animationTimingFunction: 'linear',
+      animationIterationCount: 'infinite',
+      animationDuration: `${Math.random() * 10 + 15}s`, // 15s to 25s
+      animationDelay: `${Math.random() * 5}s`,
+    }));
+    setFlowingLines(lines);
+
+    const parts: Array<DynamicStyle> = Array.from({ length: 25 }).map((_, i) => ({
+      position: 'absolute',
+      width: `${Math.random() * 1.5 + 1}px`, // 1px to 2.5px
+      height: `${Math.random() * 1.5 + 1}px`,
+      borderRadius: '50%',
+      backgroundColor: 'hsl(var(--foreground) / 0.2)', // Subtle particles
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      animationName: 'twinkle',
+      animationTimingFunction: 'ease-in-out',
+      animationIterationCount: 'infinite',
+      animationDuration: `${Math.random() * 4 + 3}s`, // 3s to 7s
+      animationDelay: `${Math.random() * 5}s`,
+    }));
+    setParticles(parts);
+
+  }, []);
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
@@ -97,14 +149,26 @@ export function HeroSection() {
 
   return (
     <section id="about" className="relative bg-gradient-to-br from-background via-secondary to-background py-20 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-20 z-0">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary rounded-full filter blur-2xl animate-pulse-slow"></div>
         <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-accent rounded-full filter blur-2xl animate-pulse-slow animation-delay-2000"></div>
+      </div>
+
+      <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+        {flowingLines.map((style, i) => (
+          <div
+            key={`line-${i}`}
+            className={`bg-gradient-to-r ${i % 2 === 0 ? 'from-transparent via-primary/10 to-transparent' : 'from-transparent via-accent/10 to-transparent'}`}
+            style={style as React.CSSProperties}
+          />
+        ))}
+        {particles.map((style, i) => (
+          <div key={`particle-${i}`} style={style as React.CSSProperties} />
+        ))}
       </div>
       
       <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
         <div className="max-w-3xl mx-auto">
-          {/* Image with mouse-move effect wrapper */}
           <div className="mb-8 opacity-0 translate-y-8 animate-fade-in-up">
              <div ref={heroImageWrapperRef} style={imageStyle}>
               <Image
@@ -140,7 +204,6 @@ export function HeroSection() {
             </div>
           </div>
           
-          {/* Buttons group with mouse-move effect wrapper */}
           <div className="animate-fade-in-up animation-delay-800 mb-10">
             <div ref={buttonsGroupWrapperRef} style={buttonsGroupStyle} className="flex flex-wrap justify-center gap-4">
               {portfolioData.socialLinks.map((link) => (
@@ -190,6 +253,7 @@ export function HeroSection() {
         .animation-delay-600 { animation-delay: 0.6s; }
         .animation-delay-800 { animation-delay: 0.8s; }
         .animation-delay-1000 { animation-delay: 1s; }
+
         .animate-pulse-slow {
           animation: pulse-slow 4s infinite ease-in-out;
         }
@@ -198,6 +262,16 @@ export function HeroSection() {
           50% { opacity: 0.3; transform: scale(1.05); }
         }
         .animation-delay-2000 { animation-delay: 2s; }
+
+        @keyframes flow-across {
+          0% { transform: translateX(-150%); opacity: 0; }
+          10%, 90% { opacity: 1; }
+          100% { transform: translateX(150vw); opacity: 0; }
+        }
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.1; transform: scale(0.7); }
+          50% { opacity: 0.5; transform: scale(1); }
+        }
       `}</style>
     </section>
   );
