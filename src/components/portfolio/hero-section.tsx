@@ -87,10 +87,10 @@ export function HeroSection() {
       backgroundColor: particleColors[Math.floor(Math.random() * particleColors.length)],
       top: `${Math.random() * 100}%`, 
       left: `${Math.random() * 100}%`, 
-      animationName: 'atomicPopMotion', // Changed to new pop animation
+      animationName: 'atomicPopMotion', 
       animationTimingFunction: 'linear', 
       animationIterationCount: 'infinite',
-      animationDuration: `${Math.random() * 8 + 8}s`, // Adjusted duration for pop effect
+      animationDuration: `${Math.random() * 8 + 8}s`, 
       animationDelay: `${Math.random() * 8}s`, 
       '--particle-rand-x': (Math.random() * 2 - 1).toFixed(2), 
       '--particle-rand-y': (Math.random() * 2 - 1).toFixed(2),
@@ -197,8 +197,8 @@ export function HeroSection() {
             style={{
               ...style,
               background: style.animationName === 'flow-up-down' 
-                ? (i % 2 === 0 ? 'linear-gradient(to bottom, transparent, hsl(var(--primary)/0.5), transparent)' : 'linear-gradient(to bottom, transparent, hsl(var(--accent)/0.5), transparent)') // Increased opacity
-                : (i % 2 === 0 ? 'linear-gradient(to right, transparent, hsl(var(--primary)/0.5), transparent)' : 'linear-gradient(to right, transparent, hsl(var(--accent)/0.5), transparent)') // Increased opacity
+                ? (i % 2 === 0 ? 'linear-gradient(to bottom, transparent, hsl(var(--primary)/0.5), transparent)' : 'linear-gradient(to bottom, transparent, hsl(var(--accent)/0.5), transparent)') 
+                : (i % 2 === 0 ? 'linear-gradient(to right, transparent, hsl(var(--primary)/0.5), transparent)' : 'linear-gradient(to right, transparent, hsl(var(--accent)/0.5), transparent)') 
             } as React.CSSProperties}
           />
         ))}
@@ -285,7 +285,7 @@ export function HeroSection() {
 
           {portfolioData.websiteLinks && portfolioData.websiteLinks.length > 0 && (
             <div className="mt-8 animate-fade-in-up animation-delay-1000">
-              <p className="text-sm text-muted-foreground mb-2">Check out my ongoing work:</p>
+              <p className="text-base text-foreground font-medium mb-3">Check out my ongoing work:</p>
               <div className="flex flex-wrap justify-center gap-4">
                 {portfolioData.websiteLinks.map(link => (
                   <Button key={link.name} variant="link" asChild className="text-primary hover:text-accent transition-colors">
