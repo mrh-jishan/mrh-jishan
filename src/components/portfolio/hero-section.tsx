@@ -42,32 +42,32 @@ export function HeroSection() {
       for (let i = 0; i < 12; i++) { 
         lines.push({
           position: 'absolute',
-          height: `${Math.random() * 4 + 2.5}px`, 
-          width: `${Math.random() * 50 + 40}%`,   
+          height: `${Math.random() * 4 + 3.5}px`, // Made slightly thicker
+          width: `${Math.random() * 60 + 50}%`, // Cover more area  
           borderRadius: '9999px',
           top: `${Math.random() * 95 + 2.5}%`,
           animationName: 'flow-across',
           animationTimingFunction: 'linear',
           animationIterationCount: 'infinite',
-          animationDuration: `${Math.random() * 10 + 12}s`, 
-          animationDelay: `${Math.random() * 6}s`,
-          opacity: Math.random() * 0.3 + 0.15, 
+          animationDuration: `${Math.random() * 8 + 10}s`, // Slightly faster range 
+          animationDelay: `${Math.random() * 5}s`,
+          opacity: Math.random() * 0.4 + 0.25, // Made more visible
         });
       }
       // Vertical lines
       for (let i = 0; i < 10; i++) { 
         lines.push({
           position: 'absolute',
-          width: `${Math.random() * 4 + 2.5}px`, 
-          height: `${Math.random() * 50 + 40}%`,  
+          width: `${Math.random() * 4 + 3.5}px`, // Made slightly thicker
+          height: `${Math.random() * 60 + 50}%`, // Cover more area 
           borderRadius: '9999px',
           left: `${Math.random() * 95 + 2.5}%`,
           animationName: 'flow-up-down', 
           animationTimingFunction: 'linear',
           animationIterationCount: 'infinite',
-          animationDuration: `${Math.random() * 10 + 12}s`,
-          animationDelay: `${Math.random() * 6}s`,
-          opacity: Math.random() * 0.3 + 0.15, 
+          animationDuration: `${Math.random() * 8 + 10}s`, // Slightly faster range
+          animationDelay: `${Math.random() * 5}s`,
+          opacity: Math.random() * 0.4 + 0.25, // Made more visible
         });
       }
       return lines;
@@ -79,19 +79,19 @@ export function HeroSection() {
       'hsl(var(--accent) / 0.9)',
       'hsl(var(--secondary) / 0.8)'
     ];
-    const parts: Array<DynamicStyle> = Array.from({ length: 200 }).map((_, i) => ({ 
+    const parts: Array<DynamicStyle> = Array.from({ length: 250 }).map((_, i) => ({ // Increased particle count
       position: 'absolute',
-      width: `${Math.random() * 5 + 4}px`, 
-      height: `${Math.random() * 5 + 4}px`,
+      width: `${Math.random() * 6 + 5}px`, // Made particles bigger
+      height: `${Math.random() * 6 + 5}px`,
       borderRadius: '50%',
       backgroundColor: particleColors[Math.floor(Math.random() * particleColors.length)],
       top: `${Math.random() * 100}%`, 
       left: `${Math.random() * 100}%`, 
-      animationName: 'atomicPopMotion', 
+      animationName: 'atomicPopMotion', // Changed to new pop animation
       animationTimingFunction: 'linear', 
       animationIterationCount: 'infinite',
-      animationDuration: `${Math.random() * 10 + 10}s`, 
-      animationDelay: `${Math.random() * 10}s`, 
+      animationDuration: `${Math.random() * 8 + 8}s`, // Adjusted duration for pop effect
+      animationDelay: `${Math.random() * 8}s`, 
       '--particle-rand-x': (Math.random() * 2 - 1).toFixed(2), 
       '--particle-rand-y': (Math.random() * 2 - 1).toFixed(2),
     }));
@@ -197,8 +197,8 @@ export function HeroSection() {
             style={{
               ...style,
               background: style.animationName === 'flow-up-down' 
-                ? (i % 2 === 0 ? 'linear-gradient(to bottom, transparent, hsl(var(--primary)/0.4), transparent)' : 'linear-gradient(to bottom, transparent, hsl(var(--accent)/0.4), transparent)')
-                : (i % 2 === 0 ? 'linear-gradient(to right, transparent, hsl(var(--primary)/0.4), transparent)' : 'linear-gradient(to right, transparent, hsl(var(--accent)/0.4), transparent)')
+                ? (i % 2 === 0 ? 'linear-gradient(to bottom, transparent, hsl(var(--primary)/0.5), transparent)' : 'linear-gradient(to bottom, transparent, hsl(var(--accent)/0.5), transparent)') // Increased opacity
+                : (i % 2 === 0 ? 'linear-gradient(to right, transparent, hsl(var(--primary)/0.5), transparent)' : 'linear-gradient(to right, transparent, hsl(var(--accent)/0.5), transparent)') // Increased opacity
             } as React.CSSProperties}
           />
         ))}
@@ -218,14 +218,29 @@ export function HeroSection() {
                 <svg
                   width="100"
                   height="100"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 100 100"
                   fill="hsl(var(--primary))"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-labelledby="heroIconTitle"
                 >
-                  <title id="heroIconTitle">{`${portfolioData.name} icon`}</title>
-                  <circle cx="12" cy="7" r="4" />
-                  <path d="M12 12c-4.4183 0-8 3.134-8 7v2h16v-2c0-3.866-3.5817-7-8-7z" />
+                  <title id="heroIconTitle">{`${portfolioData.name} icon - Abstract`}</title>
+                  <g transform="translate(50 50) scale(1.1) rotate(15)">
+                    {/* Central chaotic element */}
+                    <path d="M 0 -25 Q 15 -20, 10 -5 Q 5 10, 15 20 Q 0 28, -15 20 Q -5 10, -10 -5 Q -15 -20, 0 -25 Z" opacity="0.8"/>
+                    {/* Spikes and swirls */}
+                    <path d="M 0 -25 L 5 -35 L 8 -28 L 15 -40 L 18 -30 L 25 -38 L 22 -25 Z" transform="rotate(20)"/>
+                    <path d="M 0 28 L 5 38 L 8 31 L 15 43 L 18 33 L 25 41 L 22 28 Z" transform="rotate(-160) scale(0.9)"/>
+                    <circle cx="-10" cy="-5" r="4" opacity="0.9"/>
+                    <circle cx="8" cy="10" r="3" opacity="0.7"/>
+                    {/* Outer dynamic elements */}
+                    <path d="M 20 0 C 35 10, 35 -10, 20 0 Z" transform="rotate(45) translate(10 0) scale(1.2)"/>
+                    <path d="M -20 0 C -35 10, -35 -10, -20 0 Z" transform="rotate(-135) translate(-10 0) scale(1.1)"/>
+                    <path d="M 0 20 C 10 35, -10 35, 0 20 Z" transform="rotate(135) translate(0 10) scale(0.9)"/>
+                    <path d="M 0 -20 C 10 -35, -10 -35, 0 -20 Z" transform="rotate(-45) translate(0 -10) scale(1)"/>
+                    {/* Some smaller details */}
+                    <rect x="-2" y="-30" width="4" height="8" rx="2" transform="rotate(30)"/>
+                    <rect x="25" y="5" width="3" height="6" rx="1.5" transform="rotate(-50)"/>
+                  </g>
                 </svg>
               </div>
             </div>
