@@ -1,5 +1,4 @@
 
-import Image from 'next/image';
 import { portfolioData, ProjectItem } from '@/lib/data';
 import { SectionWrapper } from '@/components/portfolio/section-wrapper';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -11,21 +10,14 @@ function ProjectCard({ project }: { project: ProjectItem }) {
   const Icon = project.icon;
   return (
     <Card className="flex flex-col h-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-out transform hover:-translate-y-1">
-      <div className="relative w-full h-48 md:h-56">
-        <Image
-          src={project.image}
-          alt={project.name}
-          fill // Use fill instead of layout="fill" objectFit="cover" for Next 13+
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Add sizes prop for responsiveness with fill
-          style={{ objectFit: 'cover' }} // Use style for objectFit with fill
-          className="transition-transform duration-500 ease-out group-hover:scale-105"
-          data-ai-hint={project.dataAiHint}
-          priority={project.name === portfolioData.projects[0].name} // Prioritize the first image
-        />
-      </div>
+      {Icon && (
+        <div className="flex justify-center items-center h-40 md:h-48 p-6 bg-muted/30">
+          <Icon className="h-20 w-20 md:h-24 md:w-24 text-accent opacity-80" />
+        </div>
+      )}
       <CardHeader>
         <div className="flex items-center gap-3">
-          {Icon && <Icon className="h-6 w-6 text-accent shrink-0" />}
+          {/* Small icon next to title removed, main icon is now above */}
           <CardTitle className="text-xl font-semibold text-primary">{project.name}</CardTitle>
         </div>
       </CardHeader>
@@ -81,3 +73,5 @@ export function ProjectsSection() {
     </SectionWrapper>
   );
 }
+
+    

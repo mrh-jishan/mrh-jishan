@@ -54,8 +54,6 @@ export interface EducationItem {
 export interface ProjectItem {
   name: string;
   description: string;
-  image: string;
-  dataAiHint: string;
   tags: string[];
   liveLink?: string;
   githubLink?: string;
@@ -254,8 +252,6 @@ export const portfolioData: PortfolioData = {
      {
       name: "Metaboost",
       description: "An ongoing project, part of the 360tablero suite. Focuses on providing advanced boosting and optimization solutions.",
-      image: "https://placehold.co/600x400.png",
-      dataAiHint: "optimization tool",
       tags: ["Web Application", "SaaS", "Optimization"],
       liveLink: "https://metaboost.360tablero.com/",
       icon: Settings2,
@@ -263,8 +259,6 @@ export const portfolioData: PortfolioData = {
     {
       name: "DataFlow",
       description: "An ongoing project for managing and visualizing data workflows, part of the 360tablero suite.",
-      image: "https://placehold.co/600x400.png",
-      dataAiHint: "data workflow",
       tags: ["Data Management", "Web Application", "Visualization"],
       liveLink: "https://dataflow.360tablero.com/",
       icon: Workflow,
@@ -272,8 +266,6 @@ export const portfolioData: PortfolioData = {
     {
       name: "DataGrid",
       description: "An ongoing project providing powerful data grid functionalities, part of the 360tablero suite.",
-      image: "https://placehold.co/600x400.png",
-      dataAiHint: "data table",
       tags: ["Data Grid", "Web Application", "Enterprise"],
       liveLink: "https://datagrid.360tablero.com/",
       icon: TableCellsSplit,
@@ -281,8 +273,6 @@ export const portfolioData: PortfolioData = {
     {
       name: "PlutoCoin",
       description: "An ongoing project related to cryptocurrency, part of the 360tablero suite.",
-      image: "https://placehold.co/600x400.png",
-      dataAiHint: "cryptocurrency platform",
       tags: ["Cryptocurrency", "FinTech", "Web Application"],
       liveLink: "https://plutocoin.360tablero.com/",
       icon: Bitcoin,
@@ -290,8 +280,6 @@ export const portfolioData: PortfolioData = {
     {
       name: "Pace-Tracker",
       description: "Automated ETL process and developed a dashboard using Ruby on Rails, ReactJS, and NodeJS for enhanced advertisement pacing insights.",
-      image: "https://placehold.co/600x400.png",
-      dataAiHint: "dashboard analytics",
       tags: ["Ruby on Rails", "ReactJS", "NodeJS", "ETL"],
       liveLink: "#", 
       icon: Gauge,
@@ -299,8 +287,6 @@ export const portfolioData: PortfolioData = {
     {
       name: "Corporate Action",
       description: "Integration with T24 and TCS Bancs for corporate action processing using Ruby on Rails, ReactJS, and NodeJS.",
-      image: "https://placehold.co/600x400.png",
-      dataAiHint: "finance integration",
       tags: ["Ruby on Rails", "ReactJS", "NodeJS", "FinTech"],
       liveLink: "#", 
       icon: Landmark,
