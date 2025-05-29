@@ -304,15 +304,6 @@ export const portfolioData: PortfolioData = {
       tags: ["Ruby on Rails", "ReactJS", "NodeJS", "FinTech"],
       liveLink: "#", 
       icon: Landmark,
-    },
-    {
-      name: "Crypto-Exchange",
-      description: "Ruby on Rails and Angular implementation of Ethereum and ERC20 token transfer from client to client.",
-      image: "https://placehold.co/600x400.png",
-      dataAiHint: "crypto blockchain",
-      tags: ["Ruby on Rails", "Angular", "Blockchain", "Crypto"],
-      liveLink: "#", 
-      icon: Repeat,
     }
   ],
   certifications: [
