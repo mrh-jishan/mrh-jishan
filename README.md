@@ -1,19 +1,21 @@
-
-# ROBIUL HASSAN
-## Sr Software Engineer (Ruby on Rails, ReactJS, Angular, NodeJS, Postgres & AWS)
-
-Highly accomplished Full Stack Developer with 6+ years of experience in designing, developing, and deploying scalable web applications. Proven expertise in Java (Spring Boot), Ruby on Rails, ReactJS, and cloud-native technologies (AWS, OpenShift). Demonstrated success in optimizing performance, reducing costs, and delivering complex solutions in Agile environments.
+# **ROBIUL HASSAN**
+### **Sr Software Engineer (Ruby on Rails, ReactJS, Angular, NodeJS, Postgres & AWS)**
+Coconut Creek, FL 33066 \
+[robiul.hassan12102@gmail.com](mailto:robiul.hassan12102@gmail.com) \
+[https://linkedin.com/in/rhsn1](https://linkedin.com/in/rhsn1) | [https://github.com/mrh-jishan](https://github.com/mrh-jishan)    
+[https://metaboost.360tablero.com/](https://metaboost.360tablero.com/) | [https://dataflow.360tablero.com/](https://dataflow.360tablero.com/)
 
 ---
 
-## Contact
-- **Email:** robiul.hassan12102@gmail.com
-- **Location:** Coconut Creek, FL 33066
-- **LinkedIn:** [https://linkedin.com/in/rhsn1](https://linkedin.com/in/rhsn1)
-- **GitHub:** [https://github.com/mrh-jishan](https://github.com/mrh-jishan)
-- **Websites:**
-  - [Metaboost](https://metaboost.360tablero.com/)
-  - [DataFlow](https://dataflow.360tablero.com/)
+<p><img align="left" height="150" width="300" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mrh-jishan&layout=compact&hide=html" alt="mrh-jishan" /></p>
+
+<p>&nbsp;<img align="center" height="150" width="300" src="https://github-readme-stats.vercel.app/api?username=mrh-jishan&show_icons=true" alt="mrh-jishan" /></p>
+
+---
+## **Ongoing Project**
+- [Metaboost](https://metaboost.360tablero.com/)
+- [DataFlow](https://dataflow.360tablero.com/)
+
 
 ---
 
