@@ -99,15 +99,6 @@ export function HeroSection() {
 
   }, []);
 
-  const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/resume.pdf'; 
-    link.download = `${portfolioData.name.replace(/\s+/g, '_')}_Resume.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const heroImageWrapperRef = useRef<HTMLDivElement>(null);
   const buttonsGroupWrapperRef = useRef<HTMLDivElement>(null);
@@ -276,9 +267,11 @@ export function HeroSection() {
                   </a>
                 </Button>
               ))}
-               <Button variant="default" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all transform hover:scale-105" onClick={handleDownloadCV}>
-                <Download size={18} className="mr-2" />
-                Download CV
+               <Button variant="default" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all transform hover:scale-105">
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download CV" className="flex items-center">
+                  <Download size={18} className="mr-2" />
+                  Download CV
+                </a>
               </Button>
             </div>
           </div>
