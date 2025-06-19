@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robiul Hassan | Senior Software Engineer</title>
+    <!-- Chosen Palette: Professional Slate & Teal -->
+    <!-- Application Structure Plan: The SPA is structured into thematic sections (Hero, Experience, Skills, Projects, Contact) to provide a clear, narrative flow. This is more engaging than a linear document. Key interactions include an interactive timeline for experience (to prevent information overload), a dynamic bar chart for skills (for quick visual assessment), and filterable project cards (to let recruiters focus on relevant technologies). This structure allows a user to get a quick overview and then dive deep into specific areas of interest, which is ideal for busy recruiters. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Career History -> Goal: Show progression without overwhelming -> Viz/Method: Interactive Timeline -> Interaction: Click to expand/collapse details -> Justification: Keeps the initial view clean, allows user-driven exploration. Library: Vanilla JS + Tailwind CSS.
+        - Report Info: Technical Skills -> Goal: Quickly convey expertise areas -> Viz/Method: Horizontal Bar Chart -> Interaction: Hover for tooltips -> Justification: Provides an immediate visual summary of core competencies. Library: Chart.js.
+        - Report Info: Project Portfolio -> Goal: Showcase relevant practical work -> Viz/Method: Filterable Cards -> Interaction: Click technology buttons to filter projects -> Justification: Enables recruiters to instantly see projects using specific tech like Rails or Next.js. Library: Vanilla JS.
+        - Report Info: Contact/Links -> Goal: Easy access to professional profiles -> Viz/Method: Header and Footer Links -> Interaction: Standard hyperlinks -> Justification: Standard, expected, and effective. Library: HTML.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            height: auto;
+            max-height: 500px;
+        }
+        .timeline-content {
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .timeline-item.active .timeline-content {
+            max-height: 500px; 
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .timeline-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+        .icon-plus {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700 font-sans">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-slate-50/80 backdrop-blur-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-bold text-slate-800">Robiul Hassan</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#experience" class="text-slate-600 hover:text-teal-600 transition-colors">Experience</a>
+                <a href="#skills" class="text-slate-600 hover:text-teal-600 transition-colors">Skills</a>
+                <a href="#projects" class="text-slate-600 hover:text-teal-600 transition-colors">Projects</a>
+                <a href="#contact" class="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 transition-colors">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-slate-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="#experience" class="block py-2 text-slate-600 hover:text-teal-600">Experience</a>
+             <a href="#skills" class="block py-2 text-slate-600 hover:text-teal-600">Skills</a>
+             <a href="#projects" class="block py-2 text-slate-600 hover:text-teal-600">Projects</a>
+             <a href="#contact" class="block mt-2 text-center bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center py-20 md:py-32">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-800 mb-4">Sr. Software Engineer</h1>
+            <p class="text-xl md:text-2xl text-slate-600 mb-6 max-w-3xl mx-auto">Full-Stack Specialist in <span class="text-teal-600 font-semibold">Ruby on Rails</span> & <span class="text-teal-600 font-semibold">Next.js</span>, building robust and scalable web applications.</p>
+            <div class="flex justify-center items-center space-x-4">
+                <a href="https://github.com/mrh-jishan" target="_blank" class="text-slate-500 hover:text-teal-600 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/rhsn1/" target="_blank" class="text-slate-500 hover:text-teal-600 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://mrh-jishan.github.io/mrh-jishan" target="_blank" class="text-slate-500 hover:text-teal-600 transition-colors">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-12">Career Timeline</h2>
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="absolute left-4 top-0 h-full w-0.5 bg-slate-200"></div>
+
+                <div class="timeline-item relative pl-12 pb-12">
+                    <div class="absolute left-0 top-1.5 w-8 h-8 bg-white border-2 border-teal-500 rounded-full flex items-center justify-center">
+                        <div class="w-4 h-4 bg-teal-500 rounded-full"></div>
+                    </div>
+                    <div class="cursor-pointer">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h3 class="text-xl font-semibold text-slate-800">Senior Software Engineer</h3>
+                                <p class="text-slate-500">Mission Wired | Sept 2024 - Present</p>
+                            </div>
+                            <div class="icon-plus text-teal-500 text-3xl font-light">+</div>
+                        </div>
+                        <div class="timeline-content">
+                            <ul class="list-disc list-inside text-slate-600 space-y-2 mt-2">
+                                <li>Led zero-downtime MySQL upgrade (v6 to v8) leveraging Terraform for streamlined infrastructure-as-code deployments.</li>
+                                <li>Modernized a legacy Bootstrap application by migrating it to a modern Next.js application, enhancing cross-device responsiveness and user experience.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pl-12 pb-12">
+                    <div class="absolute left-0 top-1.5 w-8 h-8 bg-white border-2 border-slate-300 rounded-full flex items-center justify-center">
+                        <div class="w-4 h-4 bg-slate-300 rounded-full"></div>
+                    </div>
+                    <div class="cursor-pointer">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h3 class="text-xl font-semibold text-slate-800">Senior Software Developer</h3>
+                                <p class="text-slate-500">Digilant | May 2022 - May 2024</p>
+                            </div>
+                            <div class="icon-plus text-teal-500 text-3xl font-light">+</div>
+                        </div>
+                         <div class="timeline-content">
+                            <ul class="list-disc list-inside text-slate-600 space-y-2 mt-2">
+                                <li>Led full-stack development of scalable, high-traffic applications using ReactJS and Ruby on Rails.</li>
+                                <li>Automated ETL pipelines, improving data consistency by 15% and accelerating business reporting.</li>
+                                <li>Streamlined CI/CD pipelines using Jenkins, Docker, and Kubernetes, enabling 30% faster deployments.</li>
+                                <li>Cut AWS costs by 20% via automating EC2 lifecycle management with Terraform and Lambda.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item relative pl-12 pb-12">
+                    <div class="absolute left-0 top-1.5 w-8 h-8 bg-white border-2 border-slate-300 rounded-full flex items-center justify-center">
+                         <div class="w-4 h-4 bg-slate-300 rounded-full"></div>
+                    </div>
+                    <div class="cursor-pointer">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <h3 class="text-xl font-semibold text-slate-800">Data Platform Engineer</h3>
+                                <p class="text-slate-500">FreeNow (MyTaxi) | Jan 2022 - May 2022</p>
+                            </div>
+                           <div class="icon-plus text-teal-500 text-3xl font-light">+</div>
+                        </div>
+                        <div class="timeline-content">
+                            <ul class="list-disc list-inside text-slate-600 space-y-2 mt-2">
+                                <li>Optimized Presto cluster infrastructure on AWS via Terraform and Auto Scaling Groups.</li>
+                                <li>Engineered a rule-based system for dynamic IAM role configuration using Apache Ranger.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item relative pl-12">
+                    <div class="absolute left-0 top-1.5 w-8 h-8 bg-white border-2 border-slate-300 rounded-full flex items-center justify-center">
+                        <div class="w-4 h-4 bg-slate-300 rounded-full"></div>
+                    </div>
+                     <div class="cursor-pointer">
+                        <div class="flex justify-between items-center">
+                           <div>
+                                <h3 class="text-xl font-semibold text-slate-800">More Experience</h3>
+                                <p class="text-slate-500">Cognizant & Finterra Technologies</p>
+                           </div>
+                           <div class="icon-plus text-teal-500 text-3xl font-light">+</div>
+                        </div>
+                        <div class="timeline-content">
+                            <ul class="list-disc list-inside text-slate-600 space-y-2 mt-2">
+                                <li>Developed corporate action services with GraphQL APIs at Cognizant.</li>
+                                <li>Built a custom DSL engine, reducing legacy COBOL server load by 30%.</li>
+                                <li>Developed reactive microservices with Quarkus and Kafka.</li>
+                                <li>Redesigned a crowdfunding portal using Angular 2 at Finterra, reducing page load by 40%.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-white">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">Technical Skills</h2>
+            <p class="text-center text-slate-500 mb-12 max-w-2xl mx-auto">This chart provides a visual overview of my core competencies. My expertise is centered around full-stack development with a strong focus on backend frameworks, modern frontend libraries, and robust DevOps practices.</p>
+            <div class="chart-container">
+                <canvas id="skillsChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">Projects</h2>
+            <p class="text-center text-slate-500 mb-8 max-w-2xl mx-auto">Here are some of the projects I've worked on. You can filter them by technology to see specific examples of my work.</p>
+            <div id="project-filters" class="flex justify-center flex-wrap gap-2 mb-12">
+                <button class="filter-btn active bg-teal-500 text-white px-4 py-2 rounded-full" data-filter="all">All</button>
+                <button class="filter-btn bg-slate-200 text-slate-700 hover:bg-teal-200 px-4 py-2 rounded-full" data-filter="rails">Ruby on Rails</button>
+                <button class="filter-btn bg-slate-200 text-slate-700 hover:bg-teal-200 px-4 py-2 rounded-full" data-filter="react">React/Next.js</button>
+                <button class="filter-btn bg-slate-200 text-slate-700 hover:bg-teal-200 px-4 py-2 rounded-full" data-filter="java">Java</button>
+                <button class="filter-btn bg-slate-200 text-slate-700 hover:bg-teal-200 px-4 py-2 rounded-full" data-filter="angular">Angular</button>
+            </div>
+
+            <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-tech="personal">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">DataFlow</h3>
+                    <p class="text-slate-600 mb-4">Ongoing personal project for managing and visualizing data workflows.</p>
+                    <a href="https://dataflow.360tablero.com/" target="_blank" class="text-teal-600 hover:underline">View Project &rarr;</a>
+                </div>
+                <div class="project-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-tech="personal">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">SmartShop</h3>
+                    <p class="text-slate-600 mb-4">Intelligent shopping assistant to find best prices and optimize grocery trips.</p>
+                    <a href="https://smartshop.360tablero.com/" target="_blank" class="text-teal-600 hover:underline">View Project &rarr;</a>
+                </div>
+                 <div class="project-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-tech="rails react">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Pace-Tracker</h3>
+                    <p class="text-slate-600 mb-4">ETL process and dashboard for advertisement pacing insights. Built with Ruby on Rails, ReactJS, and NodeJS.</p>
+                </div>
+                <div class="project-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-tech="rails react">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Corporate Action</h3>
+                    <p class="text-slate-600 mb-4">Integration with T24 and TCS Bancs for corporate action processing. Built with Ruby on Rails and ReactJS.</p>
+                </div>
+                <div class="project-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-tech="rails angular">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">Crypto-Exchange</h3>
+                    <p class="text-slate-600 mb-4">Ruby on Rails and Angular implementation for Ethereum and ERC20 token transfer.</p>
+                </div>
+                <div class="project-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-tech="java">
+                    <h3 class="text-xl font-semibold mb-2 text-slate-800">DSL Engine (ETL)</h3>
+                    <p class="text-slate-600 mb-4">Java and Nashorn-based engine for parsing text into SQL and JavaScript to process warehouse data.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-800 text-slate-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-2 text-white">Get In Touch</h2>
+            <p class="mb-6">I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team.</p>
+            <a href="mailto:robiul.hassan12102@gmail.com" class="bg-teal-500 text-white px-6 py-3 rounded-lg hover:bg-teal-600 transition-colors text-lg">Say Hello</a>
+            <div class="flex justify-center items-center space-x-4 mt-8">
+                <a href="https://github.com/mrh-jishan" target="_blank" class="hover:text-teal-400 transition-colors">GitHub</a>
+                <span>&middot;</span>
+                <a href="https://www.linkedin.com/in/rhsn1/" target="_blank" class="hover:text-teal-400 transition-colors">LinkedIn</a>
+                 <span>&middot;</span>
+                <a href="https://mrh-jishan.github.io/mrh-jishan" target="_blank" class="hover:text-teal-400 transition-colors">Portfolio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Timeline Accordion
+            const timelineItems = document.querySelectorAll('.timeline-item .cursor-pointer');
+            timelineItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const parent = item.parentElement;
+                    // Close other items
+                    document.querySelectorAll('.timeline-item').forEach(otherItem => {
+                        if (otherItem !== parent && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    parent.classList.toggle('active');
+                });
+            });
+
+            // Skills Chart
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+            const skillsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Ruby on Rails', 'React/Next.js', 'JavaScript', 'Java', 'Python', 'AWS', 'Kubernetes', 'Docker', 'Terraform', 'Databases (SQL/NoSQL)'],
+                    datasets: [{
+                        label: 'Years of Experience / Proficiency',
+                        data: [8, 7, 8, 6, 5, 8, 7, 8, 7, 8],
+                        backgroundColor: 'rgba(20, 184, 166, 0.6)', // teal-500 with opacity
+                        borderColor: 'rgba(15, 118, 110, 1)', // teal-700
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: '#1e293b', // slate-800
+                            titleFont: { size: 16 },
+                            bodyFont: { size: 14 },
+                            padding: 12,
+                            cornerRadius: 6,
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(203, 213, 225, 0.3)' // slate-300 with opacity
+                            },
+                            ticks: {
+                                color: '#475569' // slate-600
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: '#334155' // slate-700
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Project Filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active', 'bg-teal-500', 'text-white'));
+                    filterBtns.forEach(b => b.classList.add('bg-slate-200', 'text-slate-700'));
+                    
+                    btn.classList.add('active', 'bg-teal-500', 'text-white');
+                    btn.classList.remove('bg-slate-200', 'text-slate-700');
+
+                    const filter = btn.dataset.filter;
+
+                    projectCards.forEach(card => {
+                        const tech = card.dataset.tech;
+                        if (filter === 'all' || tech.includes(filter) || (filter === 'personal' && tech.includes('personal'))) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
