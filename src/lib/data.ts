@@ -308,11 +308,11 @@ export const portfolioData: PortfolioData = {
       icon: Workflow,
     },
     {
-      name: "DataGrid",
+      name: "SmartShop",
       description:
         "An ongoing project providing powerful data grid functionalities, part of the 360tablero suite.",
       tags: ["Data Grid", "Web Application", "Enterprise"],
-      liveLink: "https://datagrid.360tablero.com/",
+      liveLink: "https://smartshop.360tablero.com/",
       icon: TableCellsSplit,
     },
     {
