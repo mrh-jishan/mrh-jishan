@@ -17,6 +17,7 @@ Coconut Creek, FL 33066 \
 - [DataFlow](https://dataflow.360tablero.com/)
 - [SmartShop](https://smartshop.360tablero.com/)
 - [CareerCraft](https://careercraft.360tablero.com)
+- [TradeCraft](https://tradecraft.360tablero.com/)
 
 ---
 
