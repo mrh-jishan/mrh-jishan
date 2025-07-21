@@ -12,7 +12,7 @@ Coconut Creek, FL 33066 \
 <p>&nbsp;<img align="center" height="150" width="300" src="https://github-readme-stats.vercel.app/api?username=mrh-jishan&show_icons=true" alt="mrh-jishan" /></p>
 
 ---
-## **Ongoing Project**
+## **Ongoing Personal Project**
 - [DataFlow](https://dataflow.360tablero.com/)
 - [CareerCraft](https://careercraft.360tablero.com)
 - [TradeCraft](https://tradecraft.360tablero.com/)
