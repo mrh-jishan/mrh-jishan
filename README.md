@@ -13,6 +13,7 @@ Coconut Creek, FL 33066 \
 
 ---
 ## **Ongoing Personal Project**
+- [SkillSynapse](https://synapse.360tablero.com/)
 - [DataFlow](https://dataflow.360tablero.com/)
 - [CareerCraft](https://careercraft.360tablero.com)
 - [TradeCraft](https://tradecraft.360tablero.com/)
