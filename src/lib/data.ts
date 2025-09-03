@@ -223,19 +223,6 @@ export const portfolioData: PortfolioData = {
   ],
   experience: [
     {
-      role: "Senior Software Engineer",
-      company: "Digilant (ISPD)",
-      location: "Boston, MA",
-      period: "May 2022 - May 2024",
-      icon: Briefcase,
-      description: [
-        "Developed and maintained full-stack applications using Ruby on Rails, ReactJS, and NodeJS, focusing on data processing and visualization.",
-        "Reduced monthly AWS EC2 costs by 25% by automating instance scheduling with SSM and Lambda, resulting in significant cost savings.",
-        "Enhanced database performance and reliability by migrating multi-model databases to Redshift, reducing manual processing time by 40% and minimizing human error.",
-        "Upgraded legacy Rails applications to version 7.2 with Hotwire and Turbolinks, improving security and maintainability.",
-      ],
-    },
-    {
       role: "Data Platform Engineer",
       company: "FREE NOW (MyTaxi)",
       location: "Hamburg, Germany",
