@@ -77,12 +77,6 @@ Coconut Creek, FL 33066 \
 ---
 
 ## Work Experience
-### Senior Software Engineer at Digilant (ISPD)
-*May 2022 - May 2024 | Boston, MA*
-- Developed and maintained full-stack applications using Ruby on Rails, ReactJS, and NodeJS, focusing on data processing and visualization.
-- Reduced monthly AWS EC2 costs by 25% by automating instance scheduling with SSM and Lambda, resulting in significant cost savings.
-- Enhanced database performance and reliability by migrating multi-model databases to Redshift, reducing manual processing time by 40% and minimizing human error.
-- Upgraded legacy Rails applications to version 7.2 with Hotwire and Turbolinks, improving security and maintainability.
 
 ### Data Platform Engineer at FREE NOW (MyTaxi)
 *Jan 2022 - May 2022 | Hamburg, Germany*
