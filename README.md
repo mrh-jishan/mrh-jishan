@@ -7,9 +7,7 @@ Coconut Creek, FL 33066 \
 
 ---
 
-<p><img align="left" height="150" width="300" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mrh-jishan&layout=compact&hide=html" alt="mrh-jishan" /></p>
-
-<p>&nbsp;<img align="center" height="150" width="300" src="https://github-readme-stats.vercel.app/api?username=mrh-jishan&show_icons=true" alt="mrh-jishan" /></p>
+<img align="center" height="300" width="600" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mrh-jishan&layout=compact&hide=html" alt="mrh-jishan" />
 
 ---
 ## **Ongoing Personal Project**
