@@ -15,16 +15,6 @@ Results-driven Senior Software Engineer with 5+ years of experience designing an
 
 ---
 
-## FEATURED PROJECTS
-
-- [SkillSynapse](https://synapse.360tablero.com/) — Intelligent skill assessment and tracking platform
-- [DataFlow](https://dataflow.360tablero.com/) — Data pipeline orchestration and visualization
-- [CareerCraft](https://careercraft.360tablero.com) — Career development and path planning system
-- [TradeCraft](https://tradecraft.360tablero.com/) — Trade execution and analytics platform
-- [SmartShop](https://smartshop.360tablero.com/) — E-commerce platform with AI recommendations
-
----
-
 ## CORE COMPETENCIES
 
 ### Programming Languages
