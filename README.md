@@ -125,23 +125,15 @@ Kuala Lumpur, Malaysia
 Advanced optimization and boosting platform built as part of 360tablero suite. Provides data-driven enhancement solutions for business operations.  
 **Technology Stack**: React.js, Node.js, PostgreSQL, AWS  
 **Impact**: SaaS platform serving 100+ organizations  
-[View Live](https://metaboost.360tablero.com/)
 
 ### DataFlow
 Enterprise data pipeline orchestration and visualization system. Enables teams to design, monitor, and optimize complex data workflows.  
 **Technology Stack**: Next.js, Go, Apache Airflow, Kubernetes  
 **Key Features**: Real-time monitoring, workflow scheduling, data lineage tracking  
-[View Live](https://dataflow.360tablero.com/)
 
 ### DataGrid
 High-performance, enterprise-grade data grid component providing advanced sorting, filtering, and virtualization capabilities.  
 **Technology Stack**: React.js, TypeScript, Canvas rendering  
-[View Live](https://datagrid.360tablero.com/)
-
-### PlutoCoin
-Cryptocurrency platform integrating blockchain technologies with modern web technologies.  
-**Technology Stack**: Ruby on Rails, React.js, Web3.js  
-[View Live](https://plutocoin.360tablero.com/)
 
 ### Pace-Tracker
 Automated ETL pipeline and analytics dashboard for advertisement pacing optimization. Tracks and optimizes ad delivery metrics in real-time.  
