@@ -119,12 +119,7 @@ Kuala Lumpur, Malaysia
 
 ## NOTABLE PROJECTS & PORTFOLIO
 
-### Metaboost
-Advanced optimization and boosting platform built as part of 360tablero suite. Provides data-driven enhancement solutions for business operations.  
-**Technology Stack**: React.js, Node.js, PostgreSQL, AWS  
-**Impact**: SaaS platform serving 100+ organizations  
-
-### DataFlow
+### DataFlow (https://dataflow.online360.org/)
 Enterprise data pipeline orchestration and visualization system. Enables teams to design, monitor, and optimize complex data workflows.  
 **Technology Stack**: Next.js, Go, Apache Airflow, Kubernetes  
 **Key Features**: Real-time monitoring, workflow scheduling, data lineage tracking  
