@@ -11,8 +11,6 @@ Coconut Creek, FL 33066 | [robiul.hassan12102@gmail.com](mailto:robiul.hassan121
 
 Results-driven Senior Software Engineer with 5+ years of experience designing and architecting scalable, distributed systems. Proven expertise leading cross-functional technical teams, mentoring engineers, and driving system modernization initiatives. Specialized in full-stack development across Ruby on Rails, Node.js, Angular, and modern cloud-native technologies. Demonstrated ability to translate business requirements into technical solutions while maintaining code quality, security, and operational excellence. Positioned for Technical Lead and Engineering Manager roles.
 
-
-
 ---
 
 ## CORE COMPETENCIES
@@ -21,8 +19,8 @@ Results-driven Senior Software Engineer with 5+ years of experience designing an
 - Java (Spring Boot) - Spring Cloud, Microservice, Distributed System
 - Ruby - Rails, PG, devise, Hotwire/Turbolinks, devise, faraday, and pagy 
 - JavaScript/TypeScript/(ES6+) - NextJS, React, Angular, ExpressJS
-- Python
-- **Go (Golang)** — Microservices, system tools, high-performance applications
+- Python, Java, Ruby, **Go (Golang)**
+- Microservices, system tools, high-performance applications
 
 
 ### Backend Frameworks & Architectures
@@ -110,7 +108,7 @@ Results-driven Senior Software Engineer with 5+ years of experience designing an
 ## EDUCATION
 
 ### M.Sc. Computer Science
-Florida Atlantic University | 2025 - Present  
+Florida Atlantic University | 2025 - 2026  
 Coconut Creek, FL, USA
 
 ### B.Sc. Computer Science
