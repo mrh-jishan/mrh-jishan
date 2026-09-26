@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: `${portfolioData.name} | Lead & Staff Software Engineer`,
-  description: `Technical leadership portfolio of ${portfolioData.name} — architecture, cloud platforms, data systems, AI products, and engineering impact.`,
+  description: `Technical leadership portfolio of ${portfolioData.name} - architecture, cloud platforms, data systems, AI products, and engineering impact.`,
   icons: {
     icon: "/favicon.svg",
   },

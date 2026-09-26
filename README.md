@@ -1,4 +1,4 @@
-# Robiul Hassan — Lead / Staff Software Engineer
+# Robiul Hassan - Lead / Staff Software Engineer
 
 Technical leadership portfolio for [Robiul Hassan](https://linkedin.com/in/rhsn1), a senior software engineer focused on scalable platforms, data systems, cloud architecture, and AI-enabled products.
 
@@ -85,7 +85,7 @@ Financial tracking and ledger tools for small businesses and independent contrac
 
 ## Experience highlights
 
-### Staff Software Engineer — Online360 LLC
+### Staff Software Engineer - Online360 LLC
 
 **Coconut Creek, Florida · Remote · Feb 2025–Present**
 
@@ -93,14 +93,14 @@ Financial tracking and ledger tools for small businesses and independent contrac
 - Lead CineForge’s AI planning, media generation, FFmpeg composition, and social publishing pipeline.
 - Lead OpenTrade’s public-data ingestion, contractor verification, search, and consumer experience.
 
-### Teaching Assistant — Florida Atlantic University
+### Teaching Assistant - Florida Atlantic University
 
 **Boca Raton, Florida · Hybrid · Sep 2025–May 2026**
 
 - Supported graduate-level artificial intelligence course delivery, student guidance, and instructional support.
 - Worked with faculty on course logistics and instruction across AI, data science, and analytics topics.
 
-### Senior Software Engineer — Digilant
+### Senior Software Engineer - Digilant
 
 **Boston, Massachusetts · Remote · May 2022–May 2024**
 
@@ -108,7 +108,7 @@ Financial tracking and ledger tools for small businesses and independent contrac
 - Built AWS Lambda, SSM, and Terraform ETL pipelines that reduced ingestion latency by 45%.
 - Improved APIs, reviews, and observability to reduce critical-incident MTTR by 35% while helping lead a 4–5 person engineering team.
 
-### Data Platform Engineer — FREE NOW (MyTaxi)
+### Data Platform Engineer - FREE NOW (MyTaxi)
 
 **Hamburg, Germany · Jan 2022–May 2022**
 
@@ -116,7 +116,7 @@ Financial tracking and ledger tools for small businesses and independent contrac
 - Designed an IAM rules engine supporting consistent configuration across 50+ services.
 - Added Databricks Overwatch and Airflow monitoring to reduce production detection time from hours to minutes.
 
-### Senior Software Engineer Consultant — Cognizant
+### Senior Software Engineer Consultant - Cognizant
 
 **Singapore · Oct 2019–Jan 2022**
 
@@ -124,7 +124,7 @@ Financial tracking and ledger tools for small businesses and independent contrac
 - Built TeamCity and Ansible pipelines supporting 100+ deployments per day.
 - Designed event-driven services processing 10M+ daily events and mentored engineers on microservices and operations.
 
-### Full-Stack Engineer — Finterra Technologies
+### Full-Stack Engineer - Finterra Technologies
 
 **Kuala Lumpur, Malaysia · Nov 2017–Oct 2019**
 
@@ -134,7 +134,7 @@ Financial tracking and ledger tools for small businesses and independent contrac
 
 ## Education
 
-### Master of Science, Computer Science — Florida Atlantic University
+### Master of Science, Computer Science - Florida Atlantic University
 
 **Jan 2025–May 2026 · GPA 3.9**
 
@@ -143,7 +143,7 @@ Financial tracking and ledger tools for small businesses and independent contrac
 - Served as a graduate researcher and Teaching Assistant supporting AI and data science instruction.
 - Built the Closest Pair App to visualize computational geometry algorithms.
 
-### Bachelor’s Degree, Computer Science — Asia Pacific University of Technology & Innovation
+### Bachelor’s Degree, Computer Science - Asia Pacific University of Technology & Innovation
 
 **Apr 2015–Nov 2018**
 
@@ -154,7 +154,7 @@ Financial tracking and ledger tools for small businesses and independent contrac
 
 ## Professional development
 
-- NgRx (with NgRx Data) — The Complete Guide, 2020
+- NgRx (with NgRx Data) - The Complete Guide, 2020
 - Ultimate AWS Certified Developer Associate, 2020
 - Certified Kubernetes Application Developer, 2020
 - Intro to AI: UC Berkeley CS188, 2017

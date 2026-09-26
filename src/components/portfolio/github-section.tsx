@@ -97,7 +97,7 @@ export function GitHubSection() {
   return (
     <SectionWrapper eyebrow="GITHUB SIGNAL" title="Engineering range, visible in the work." id="github" className="bg-[#0b1d2a] text-white" titleClassName="text-white">
       <div className="mb-8 flex flex-col justify-between gap-5 border-b border-white/10 pb-7 md:flex-row md:items-end">
-        <p className="max-w-2xl text-base leading-7 text-slate-300">A live view of public repositories—showing the languages, experimentation, and recent delivery behind the résumé.</p>
+        <p className="max-w-2xl text-base leading-7 text-slate-300">A live view of public repositories-showing the languages, experimentation, and recent delivery behind the résumé.</p>
         <div className="flex items-center gap-4">
           <span className="inline-flex items-center gap-2 text-xs text-slate-400">{isLive ? <><span className="h-2 w-2 rounded-full bg-[#b9f26b]" />Live GitHub data</> : <><RefreshCw className="h-3.5 w-3.5" />Cached snapshot</>}</span>
           <a href={`https://github.com/${GITHUB_USER}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#b9f26b]">View profile <ArrowUpRight className="h-4 w-4" /></a>

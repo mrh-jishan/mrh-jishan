@@ -34,13 +34,13 @@ export const portfolioData: PortfolioData = {
   shortName: "RH",
   avatarUrl: "https://avatars.githubusercontent.com/u/16862701?v=4",
   title: "Lead / Staff Software Engineer",
-  positioning: "I turn complex product ideas into reliable platforms — aligning architecture, delivery, and the engineers who make both work.",
+  positioning: "I turn complex product ideas into reliable platforms - aligning architecture, delivery, and the engineers who make both work.",
   contact: { address: "Coconut Creek, Florida", email: "robiul.hassan12102@gmail.com" },
   socialLinks: [
     { name: "LinkedIn", url: "https://linkedin.com/in/rhsn1", icon: Linkedin },
     { name: "GitHub", url: "https://github.com/mrh-jishan", icon: Github },
   ],
-  summary: "Senior software engineer and technical leader with 8+ years of experience across cloud platforms, data systems, fintech, and AI-enabled products. I work across the stack — from product framing and system design to delivery, observability, and mentorship — with a bias for simple architecture, measurable outcomes, and teams that can move with confidence.",
+  summary: "Senior software engineer and technical leader with 8+ years of experience across cloud platforms, data systems, fintech, and AI-enabled products. I work across the stack - from product framing and system design to delivery, observability, and mentorship - with a bias for simple architecture, measurable outcomes, and teams that can move with confidence.",
   metrics: [
     { value: "8+", label: "Years building", detail: "Production software across four markets" },
     { value: "12", label: "Products in lab", detail: "Online360 product portfolio" },
@@ -73,7 +73,7 @@ export const portfolioData: PortfolioData = {
   experience: [
     {
       role: "Staff Software Engineer", company: "Online360 LLC", location: "Coconut Creek, Florida · Remote",
-      period: "Feb 2025 — Present", icon: Sparkles,
+      period: "Feb 2025 - Present", icon: Sparkles,
       description: [
         "Lead product architecture and hands-on delivery across Online360’s software portfolio, turning early product ideas into secure, production-ready platforms.",
         "Lead CineForge, a prompt-to-published-video system spanning AI scene planning, media generation, FFmpeg composition, and multi-channel distribution.",
@@ -82,7 +82,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       role: "Teaching Assistant", company: "Florida Atlantic University", location: "Boca Raton, Florida · Hybrid",
-      period: "Sep 2025 — May 2026", icon: GraduationCap,
+      period: "Sep 2025 - May 2026", icon: GraduationCap,
       description: [
         "Supported graduate-level artificial intelligence course delivery through student guidance, instructional support, and clear explanations of complex technical concepts.",
         "Worked directly with faculty to support course logistics, student success, and instruction across AI, data science, and analytics topics.",
@@ -90,7 +90,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       role: "Senior Software Engineer", company: "Digilant", location: "Boston, Massachusetts · Remote",
-      period: "May 2022 — May 2024", icon: BarChart3,
+      period: "May 2022 - May 2024", icon: BarChart3,
       description: [
         "Led backend design and scaling for a reporting and analytics platform processing multi-million-row daily datasets and gigabyte-scale data flows with AWS, PostgreSQL, and Snowflake.",
         "Designed serverless ETL pipelines with AWS Lambda, SSM, and Terraform, reducing ingestion latency by 45% while lowering infrastructure overhead.",
@@ -99,7 +99,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       role: "Data Platform Engineer", company: "FREE NOW (MyTaxi)", location: "Hamburg, Germany",
-      period: "Jan 2022 — May 2022", icon: BriefcaseBusiness,
+      period: "Jan 2022 - May 2022", icon: BriefcaseBusiness,
       description: [
         "Improved AWS Presto cluster provisioning with Terraform and Auto Scaling Groups, increasing platform reliability and elasticity.",
         "Designed a rules engine for IAM role configuration across 50+ services, standardizing access controls in a distributed environment.",
@@ -108,7 +108,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       role: "Senior Software Engineer Consultant", company: "Cognizant Technology Solutions", location: "Singapore",
-      period: "Oct 2019 — Jan 2022", icon: BriefcaseBusiness,
+      period: "Oct 2019 - Jan 2022", icon: BriefcaseBusiness,
       description: [
         "Led the migration of 12+ Spring Boot services to OpenShift and shaped repeatable cloud-native deployment patterns.",
         "Built TeamCity and Ansible delivery pipelines supporting 100+ deployments per day across multiple teams.",
@@ -117,7 +117,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       role: "Full-Stack Engineer", company: "Finterra Technologies Sdn Bhd", location: "Kuala Lumpur, Malaysia",
-      period: "Nov 2017 — Oct 2019", icon: BriefcaseBusiness,
+      period: "Nov 2017 - Oct 2019", icon: BriefcaseBusiness,
       description: [
         "Delivered a crypto-exchange platform using Ruby on Rails, Angular, and AWS, supporting a high-value transactional product.",
         "Reduced deployment time from hours to minutes by introducing automated AWS delivery pipelines.",
@@ -130,7 +130,7 @@ export const portfolioData: PortfolioData = {
       degree: "Master of Science, Computer Science",
       institution: "Florida Atlantic University",
       location: "Boca Raton, Florida",
-      period: "Jan 2025 — May 2026",
+      period: "Jan 2025 - May 2026",
       grade: "GPA 3.9",
       summary: "Graduate focus in artificial intelligence, data science, and machine learning, combining advanced coursework with instructional and applied project work.",
       highlights: [
@@ -145,7 +145,7 @@ export const portfolioData: PortfolioData = {
       degree: "Bachelor’s Degree, Computer Science",
       institution: "Asia Pacific University of Technology & Innovation (APU / APIIT)",
       location: "Kuala Lumpur, Malaysia",
-      period: "Apr 2015 — Nov 2018",
+      period: "Apr 2015 - Nov 2018",
       summary: "Built a broad computer-science foundation spanning artificial intelligence, data structures, concurrent programming, and software engineering.",
       highlights: [
         "Thesis: Students Enrolment Recommendation System using a neural-network recommendation engine.",
@@ -215,7 +215,7 @@ export const portfolioData: PortfolioData = {
   certifications: [
     { name: "Ultimate AWS Certified Developer Associate", issuer: "Professional development", year: "2020", icon: Award },
     { name: "Certified Kubernetes Application Developer", issuer: "Professional development", year: "2020", icon: Award },
-    { name: "NgRx (with NgRx Data) — The Complete Guide", issuer: "Professional development", year: "2020", icon: Award },
+    { name: "NgRx (with NgRx Data) - The Complete Guide", issuer: "Professional development", year: "2020", icon: Award },
     { name: "Intro to AI: UC Berkeley CS188", issuer: "Independent coursework", year: "2017", icon: Award },
   ],
   navItems: [
