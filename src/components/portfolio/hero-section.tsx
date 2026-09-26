@@ -1,5 +1,6 @@
 import { portfolioData } from "@/lib/data";
 import { ArrowDownRight, ArrowUpRight, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export function HeroSection() {
   return (
@@ -29,7 +30,10 @@ export function HeroSection() {
           </div>
           <aside className="reveal-up reveal-delay-3 rounded-[1.75rem] border border-slate-200 bg-white/90 p-6 shadow-[0_24px_80px_-45px_rgba(11,29,42,.45)] backdrop-blur md:p-7">
             <div className="flex items-center justify-between">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0b1d2a] font-mono text-base font-bold text-[#b9f26b]">{portfolioData.shortName}</div>
+              <div className="relative">
+                <Image src={portfolioData.avatarUrl} alt={`Portrait of ${portfolioData.name}`} width={72} height={72} priority className="h-[72px] w-[72px] rounded-2xl border-2 border-white object-cover shadow-md" />
+                <span className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full border-2 border-white bg-[#78b63e]" aria-label="Available for opportunities" />
+              </div>
               <a href="https://online360.org" target="_blank" rel="noreferrer" aria-label="Visit Online360" className="rounded-full border border-slate-200 p-2.5 text-slate-500 transition hover:border-[#337b76] hover:text-[#337b76]">
                 <ArrowUpRight className="h-4 w-4" />
               </a>
@@ -39,6 +43,13 @@ export function HeroSection() {
             <p className="mt-3 text-sm leading-6 text-slate-600">Cloud platforms, data products, AI workflows, and the engineering practices that help teams scale.</p>
             <div className="mt-7 flex items-center gap-2 border-t border-slate-100 pt-5 text-sm text-slate-500">
               <MapPin className="h-4 w-4 text-[#337b76]" /> {portfolioData.contact.address}
+            </div>
+            <div className="mt-4 flex gap-2">
+              {portfolioData.socialLinks.map((link) => (
+                <a key={link.name} href={link.url} target="_blank" rel="noreferrer" aria-label={`Visit ${link.name}`} className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:border-[#337b76] hover:bg-[#eff9f6] hover:text-[#337b76]">
+                  <link.icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </aside>
         </div>

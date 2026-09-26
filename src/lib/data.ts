@@ -21,7 +21,7 @@ export interface ProjectItem {
 }
 export interface CertificationItem { name: string; issuer: string; year: string; icon?: LucideIcon }
 export interface PortfolioData {
-  name: string; shortName: string; title: string; positioning: string;
+  name: string; shortName: string; avatarUrl: string; title: string; positioning: string;
   contact: { address: string; email: string };
   socialLinks: SocialLink[]; summary: string; metrics: MetricItem[];
   leadership: { title: string; description: string; icon: LucideIcon }[];
@@ -32,6 +32,7 @@ export interface PortfolioData {
 export const portfolioData: PortfolioData = {
   name: "Robiul Hassan",
   shortName: "RH",
+  avatarUrl: "https://avatars.githubusercontent.com/u/16862701?v=4",
   title: "Lead / Staff Software Engineer",
   positioning: "I turn complex product ideas into reliable platforms — aligning architecture, delivery, and the engineers who make both work.",
   contact: { address: "Coconut Creek, Florida", email: "robiul.hassan12102@gmail.com" },

@@ -3,6 +3,7 @@
 import { portfolioData } from "@/lib/data";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,7 +20,7 @@ export function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all ${scrolled ? "border-b border-slate-200 bg-[#f4f7f4]/90 backdrop-blur-xl" : "bg-transparent"}`}>
       <div className="container mx-auto flex h-16 items-center justify-between px-5 md:px-8">
         <a href="#about" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0b1d2a] font-mono text-xs font-bold text-[#b9f26b]">{portfolioData.shortName}</span>
+          <Image src={portfolioData.avatarUrl} alt="" width={36} height={36} className="h-9 w-9 rounded-xl border border-white object-cover shadow-sm" />
           <span className="text-sm font-semibold tracking-tight text-[#0b1d2a]">{portfolioData.name}</span>
         </a>
         <nav className="hidden items-center gap-7 lg:flex">
