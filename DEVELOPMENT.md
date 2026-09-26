@@ -83,6 +83,8 @@ Most public profile content is maintained in `src/lib/data.ts`, including:
 
 Page-level presentation lives in `src/components/portfolio/`.
 
+The GitHub section reads public repository metadata from the GitHub REST API in the browser. It falls back to a bundled snapshot if the anonymous API rate limit is unavailable, so the page remains usable without credentials or environment variables.
+
 ## Useful scripts
 
 | Command | Purpose |

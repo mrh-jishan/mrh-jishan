@@ -219,7 +219,7 @@ export const portfolioData: PortfolioData = {
   ],
   navItems: [
     { label: "Profile", href: "#about" }, { label: "Impact", href: "#impact" },
-    { label: "Work", href: "#projects" }, { label: "Experience", href: "#experience" },
+    { label: "Work", href: "#projects" }, { label: "GitHub", href: "#github" }, { label: "Experience", href: "#experience" },
     { label: "Capabilities", href: "#skills" }, { label: "Contact", href: "#contact" },
   ],
 };

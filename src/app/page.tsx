@@ -6,6 +6,7 @@ import { SkillsSection } from '@/components/portfolio/skills-section';
 import { ExperienceSection } from '@/components/portfolio/experience-section';
 import { CredentialsSection } from '@/components/portfolio/credentials-section';
 import { ContactSection } from '@/components/portfolio/contact-section';
+import { GitHubSection } from '@/components/portfolio/github-section';
 
 export default function PortfolioPage() {
   return (
@@ -14,6 +15,7 @@ export default function PortfolioPage() {
       <ImpactSection />
       <SummarySection />
       <ProjectsSection />
+      <GitHubSection />
       <ExperienceSection />
       <SkillsSection />
       <CredentialsSection />
