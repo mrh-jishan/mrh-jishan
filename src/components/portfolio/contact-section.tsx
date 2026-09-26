@@ -1,49 +1,25 @@
-"use client";
-
-import { portfolioData } from '@/lib/data';
-import { SectionWrapper } from '@/components/portfolio/section-wrapper';
-import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Github, MapPin } from 'lucide-react';
+import { portfolioData } from "@/lib/data";
+import { ArrowUpRight, Mail } from "lucide-react";
 
 export function ContactSection() {
   return (
-    <SectionWrapper title="Get In Touch" id="contact" className="bg-card">
-      <div className="max-w-xl mx-auto text-center">
-        <p className="text-lg text-foreground mb-8">
-          I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-        </p>
-        
-        <div className="space-y-4 mb-8">
-          <a href={`mailto:${portfolioData.contact.email}`} className="flex items-center justify-center gap-3 text-lg text-primary hover:text-accent transition-colors group">
-            <Mail className="h-6 w-6 group-hover:animate-ping-once" />
-            <span>{portfolioData.contact.email}</span>
-          </a>
-          <div className="flex items-center justify-center gap-3 text-md text-muted-foreground">
-            <MapPin className="h-5 w-5" />
-            <span>{portfolioData.contact.address}</span>
+    <section id="contact" className="scroll-mt-20 bg-[#0b1d2a] px-5 py-20 text-white md:px-8 md:py-28">
+      <div className="container mx-auto">
+        <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="max-w-4xl">
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#b9f26b]">NEXT CHAPTER</p>
+            <h2 className="mt-5 text-balance text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-6xl">Looking for a technical leader who still loves the work?</h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">I’m interested in Lead and Staff Engineer roles where architecture, product judgment, and team enablement matter equally.</p>
           </div>
+          <a href={`mailto:${portfolioData.contact.email}`} className="group inline-flex h-32 w-32 items-center justify-center rounded-full bg-[#b9f26b] text-[#0b1d2a] transition hover:scale-105 md:h-40 md:w-40">
+            <span className="text-center text-sm font-bold">Email me <ArrowUpRight className="mx-auto mt-1 h-5 w-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></span>
+          </a>
         </div>
-
-        <div className="flex justify-center gap-4">
-          {portfolioData.socialLinks.map((link) => (
-             <Button key={link.name} variant="outline" asChild className="transition-all transform hover:scale-110 hover:bg-accent/10 hover:border-accent">
-              <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2">
-                <link.icon size={20} />
-                <span>{link.name}</span>
-              </a>
-            </Button>
-          ))}
+        <div className="mt-16 flex flex-col gap-5 border-t border-white/10 pt-7 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+          <a href={`mailto:${portfolioData.contact.email}`} className="flex items-center gap-2 text-white hover:text-[#b9f26b]"><Mail className="h-4 w-4" />{portfolioData.contact.email}</a>
+          <div className="flex gap-5">{portfolioData.socialLinks.map((link) => <a key={link.name} href={link.url} target="_blank" rel="noreferrer" className="hover:text-white">{link.name}</a>)}</div>
         </div>
       </div>
-      <style jsx global>{`
-        .group-hover\\:animate-ping-once:hover .lucide-mail {
-          animation: ping-once 0.5s cubic-bezier(0, 0, 0.2, 1);
-        }
-        @keyframes ping-once {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.2); }
-        }
-      `}</style>
-    </SectionWrapper>
+    </section>
   );
 }

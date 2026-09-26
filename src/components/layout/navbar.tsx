@@ -1,75 +1,40 @@
 "use client";
 
-import Link from 'next/link';
-import { portfolioData } from '@/lib/data';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Briefcase } from 'lucide-react'; // Using Briefcase as a generic logo icon
-import { useState, useEffect } from 'react';
+import { portfolioData } from "@/lib/data";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("#")) {
-      e.preventDefault();
-      const targetId = href.substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-    setIsOpen(false); // Close sheet on link click
-  };
-  
-  const navLinks = portfolioData.navItems.map((item) => (
-    <Link
-      key={item.label}
-      href={item.href}
-      onClick={(e) => handleLinkClick(e, item.href)}
-      className="text-sm font-medium transition-colors hover:text-primary"
-    >
-      {item.label}
-    </Link>
-  ));
-
   return (
-    <header className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-md' : 'bg-background'}`}>
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="#" className="flex items-center gap-2" onClick={(e) => handleLinkClick(e, "#")}>
-          <Briefcase className="h-6 w-6 text-primary" />
-          <span className="font-semibold text-lg">{portfolioData.name.split(" ")[0]}</span>
-        </Link>
-        <nav className="hidden gap-6 md:flex">
-          {navLinks}
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all ${scrolled ? "border-b border-slate-200 bg-[#f4f7f4]/90 backdrop-blur-xl" : "bg-transparent"}`}>
+      <div className="container mx-auto flex h-16 items-center justify-between px-5 md:px-8">
+        <a href="#about" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0b1d2a] font-mono text-xs font-bold text-[#b9f26b]">{portfolioData.shortName}</span>
+          <span className="text-sm font-semibold tracking-tight text-[#0b1d2a]">{portfolioData.name}</span>
+        </a>
+        <nav className="hidden items-center gap-7 lg:flex">
+          {portfolioData.navItems.map((item) => <a key={item.href} href={item.href} className="text-xs font-semibold text-slate-600 transition hover:text-[#0b1d2a]">{item.label}</a>)}
         </nav>
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon">
-              <Menu className="h-6 w-6" />
-              <span className="sr-only">Toggle navigation menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right">
-            <nav className="grid gap-6 text-lg font-medium mt-8">
-              <Link href="#" className="flex items-center gap-2 text-lg font-semibold mb-4" onClick={(e) => handleLinkClick(e, "#")}>
-                 <Briefcase className="h-6 w-6 text-primary" />
-                <span className="sr-only">{portfolioData.name}</span>
-              </Link>
-              {navLinks}
-            </nav>
-          </SheetContent>
-        </Sheet>
+        <a href={`mailto:${portfolioData.contact.email}`} className="hidden items-center gap-1.5 rounded-full bg-[#0b1d2a] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#17384b] sm:flex">Let&apos;s talk <ArrowUpRight className="h-3.5 w-3.5" /></a>
+        <button type="button" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen(!open)} className="rounded-full border border-slate-300 bg-white p-2 text-[#0b1d2a] lg:hidden">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
       </div>
+      {open && (
+        <nav className="border-t border-slate-200 bg-[#f4f7f4] px-5 py-5 lg:hidden">
+          <div className="container mx-auto grid gap-1">
+            {portfolioData.navItems.map((item) => <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="rounded-xl px-3 py-3 text-sm font-semibold text-[#0b1d2a] hover:bg-white">{item.label}</a>)}
+          </div>
+        </nav>
+      )}
     </header>
   );
 }

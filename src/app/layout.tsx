@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${portfolioData.name} | ${portfolioData.title.split('(')[0].trim()}`,
-  description: `Portfolio of ${portfolioData.name}, ${portfolioData.title}. Showcasing skills in ${portfolioData.skills.slice(0,2).map(s => s.name).join(', ')} and more.`,
+  title: `${portfolioData.name} | Lead & Staff Software Engineer`,
+  description: `Technical leadership portfolio of ${portfolioData.name} — architecture, cloud platforms, data systems, AI products, and engineering impact.`,
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans bg-background text-foreground antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background font-sans text-foreground antialiased`}>
         <Navbar />
         <main className="flex-grow">
           {children}

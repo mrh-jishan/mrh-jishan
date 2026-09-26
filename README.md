@@ -1,159 +1,186 @@
-# ROBIUL HASSAN
+# Robiul Hassan — Lead / Staff Software Engineer
 
-**Senior Software Engineer | Technical Leadership | Full-Stack Architecture**
+Technical leadership portfolio for [Robiul Hassan](https://linkedin.com/in/rhsn1), a senior software engineer focused on scalable platforms, data systems, cloud architecture, and AI-enabled products.
 
-Coconut Creek, FL 33066 | [robiul.hassan12102@gmail.com](mailto:robiul.hassan12102@gmail.com)  
-[LinkedIn](https://linkedin.com/in/rhsn1) | [GitHub](https://github.com/mrh-jishan) | [Portfolio](https://online360.org/)
+This profile is designed for **Lead Software Engineer** and **Staff Software Engineer** opportunities. It emphasizes engineering scope, measurable outcomes, architecture, delivery leadership, and the ability to increase a team’s technical leverage.
 
----
+## Leadership profile
 
-## PROFESSIONAL SUMMARY
+I turn complex product ideas into reliable platforms by connecting architecture, execution, and people. My experience spans cloud platforms, fintech, distributed systems, data products, and full-stack product delivery across the United States, Germany, Singapore, and Malaysia.
 
-Results-driven Senior Software Engineer with 5+ years of experience designing and architecting scalable, distributed systems. Proven expertise leading cross-functional technical teams, mentoring engineers, and driving system modernization initiatives. Specialized in full-stack development across Ruby on Rails, Node.js, Angular, and modern cloud-native technologies. Demonstrated ability to translate business requirements into technical solutions while maintaining code quality, security, and operational excellence. Positioned for Technical Lead and Engineering Manager roles.
+| Engineering impact | Evidence |
+| --- | --- |
+| **8+ years** | Building and operating production software across multiple markets |
+| **12 products** | Current product portfolio within the Online360 software lab |
+| **10M+ events/day** | Event-driven enterprise data services |
+| **100+ deploys/day** | Delivery automation enabled across multiple teams |
+| **50+ services** | Standardized IAM configuration in a distributed platform |
+| **12+ services migrated** | Spring Boot workloads moved to OpenShift |
 
----
+## What I bring at Lead / Staff level
 
-## CORE COMPETENCIES
+- **Technical direction:** translate product goals into architecture, milestones, and explicit tradeoffs.
+- **Systems thinking:** connect application design, data flows, infrastructure, security, and operability.
+- **Delivery leadership:** shorten feedback loops with CI/CD, observability, and clear ownership.
+- **Engineering leverage:** improve standards, reviews, documentation, mentoring, and incident response.
+- **Hands-on execution:** contribute across Ruby on Rails, TypeScript, React/Next.js, Node.js, Java/Spring Boot, Python, Go, AWS, Kubernetes, Terraform, PostgreSQL, and Kafka.
 
-### Programming Languages
-- Java (Spring Boot) - Spring Cloud, Microservice, Distributed System
-- Ruby - Rails, PG, devise, Hotwire/Turbolinks, devise, faraday, and pagy 
-- JavaScript/TypeScript/(ES6+) - NextJS, React, Angular, ExpressJS
-- Python, Java, Ruby, **Go (Golang)**
-- Microservices, system tools, high-performance applications
+## Selected Online360 portfolio
 
+[Online360](https://online360.org) is a software lab focused on AI, data visualization, compliance technology, and custom software. Selected products featured in this portfolio:
 
-### Backend Frameworks & Architectures
-- Ruby on Rails (5+ years)
-- Spring Boot (Enterprise applications)
-- Node.js / Express.js
-- Next.js (Full-stack React)
-- Quarkus (Reactive microservices)
-- Hotwire / Turbolinks
+### [CineForge](https://cineforge.online360.org/)
 
-### Frontend Technologies
-- React.js (Modern patterns, hooks, state management)
-- Angular (2+)
-- TypeScript
-- Responsive design & accessibility
+A prompt-to-video workflow covering AI scene planning, visuals, narration, music, and publishing to multiple social channels.
 
-### Databases & Data Systems
-- PostgreSQL (Advanced queries, optimization)
-- MySQL
-- MongoDB (Document-based architecture)
-- Redis (Caching, real-time features)
-- CouchDB, DB2
-- Snowflake, Redshift (Data warehousing)
+**Focus:** AI workflow orchestration, media pipeline design, publishing integrations, and reliability.
 
-### Cloud & Infrastructure
-- **AWS** (EC2, Lambda, RDS, S3, CloudFormation)
-- Docker & **Docker Compose** (Container orchestration)
-- Kubernetes (CKAD certified)
-- OpenShift
-- Infrastructure as Code (Terraform, Ansible)
-- Heroku
+### [OpenTrade](https://opentrade.online360.org/)
 
-### Data & Event Processing
-- Apache Kafka (Event streaming)
-- Apache Airflow (Workflow orchestration)
-- Databricks
-- ActiveMQ
-- ETL/ELT pipelines
+An open directory of verified, licensed trade contractors built directly from state licensing registries.
 
-### DevOps & CI/CD
-- GitLab CI/CD
-- TeamCity
-- AWS deployment & automation
-- Terraform & infrastructure provisioning
-- Container orchestration & deployment strategies
+**Focus:** product architecture, public-data ingestion, verification workflows, search, and production delivery.
 
-### Development Methodologies
-- Agile/Scrum (Team lead experience)
-- Code review best practices
-- System design & architecture
-- Mentoring & knowledge sharing
+### [DataFlow](https://dataflow.online360.org/)
 
----
+A modern analytics workspace for uploading data, building charts, assembling dashboards and reports, and sharing results.
 
-## PROFESSIONAL EXPERIENCE
+**Focus:** product architecture, workflow design, data-platform integration, and production delivery.
 
-### Data Platform Engineer | FREE NOW (MyTaxi)
-*Jan 2022 - May 2022 | Hamburg, Germany*
+### [AgentReady](https://agentready.online360.org/)
 
-- **Infrastructure & Scalability**: Designed and optimized Presto cluster deployment on AWS using Terraform and Auto Scaling Groups, improving query performance and reducing infrastructure costs by 25%.
-- **Security Architecture**: Engineered a custom rule engine for IAM role configuration in a distributed system, enhancing security posture and standardizing access control policies across 50+ services.
-- **Observability & Reliability**: Implemented comprehensive monitoring using Databricks Overwatch and Apache Airflow, reducing production incident detection time from hours to minutes and improving system MTTR.
-- **Technical Leadership**: Collaborated with platform and analytics teams to define standards for data infrastructure, influencing technical decisions for downstream systems.
+AI shopping-readiness audits that help ecommerce stores prepare their catalogs and customer experience for agent-led purchasing.
 
-### Associate - Projects (Senior Software Engineer Consultant) | Cognizant Technology Solutions
-*Oct 2019 - Jan 2022 | Singapore*
+**Focus:** platform architecture, assessment workflows, production infrastructure, and product strategy.
 
-- **Cloud Migration**: Led migration of 12+ Spring Boot applications to OpenShift using GitLab, resulting in improved deployment frequency and reduced operational overhead.
-- **CI/CD Infrastructure**: Architected and implemented enterprise CI/CD pipelines using TeamCity and Ansible, enabling 100+ deployments daily across multiple teams.
-- **Event-Driven Architecture**: Designed and implemented high-throughput data transformation systems using Apache Kafka, CouchDB, and ActiveMQ, processing 10M+ events daily with 99.9% reliability.
-- **Data Integration**: Built custom DSL engine for DB2 data migration, automating complex integration workflows and reducing manual effort by 80%.
-- **Reactive Systems**: Developed responsive applications using Quarkus and Kafka reactive adapters, improving system throughput by 3x compared to traditional approaches.
-- **Team Development**: Mentored junior engineers in microservices architecture, cloud-native development, and DevOps practices.
+### [AskRank](https://askrank.online360.org/)
 
-### Front-End Developer | Finterra Technologies Sdn Bhd
-*Nov 2017 - Oct 2019 | Kuala Lumpur, Malaysia*
+AI visibility scoring for local businesses, with practical recommendations to improve how AI assistants present a brand.
 
-- **Full-Stack Development**: Architected and delivered a full-stack cryptocurrency exchange platform using Ruby on Rails, Angular, and AWS, handling $2M+ monthly transaction volume.
-- **DevOps & Automation**: Implemented automated CI/CD pipelines on AWS, reducing deployment time from 4 hours to 15 minutes and enabling continuous delivery practices.
-- **Performance Optimization**: Redesigned crowdfunding portal with advanced lazy loading and pagination in Angular, improving page load time by 60% and reducing bounce rate.
-- **Technical Documentation**: Established coding standards and best practices documentation for frontend team, improving code consistency and maintainability.
+**Focus:** full-stack engineering, scoring workflows, automated reporting, and cloud operations.
 
----
+### [Disclosely](https://disclosely.online360.org/)
 
-## EDUCATION
+An EU AI Act Article 50 compliance kit for teams preparing for AI transparency requirements.
 
-### M.Sc. Computer Science
-Florida Atlantic University | 2025 - 2026  
-Coconut Creek, FL, USA
+**Focus:** compliance workflow design, product architecture, implementation guidance, and delivery.
 
-### B.Sc. Computer Science
-Asia Pacific University of Technology and Innovation | 2015 - 2018  
-Kuala Lumpur, Malaysia
+### [Pixel Click Tracker](https://pixeltracker.online360.org/)
 
----
+Per-pixel interaction tracking with a lightweight browser SDK, live heatmaps, and a Node.js/PostgreSQL backend.
 
-## NOTABLE PROJECTS & PORTFOLIO
+**Focus:** SDK and event architecture, analytics experience, backend design, and deployment.
 
-### DataFlow (https://dataflow.online360.org/)
-Enterprise data pipeline orchestration and visualization system. Enables teams to design, monitor, and optimize complex data workflows.  
-**Technology Stack**: Next.js, Go, Apache Airflow, Kubernetes  
-**Key Features**: Real-time monitoring, workflow scheduling, data lineage tracking  
+### [LifeMath](https://lifemath.online360.org/)
 
-### DataGrid
-High-performance, enterprise-grade data grid component providing advanced sorting, filtering, and virtualization capabilities.  
-**Technology Stack**: React.js, TypeScript, Canvas rendering  
+A long-term financial model for comparing renting and buying, investments, and wealth scenarios.
 
-### Pace-Tracker
-Automated ETL pipeline and analytics dashboard for advertisement pacing optimization. Tracks and optimizes ad delivery metrics in real-time.  
-**Technology Stack**: Ruby on Rails, React.js, Node.js, PostgreSQL  
-**Key Achievement**: Reduced ad over-delivery by 35%, improving ROI
+**Focus:** financial modeling, scenario design, product engineering, and decision support.
 
-### Corporate Action Platform
-Financial integration platform connecting with T24 and TCS Bancs for corporate action processing. Handles complex financial transactions and settlements.  
-**Technology Stack**: Ruby on Rails, React.js, Node.js, MySQL  
-**Scale**: Processes 1000+ corporate actions daily
+### [PilotLedger](https://pilotledger.online360.org/)
 
----
+Financial tracking and ledger tools for small businesses and independent contractors.
 
-## PROFESSIONAL CERTIFICATIONS & CONTINUOUS LEARNING
+**Focus:** product architecture, financial workflows, reporting, and production infrastructure.
 
-- **Certified Kubernetes Application Developer (CKAD)** — The Linux Foundation (2020)
-- **AWS Certified Developer Associate** — Amazon Web Services (2020)
-- **NgRx Advanced State Management** — Udemy (2020)
+## Experience highlights
 
----
+### Staff Software Engineer — Online360 LLC
 
-## TECHNICAL INTERESTS & EMERGING TECHNOLOGIES
+**Coconut Creek, Florida · Remote · Feb 2025–Present**
 
-- Microservices architecture and Go-based system tools
-- Cloud-native application development
-- Real-time data processing and streaming systems
-- Technical team leadership and engineering culture
-- System design and scalability patterns
+- Lead product architecture and hands-on delivery across Online360’s software portfolio.
+- Lead CineForge’s AI planning, media generation, FFmpeg composition, and social publishing pipeline.
+- Lead OpenTrade’s public-data ingestion, contractor verification, search, and consumer experience.
 
+### Teaching Assistant — Florida Atlantic University
 
+**Boca Raton, Florida · Hybrid · Sep 2025–May 2026**
+
+- Supported graduate-level artificial intelligence course delivery, student guidance, and instructional support.
+- Worked with faculty on course logistics and instruction across AI, data science, and analytics topics.
+
+### Senior Software Engineer — Digilant
+
+**Boston, Massachusetts · Remote · May 2022–May 2024**
+
+- Led backend design and scaling for analytics workloads processing multi-million-row daily datasets and gigabyte-scale data flows.
+- Built AWS Lambda, SSM, and Terraform ETL pipelines that reduced ingestion latency by 45%.
+- Improved APIs, reviews, and observability to reduce critical-incident MTTR by 35% while helping lead a 4–5 person engineering team.
+
+### Data Platform Engineer — FREE NOW (MyTaxi)
+
+**Hamburg, Germany · Jan 2022–May 2022**
+
+- Improved AWS Presto provisioning with Terraform and Auto Scaling Groups.
+- Designed an IAM rules engine supporting consistent configuration across 50+ services.
+- Added Databricks Overwatch and Airflow monitoring to reduce production detection time from hours to minutes.
+
+### Senior Software Engineer Consultant — Cognizant
+
+**Singapore · Oct 2019–Jan 2022**
+
+- Led the migration of 12+ Spring Boot services to OpenShift.
+- Built TeamCity and Ansible pipelines supporting 100+ deployments per day.
+- Designed event-driven services processing 10M+ daily events and mentored engineers on microservices and operations.
+
+### Full-Stack Engineer — Finterra Technologies
+
+**Kuala Lumpur, Malaysia · Nov 2017–Oct 2019**
+
+- Delivered a crypto-exchange platform using Ruby on Rails, Angular, and AWS.
+- Reduced deployment time from hours to minutes through delivery automation.
+- Improved a crowdfunding portal with progressive loading and pagination.
+
+## Education
+
+### Master of Science, Computer Science — Florida Atlantic University
+
+**Jan 2025–May 2026 · GPA 3.9**
+
+- Focused on artificial intelligence, data science, and machine learning.
+- Coursework includes Deep Learning, Data Science, Computer Vision, Data Mining, and Analysis of Algorithms.
+- Served as a graduate researcher and Teaching Assistant supporting AI and data science instruction.
+- Built the Closest Pair App to visualize computational geometry algorithms.
+
+### Bachelor’s Degree, Computer Science — Asia Pacific University of Technology & Innovation
+
+**Apr 2015–Nov 2018**
+
+- Thesis: *Students Enrolment Recommendation System using Neural Network*.
+- Studied AI methods, data structures, concurrent programming, and software engineering.
+- Won the APU Coding Challenge and placed second in a Universiti Kebangsaan Malaysia hackathon in 2017.
+- Organized events for the APU Math & Science Club from 2015–2016.
+
+## Professional development
+
+- NgRx (with NgRx Data) — The Complete Guide, 2020
+- Ultimate AWS Certified Developer Associate, 2020
+- Certified Kubernetes Application Developer, 2020
+- Intro to AI: UC Berkeley CS188, 2017
+
+## Run the portfolio locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:9002](http://localhost:9002).
+
+Quality checks:
+
+```bash
+npm run typecheck
+npm run build
+```
+
+## Stack
+
+Next.js 15, React 18, TypeScript, Tailwind CSS, Radix UI, and Lucide icons.
+
+## Contact
+
+- [LinkedIn](https://linkedin.com/in/rhsn1)
+- [GitHub](https://github.com/mrh-jishan)
+- [Email](mailto:robiul.hassan12102@gmail.com)
